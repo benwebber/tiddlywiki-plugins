@@ -1,0 +1,17 @@
+{
+  "name": "tiddlywiki-motion",
+  "version": "0.1.0",
+  "description": "Vim-like keyboard shortcuts for TiddlyWiki",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benwebber/tiddlywiki-motion"
+  },
+  "scripts": {
+    "build": "make"
+  },
+  "author": "Ben Webber <benjamin.webber@gmail.com>",
+  "devDependencies": {
+    "tiddlywiki": "^5.2.1"
+  }
+}

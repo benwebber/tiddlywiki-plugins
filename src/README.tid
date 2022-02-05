@@ -1,0 +1,25 @@
+title: $:/plugins/benwebber/motion/README
+
+\define plugin() $:/plugins/benwebber/motion
+\define install()
+<$list
+  filter="[<transclusion>prefix[{$(plugin)$/README|$(plugin)$/README|||}]]"
+  emptyMessage="$(plugin)$"
+>
+{{ $(plugin)$||$:/core/ui/Components/plugin-info }}
+</$list>
+\end
+
+Vim-like keyboard shortcuts for ~TiddlyWiki.
+
+!! Install
+
+[[Manually install|https://tiddlywiki.com/#Manually%20installing%20a%20plugin]] the plugin by dragging this link to your ~TiddlyWiki:
+
+<<install>>
+
+Then save and refresh your ~TiddlyWiki.
+
+!! Usage
+
+Press <kbd>{{$:/plugins/benwebber/motion/config/Shortcuts/ShowHelp/Key}}</kbd> to show keyboard shortcuts.

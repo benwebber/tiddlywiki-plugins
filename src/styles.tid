@@ -1,0 +1,14 @@
+title: $:/plugins/benwebber/motion/styles
+tags: $:/tags/Stylesheet
+type: text/vnd.tiddlywiki
+
+<$list filter="[{$:/state/plugins/benwebber/motion/selected}] [has[draft.of]field:draft.of{$:/state/plugins/benwebber/motion/selected}] +[escapecss[]]">
+[data-tiddler-title=<<currentTiddler>>] {
+  outline: <<colour primary>> 1px solid;
+}
+</$list>
+
+.motion-border-none {border: none;}
+.motion-flex {display: flex;}
+.motion-justify-around {justify-content: space-around;}
+.motion-p-1 {padding: 0.25rem;}
