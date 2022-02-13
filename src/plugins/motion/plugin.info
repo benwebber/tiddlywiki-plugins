@@ -2,7 +2,7 @@
   "title": "$:/plugins/benwebber/motion",
   "description": "Vim-like keyboard shortcuts for TiddlyWiki",
   "author": "Ben Webber",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "core-version": ">=5.0.0",
   "source": "https://github.com/benwebber/tiddlywiki-motion",
   "plugin-type": "plugin",

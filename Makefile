@@ -1,17 +1,12 @@
-.PHONY: all install clean
-
-export PATH := ./node_modules/.bin:$(PATH)
-
-SOURCES := $(shell find doc/ src/)
-
 all: index.html
 
 clean:
 	$(RM) index.html
+	$(RM) src/plugins/motion/files/styles.min.css
 
-install:
-	yarn install
+index.html: src/plugins/motion/files/styles.min.css
+	yarn run tiddlywiki --version
+	yarn run tiddlywiki doc/ --verbose --build
 
-index.html: $(SOURCES)
-	tiddlywiki --version
-	tiddlywiki doc/ --verbose --build
+%.min.css: %.css
+	yarn run tailwindcss -m -i $< -o $@

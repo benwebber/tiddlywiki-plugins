@@ -1,21 +1,21 @@
 title: $:/plugins/benwebber/motion/Help
 subtitle: Keyboard shortcuts
-class: motion-help
+class: tw-help
 
 \define shortcut(shortcut)
 <$set name=kbd filter="[enlist{$:/plugins/benwebber/motion/config/Shortcuts/$shortcut$/Key}addprefix[<kbd>]addsuffix[</kbd>]]">
 <tr>
-  <td class="motion-border-none motion-p-1"><<kbd>></td>
-  <td class="motion-border-none motion-p-1"><$transclude tiddler="$:/plugins/benwebber/motion/config/Shortcuts/$shortcut$/Caption" /></td>
+  <td class="tw-border-none tw-p-1"><<kbd>></td>
+  <td class="tw-border-none tw-p-1"><$transclude tiddler="$:/plugins/benwebber/motion/config/Shortcuts/$shortcut$/Caption" /></td>
 </tr>
 </$set>
 \end
 
-<div class="motion-flex motion-justify-around">
+<div class="tw-flex tw-justify-around">
 <div>
 <h4>General</h4>
 
-<table class="motion-border-none">
+<table class="tw-border-none">
 <$list filter="[enlist[FocusSearch ShowHelp Dismiss]]">
 <$macrocall $name="shortcut" shortcut=<<currentTiddler>> />
 </$list>
@@ -23,7 +23,7 @@ class: motion-help
 
 <h4>Story River</h4>
 
-<table class="motion-border-none">
+<table class="tw-border-none">
 <$list filter="[enlist[CreateNewTiddler SelectNextTiddler SelectPreviousTiddler EditTiddler CloseTiddler CloseAllTiddlers]]">
 <$macrocall $name="shortcut" shortcut=<<currentTiddler>> />
 </$list>
@@ -33,7 +33,7 @@ class: motion-help
 <div>
 <h4>Folding</h4>
 
-<table class="motion-border-none">
+<table class="tw-border-none">
 <$list filter="[enlist[FoldTiddler UnfoldTiddler ToggleTiddler FoldAllTiddlers UnfoldAllTiddlers ToggleAllTiddlers]]">
 <$macrocall $name="shortcut" shortcut=<<currentTiddler>> />
 </$list>

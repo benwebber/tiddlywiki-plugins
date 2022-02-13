@@ -12,6 +12,7 @@
   },
   "author": "Ben Webber <benjamin.webber@gmail.com>",
   "devDependencies": {
+    "tailwindcss": "^3.0.22",
     "tiddlywiki": "^5.2.1"
   }
 }

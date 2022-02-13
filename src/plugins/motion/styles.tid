@@ -1,4 +1,4 @@
-title: $:/plugins/benwebber/motion/styles
+title: $:/plugins/benwebber/motion/styles/dynamic
 tags: $:/tags/Stylesheet
 type: text/vnd.tiddlywiki
 
@@ -7,8 +7,3 @@ type: text/vnd.tiddlywiki
   outline: <<colour primary>> 1px solid;
 }
 </$list>
-
-.motion-border-none {border: none;}
-.motion-flex {display: flex;}
-.motion-justify-around {justify-content: space-around;}
-.motion-p-1 {padding: 0.25rem;}
