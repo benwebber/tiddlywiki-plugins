@@ -1,0 +1,7 @@
+title: $:/plugins/benwebber/css-palette/styles
+tags: $:/tags/Stylesheet
+list-before:
+
+<$list filter="[[$:/plugins/benwebber/css-palette/config/RenderCurrentPalette]get[text]] ~true +[match[true]]">
+<<css-palette>>
+</$list>

@@ -1,0 +1,11 @@
+title: $:/plugins/benwebber/css-palette/public
+tags: $:/tags/Macro
+
+\define css-palette(palette: "{$:/palette}", prefix: "tc-")
+\rules only macrocallinline html
+:root {
+<$list filter="[$palette$indexes[]sort[title]]" variable="name">
+  --<<__prefix__>><<name>>: <$macrocall $name="colour" name=<<name>> />;
+</$list>
+}
+\end

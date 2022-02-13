@@ -1,0 +1,51 @@
+title: $:/plugins/benwebber/css-palette/README
+
+\define plugin() $:/plugins/benwebber/css-palette
+\define install()
+<$list
+  filter="[<transclusion>prefix[{$(plugin)$/README|$(plugin)$/README|||}]]"
+  emptyMessage="$(plugin)$"
+>
+{{ $(plugin)$||$:/core/ui/Components/plugin-info }}
+</$list>
+\end
+
+''css-palette'' exposes [[TiddlyWiki palette|https://tiddlywiki.com/#ColourPalettes]] colours as [[CSS variables|https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties]].
+
+! Example
+
+```
+@@color: var(--tc-alert-highlight);
+Lorem ipsum dolor sit amet.
+@@
+```
+
+@@color: var(--tc-alert-highlight);
+Lorem ipsum dolor sit amet.
+@@
+
+! Install
+
+[[Manually install|https://tiddlywiki.com/#Manually%20installing%20a%20plugin]] the plugin by dragging this link to your ~TiddlyWiki:
+
+<<install>>
+
+! Configuration
+
+Once installed, the plugin exposes variables for the current palette by default.
+
+You can disable this behaviour by setting $:/plugins/benwebber/css-palette/config/RenderCurrentPalette to `false`.
+
+! Macros
+
+!! `css-palette`
+
+Render CSS variables for all the colours defined in the given palette.
+
+!!! Parameters
+
+;palette
+: A filter tiddler reference to the palette (e.g., `{$:/palette}` or `[$:/palettes/Vanilla]`).  The default is the current palette (`{$:/palette}`).
+
+;prefix
+: Prefix variable names with this prefix. The default matches ~TiddlyWiki classes (`tc-`).
