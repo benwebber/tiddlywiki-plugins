@@ -1,0 +1,7 @@
+title: tiddlywiki-plugins
+
+! Plugins
+
+<$list filter="[prefix[$:/plugins/benwebber/]field:plugin-type[plugin]]">
+{{||$:/core/ui/Components/plugin-info}}
+</$list>

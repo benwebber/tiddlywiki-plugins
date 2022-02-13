@@ -1,8 +1,8 @@
-title: $:/plugins/benwebber/motion/github-fork-ribbon
+title: $:/.local/github-fork-ribbon
 tags: $:/tags/PageControls
 
 <div class="github-fork-ribbon-wrapper right">
   <div class="github-fork-ribbon">
-    <a href="https://github.com/benwebber/tiddlywiki-motion">Fork me on ~GitHub</a>
+    <a href="https://github.com/benwebber/tiddlywiki-plugins">Fork me on ~GitHub</a>
   </div>
 </div>

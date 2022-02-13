@@ -1,13 +1,20 @@
-# tiddlywiki-motion
+# tiddlywiki-plugins
 
-Vim-like keyboard shortcuts for [TiddlyWiki](https://tiddlywiki.com/).
+A collection of useful plugins for [TiddlyWiki](https://tiddlywiki.com/).
+
+## Plugins
+
+<dl>
+  <dt>[motion][]</dt>
+  <dd>Vim-like keyboard shortcuts</dd>
+</dl>
 
 ## Demo
 
-Check out the plugin page at:
-
-https://benwebber.github.io/tiddlywiki-motion/
+https://benwebber.github.io/tiddlywiki-plugins/
 
 ## License
 
 MIT
+
+[motion]: https://benwebber.github.io/tiddlywiki-plugins/#%24%3A%2Fplugins%2Fbenwebber%2Fmotion
