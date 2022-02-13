@@ -1,0 +1,27 @@
+title: $:/plugins/benwebber/expand/macros/public
+tags: $:/tags/Macro
+
+\define expand.dt(term, text)
+\whitespace trim
+\import [[$:/plugins/benwebber/expand/macros/private]]
+<$vars stateTiddler=<<qualify "$:/state/plugins/benwebber/expand/$term$">>>
+  <$set name=text filter="[<__text__>is[blank]] +[then<__term__>else<__text__>]" select=0>
+    <$button class="expand-dd tw-bg-transparent tw-border-none tw-cursor-pointer tw-decoration-dotted tw-m-0 tw-p-0 tw-underline hover:tw-decoration-solid" actions=<<expand.toggle>>>
+      <<text>>
+    </$button>
+  </$set>
+</$vars>
+\end
+
+\define expand.dd(term, text)
+\whitespace trim
+\import [[$:/plugins/benwebber/expand/macros/private]]
+<$vars stateTiddler=<<qualify "$:/state/plugins/benwebber/expand/$term$">>>
+  <!-- HACK: Preserve leading space (e.g., before a new sentence). -->
+  <$set name=space filter="[<__text__>prefix[ ]] +[then[&#32;]else[]]" select=0>
+    <$reveal type="nomatch" state=<<stateTiddler>> text="" class="expand-dt">
+      <<space>><<__text__>>
+    </$reveal>
+  </$set>
+</$vars>
+\end

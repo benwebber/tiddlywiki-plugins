@@ -2,9 +2,10 @@ all: index.html
 
 clean:
 	$(RM) index.html
+	$(RM) src/plugins/expand/files/styles.min.css
 	$(RM) src/plugins/motion/files/styles.min.css
 
-index.html: src/plugins/motion/files/styles.min.css
+index.html: src/plugins/expand/files/styles.min.css src/plugins/motion/files/styles.min.css
 	yarn run tiddlywiki --version
 	yarn run tiddlywiki doc/ --verbose --build
 

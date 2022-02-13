@@ -1,0 +1,10 @@
+title: $:/plugins/benwebber/expand/macros/private
+
+\define expand.toggle()
+<$list filter="[<stateTiddler>is[tiddler]]">
+  <$action-deletetiddler $tiddler=<<stateTiddler>> />
+</$list>
+<$list filter="[<stateTiddler>!is[tiddler]]">
+  <$action-createtiddler $basetitle=<<stateTiddler>> text="true" />
+</$list>
+\end

@@ -1,0 +1,78 @@
+title: $:/plugins/benwebber/expand/README
+
+\define plugin() $:/plugins/benwebber/expand
+\define install()
+<$list
+  filter="[<transclusion>prefix[{$(plugin)$/README|$(plugin)$/README|||}]]"
+  emptyMessage="$(plugin)$"
+>
+{{ $(plugin)$||$:/core/ui/Components/plugin-info }}
+</$list>
+\end
+
+''expand'' lets you define terms in text without breaking the flow.
+Readers can click the term to expand the definition at a sensible location.
+This allows the reader to select their desired level of detail.
+
+''expand'' is inspired by [[Expounder|https://skorokithakis.github.io/expounder/]], a similar library for HTML.
+
+! Install
+
+[[Manually install|https://tiddlywiki.com/#Manually%20installing%20a%20plugin]] the plugin by dragging this link to your ~TiddlyWiki:
+
+<<install>>
+
+! Example
+
+Click the underlined terms in the text below, adapted from [[Wikipedia|https://en.wikipedia.org/wiki/English_carrack_Holigost]].
+
+<<<
+//Holigost// was an English navy <<expand.dt "carrack">> rebuilt for <<expand.dt "Henry V">><<expand.dd "Henry V" " (1386--1422, r.&nbsp;1413--1422)">>.
+<<expand.dd "carrack" " A ''carrack'' is a three- or four-masted ocean-going sailing ship that was developed in the 14th to 15th centuries in Europe.">>
+She measured 760 <<expand.dt "bom" "tons BOM">><<expand.dd "bom" " (Builder's Own Measurement, a method used in England to estimate the tonnage of a ship based on length and maximum beam)">>.
+<<<
+
+! Macros
+
+!! `expand.dt`
+
+Introduce a term to expand later.
+
+This creates a button that the reader can click to expand the related term.
+The button has the CSS class `expand-dt`.
+
+!!! Parameters
+
+;term
+: The term to define. If you specify `text`, this can be a convenient identifier instead.
+
+;text
+: Optional text to display instead of the term.
+
+!!! Examples
+
+```
+<<expand.dt "tons BOM">>
+<<expand.dt "bom" "tons BOM">>
+```
+
+!! `expand.dd`
+
+Define a term.
+
+The revealed text has the CSS class `expand-dd`.
+
+!!! Parameters
+
+;term
+: The term to define, as specified in `expand.dt`.
+
+;text
+: The definition text.
+
+!!! Examples
+
+```
+<<expand.dd "tons BOM" " (Builder's Own Measurement…)">>
+<<expand.dd "bom" " (Builder's Own Measurement…)">>
+```
