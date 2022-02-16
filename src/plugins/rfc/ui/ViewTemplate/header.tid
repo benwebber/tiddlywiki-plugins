@@ -1,0 +1,17 @@
+title: $:/plugins/benwebber/rfc/ui/ViewTemplate/header
+tags: $:/tags/ViewTemplate
+list-before: $:/core/ui/ViewTemplate/body
+
+<$list filter="[all[current]!is[system]get[rfc.number]]" variable=number>
+  <table class="rfc tw-w-full">
+    <tr class="tw-flex">
+      <td class="tw-block tw-border-l-0 tw-border-r tw-border-t-0 tw-px-2 tw-py-1"><strong>RFC <<number>></strong></td>
+      <td class="tw-block tw-border-r tw-border-t-0 tw-px-2 tw-py-1"><$macrocall $name=rfc.txt number=<<number>> text="TXT" /></td>
+      <td class="tw-block tw-border-r tw-border-t-0 tw-px-2 tw-py-1"><$macrocall $name=rfc.html number=<<number>> text="HTML" /></td>
+      <td class="tw-block tw-border-r tw-border-t-0 tw-px-2 tw-py-1"><$macrocall $name=rfc.pdf number=<<number>> text="PDF" /></td>
+      <td class="tw-block tw-border-r tw-border-t-0 tw-px-2 tw-py-1"><$macrocall $name=rfc.tracker number=<<number>> text="Tracker" /></td>
+      <td class="tw-block tw-border-r tw-border-t-0 tw-px-2 tw-py-1"><$macrocall $name=rfc.diff number=<<number>> text="Diff" /></td>
+      <td class="tw-block tw-border-r tw-border-t-0 tw-px-2 tw-py-1"><$macrocall $name=rfc.errata number=<<number>> text="Errata" /></td>
+    </tr>
+  </table>
+</$list>

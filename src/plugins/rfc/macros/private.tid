@@ -1,0 +1,7 @@
+title: $:/plugins/benwebber/rfc/macros/private
+
+\define rfc.link(number, url, text: "")
+<$set name=text filter="[<__text__>is[blank]] +[then[RFC $number$]else<__text__>]" select=0>
+  <a href=<<__url__>> rel="noopener noreferrer"><<text>></a>
+</$set>
+\end
