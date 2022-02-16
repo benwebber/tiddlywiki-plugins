@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+make
+git worktree add dist gh-pages || true
+cp -f index.html dist/
+git -C dist/ add index.html
+TZ=UTC git -C dist/ commit -m "Publish $(git log -1 --format='%h')"
+git -C dist/ push
