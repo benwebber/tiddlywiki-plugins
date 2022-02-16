@@ -1,11 +1,13 @@
+CSS := $(shell find src -type f -name '*.css' ! -name '*.min.css')
+MIN_CSS := $(patsubst %.css, %.min.css, $(CSS))
+
 all: index.html
 
 clean:
 	$(RM) index.html
-	$(RM) src/plugins/expand/files/styles.min.css
-	$(RM) src/plugins/motion/files/styles.min.css
+	$(RM) $(MIN_CSS)
 
-index.html: src/plugins/expand/files/styles.min.css src/plugins/motion/files/styles.min.css
+index.html: $(MIN_CSS)
 	yarn run tiddlywiki --version
 	yarn run tiddlywiki doc/ --verbose --build
 

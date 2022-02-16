@@ -1,0 +1,33 @@
+title: $:/plugins/benwebber/crosslinks/ui/ViewTemplate/footer
+tags: $:/tags/ViewTemplate
+list-after: $:/core/ui/ViewTemplate/body
+
+\import [[$:/plugins/benwebber/crosslinks/macros/private]]
+
+<$list filter="[all[current]!is[system]]">
+  <!-- Has any links or backlinks. -->
+  <$list filter="[all[current]links[]then<currentTiddler>first[]] [all[current]backlinks[]!is[draft]then<currentTiddler>first[]]">
+    <$vars stateTiddler=<<qualify "$:/state/plugins/benwebber/crosslinks">>>
+      <div class="crosslinks tw-border-solid tw-border-t tw-border-x-0 tw-border-b-0 tw-py-2">
+        <$list filter="[<stateTiddler>is[tiddler]]" variable=noop>
+          <$button actions=<<crosslinks.toggle>> class="tc-btn-invisible crosslinks-button crosslinks-button-active tw-align-middle tw-font-bold">
+            {{$:/core/images/down-arrow}} Links
+          </$button>
+          <$list filter="[all[current]links[]then<currentTiddler>first[]]">
+            <h4 class="tw-my-2">References</h4>
+            <<list-links filter:"[title<currentTiddler>links[]]" type:"ol" class:"tw-m-0">>
+          </$list>
+          <$list filter="[all[current]backlinks[]then<currentTiddler>first[]]">
+            <h4 class="tw-my-2">Citations</h4>
+            <<list-links filter:"[title<currentTiddler>backlinks[]!is[draft]sort[]]" type:"ol" class:"tw-m-0">>
+          </$list>
+        </$list>
+        <$list filter="[<stateTiddler>!is[tiddler]]" variable=noop>
+          <$button actions=<<crosslinks.toggle>> class="tc-btn-invisible crosslinks-button tw-align-middle tw-font-bold">
+            {{$:/core/images/right-arrow}} Links
+          </$button>
+        </$list>
+      </div>
+    </$vars>
+  </$list>
+</$list>

@@ -1,0 +1,24 @@
+title: $:/plugins/benwebber/crosslinks/styles/dynamic
+tags: $:/tags/Stylesheet
+
+.crosslinks {
+  border-color: <<colour "muted-foreground">>;
+}
+
+.crosslinks-button {
+  color: <<colour "muted-foreground">>;
+}
+
+.crosslinks-button-active,
+.crosslinks-button:hover, .crosslinks-button:focus, .crosslinks-button:active {
+  color: <<colour "foreground">>;
+}
+
+.crosslinks-button svg {
+  fill: <<colour "muted-foreground">>;
+}
+
+.crosslinks-button-active svg,
+.crosslinks-button:hover svg, .crosslinks-button:focus svg, .crosslinks-button:active svg {
+  fill: <<colour "foreground">>;
+}

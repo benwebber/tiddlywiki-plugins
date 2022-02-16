@@ -1,0 +1,19 @@
+title: $:/plugins/benwebber/crosslinks/README
+
+\define plugin() $:/plugins/benwebber/crosslinks
+\define install()
+<$list
+  filter="[<transclusion>prefix[{$(plugin)$/README|$(plugin)$/README|||}]]"
+  emptyMessage="$(plugin)$"
+>
+{{ $(plugin)$||$:/core/ui/Components/plugin-info }}
+</$list>
+\end
+
+''crosslinks'' adds a footer to every non-system tiddler showing the tiddler's links (references) and backlinks (citations).
+
+! Install
+
+[[Manually install|https://tiddlywiki.com/#Manually%20installing%20a%20plugin]] the plugin by dragging this link to your ~TiddlyWiki:
+
+<<install>>

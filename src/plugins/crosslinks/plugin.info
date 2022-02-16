@@ -1,0 +1,10 @@
+{
+  "title": "$:/plugins/benwebber/crosslinks",
+  "description": "Add a footer showing a tiddler's links and backlinks",
+  "author": "Ben Webber",
+  "version": "0.1.0",
+  "core-version": ">=5.0.0",
+  "source": "https://github.com/benwebber/tiddlywiki-plugins",
+  "plugin-type": "plugin",
+  "list": "README License"
+}
