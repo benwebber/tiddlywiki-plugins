@@ -15,6 +15,8 @@ A collection of useful plugins for [TiddlyWiki](https://tiddlywiki.com/).
   <dd>Vim-like keyboard shortcuts</dd>
   <dt><a href="https://benwebber.github.io/tiddlywiki-plugins/#%24%3A%2Fplugins%2Fbenwebber%2Frfc">rfc</a></dt>
   <dd>Link to IETF RFCs</dd>
+  <dt><a href="https://benwebber.github.io/tiddlywiki-plugins/#%24%3A%2Fplugins%2Fbenwebber%2Ftag-count">tag-count</a></dt>
+  <dd>Add a count to all tag pills</dd>
 </dl>
 
 ## Demo

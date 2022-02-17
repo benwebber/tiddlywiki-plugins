@@ -1,0 +1,22 @@
+title: $:/plugins/benwebber/tag-count/styles
+tags: $:/tags/Stylesheet
+
+\whitespace trim
+
+.tc-tag-label:after {
+  font-size: 0.8em;
+  opacity: calc(2/3);
+  vertical-align: middle;
+}
+
+<$list filter="[all[shadows+tiddlers]tags[]]" variable=tag>
+<$set name=cssTag filter="[<tag>escapecss[]]" select=0>
+[data-tag-title=<<cssTag>>] .tc-tag-label:after {
+  content: "<$count filter="[all[shadows+tiddlers]tag<tag>]" />";
+}
+</$set>
+</$list>
+
+.tc-untagged-label:after {
+  content: "<$count filter="[untagged[]!is[system]] -[tags[]]"/>";
+}
