@@ -30,6 +30,14 @@ const motion = {
         this.navigatorWidget.dispatchEvent({type: 'tm-new-tiddler'});
         return false;
       },
+      DeleteTiddler: () => {
+        let selectedTiddler = $tw.wiki.getTiddlerText('$:/state/plugins/benwebber/motion/selected') || '';
+        if (!selectedTiddler) {
+          return;
+        }
+        this.navigatorWidget.dispatchEvent({type: 'tm-delete-tiddler', param: selectedTiddler});
+        return false;
+      },
       SaveWiki: () => {
         this.navigatorWidget.dispatchEvent({type: 'tm-save-wiki'});
         return false;

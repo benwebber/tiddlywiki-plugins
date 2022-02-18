@@ -6,6 +6,8 @@ ShowHelp/Key: ?
 ShowHelp/Caption: Show this help message
 CreateNewTiddler/Key: n
 CreateNewTiddler/Caption: Create a new tiddler
+DeleteTiddler/Key: d
+DeleteTiddler/Caption: Delete selected tiddler
 SelectNextTiddler/Key: j
 SelectNextTiddler/Caption: Select next tiddler in story river
 SelectPreviousTiddler/Key: k

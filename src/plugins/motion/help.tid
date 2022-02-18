@@ -24,7 +24,7 @@ class: tw-help
 <h4>Story River</h4>
 
 <table class="tw-border-none">
-<$list filter="[enlist[CreateNewTiddler SelectNextTiddler SelectPreviousTiddler EditTiddler CloseTiddler CloseAllTiddlers]]">
+<$list filter="[enlist[CreateNewTiddler SelectNextTiddler SelectPreviousTiddler EditTiddler DeleteTiddler CloseTiddler CloseAllTiddlers]]">
 <$macrocall $name="shortcut" shortcut=<<currentTiddler>> />
 </$list>
 </table>
