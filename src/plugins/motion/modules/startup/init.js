@@ -78,6 +78,26 @@ const motion = {
         this.navigatorWidget.dispatchEvent({type: 'tm-navigate', navigateTo: selectedTiddler})
         return false;
       },
+      GoToFirstTiddler: () => {
+        const storyList = this.navigatorWidget.story.getStoryList();
+        if (!storyList.length) {
+          return;
+        }
+        const selectedTiddler = storyList[0];
+        $tw.wiki.addTiddler({title: '$:/state/plugins/benwebber/motion/selected', text: selectedTiddler});
+        this.navigatorWidget.dispatchEvent({type: 'tm-navigate', navigateTo: selectedTiddler})
+        return false;
+      },
+      GoToLastTiddler: () => {
+        const storyList = this.navigatorWidget.story.getStoryList();
+        if (!storyList.length) {
+          return;
+        }
+        const selectedTiddler = storyList[storyList.length - 1];
+        $tw.wiki.addTiddler({title: '$:/state/plugins/benwebber/motion/selected', text: selectedTiddler});
+        this.navigatorWidget.dispatchEvent({type: 'tm-navigate', navigateTo: selectedTiddler})
+        return false;
+      },
       EditTiddler: () => {
         const selectedTiddler = $tw.wiki.getTiddlerText('$:/state/plugins/benwebber/motion/selected');
         if (!selectedTiddler) {

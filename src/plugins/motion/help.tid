@@ -3,7 +3,7 @@ subtitle: Keyboard shortcuts
 class: tw-help
 
 \define shortcut(shortcut)
-<$set name=kbd filter="[enlist{$:/plugins/benwebber/motion/config/Shortcuts/$shortcut$/Key}addprefix[<kbd>]addsuffix[</kbd>]]">
+<$set name=kbd filter="[enlist:raw{$:/plugins/benwebber/motion/config/Shortcuts/$shortcut$/Key}addprefix[<kbd>]addsuffix[</kbd>]]">
 <tr>
   <td class="tw-border-none tw-p-1"><<kbd>></td>
   <td class="tw-border-none tw-p-1"><$transclude tiddler="$:/plugins/benwebber/motion/config/Shortcuts/$shortcut$/Caption" /></td>
@@ -24,7 +24,7 @@ class: tw-help
 <h4>Story River</h4>
 
 <table class="tw-border-none">
-<$list filter="[enlist[CreateNewTiddler SelectNextTiddler SelectPreviousTiddler EditTiddler DeleteTiddler CloseTiddler CloseAllTiddlers]]">
+<$list filter="[enlist[CreateNewTiddler SelectNextTiddler SelectPreviousTiddler GoToFirstTiddler GoToLastTiddler EditTiddler DeleteTiddler CloseTiddler CloseAllTiddlers]]">
 <$macrocall $name="shortcut" shortcut=<<currentTiddler>> />
 </$list>
 </table>
