@@ -1,0 +1,20 @@
+title: $:/plugins/benwebber/css-palette/Settings
+
+\define checkactions()
+<$action-deletetiddler $tiddler="$:/plugins/benwebber/css-palette/config/$(__key__)$" />
+\end
+
+\define boolean(key, text)
+<$checkbox
+  tiddler="$:/plugins/benwebber/css-palette/config/$key$"
+  field="text"
+  checked="true"
+  unchecked="false"
+  default={{$:/plugins/benwebber/css-palette/config/$key$}}
+  checkactions=<<checkactions>>
+>
+$text$
+</$checkbox>
+\end
+
+<<boolean RenderCurrentPalette "Automatically define variables for current palette">>
