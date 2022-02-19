@@ -1,0 +1,18 @@
+title: crosslinks Overview
+tags: crosslinks
+caption: Overview
+
+''crosslinks'' adds a footer to every non-system tiddler showing the tiddler's links (references) and backlinks (citations).
+
+!! Example
+
+<<list-links filter:"[tag[crosslinks]tag[Demo]]">>
+
+!! Styles
+
+The links footer has the CSS class `crosslinks`.
+
+!! Limitations
+
+''crosslinks'' uses the `links` and `backlinks` filter operators.
+These filters can only detect [[hard links|https://tiddlywiki.com/#Hard%20and%20Soft%20Links]].

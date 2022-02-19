@@ -1,0 +1,19 @@
+title: expand Overview
+caption: Overview
+tags: expand
+
+''expand'' lets you define terms in text without breaking the flow.
+Readers can click the term to expand the definition at a sensible location.
+This allows the reader to select their desired level of detail.
+
+''expand'' is inspired by [[Expounder|https://skorokithakis.github.io/expounder/]], a similar library for HTML.
+
+!! Example
+
+Click the underlined terms in the text below, adapted from [[Wikipedia|https://en.wikipedia.org/wiki/English_carrack_Holigost]].
+
+<<<
+//Holigost// was an English navy <<expand.dt "carrack">> rebuilt for <<expand.dt "Henry V">><<expand.dd "Henry V" " (1386--1422, r.&nbsp;1413--1422)">>.
+<<expand.dd "carrack" " A ''carrack'' is a three- or four-masted ocean-going sailing ship that was developed in the 14th to 15th centuries in Europe.">>
+She measured 760 <<expand.dt "bom" "tons BOM">><<expand.dd "bom" " (Builder's Own Measurement, a method used in England to estimate the tonnage of a ship based on length and maximum beam)">>.
+<<<

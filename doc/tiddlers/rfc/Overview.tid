@@ -1,0 +1,18 @@
+title: rfc Overview
+tags: rfc
+caption: Overview
+
+''rfc'' makes it easy to reference [[IETF RFCs|https://www.ietf.org/standards/rfcs/]].
+
+!! Examples
+
+!!! Macros
+
+<$list filter="4122 7159 7231">
+
+* <$macrocall $name=rfc.txt number=<<currentTiddler>> />
+</$list>
+
+!!! View Templates
+
+<<list-links filter:"[tag[rfc]tag[Demo]]">>

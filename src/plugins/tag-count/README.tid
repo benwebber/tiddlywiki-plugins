@@ -1,23 +1,7 @@
 title: $:/plugins/benwebber/tag-count/README
 
-\define plugin() $:/plugins/benwebber/tag-count
-\define install()
-<$list
-  filter="[<transclusion>prefix[{$(plugin)$/README|$(plugin)$/README|||}]]"
-  emptyMessage="$(plugin)$"
->
-{{ $(plugin)$||$:/core/ui/Components/plugin-info }}
-</$list>
-\end
-
 ''tag-count'' adds a count to tag pills.
 
-! Install
-
-[[Manually install|https://tiddlywiki.com/#Manually%20installing%20a%20plugin]] the plugin by dragging this link to your ~TiddlyWiki:
-
-<<install>>
-
-! Example
+!! Example
 
 <<tag "$:/tags/Stylesheet">>

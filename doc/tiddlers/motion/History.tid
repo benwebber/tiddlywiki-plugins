@@ -1,0 +1,22 @@
+title: motion History
+tags: motion
+caption: History
+
+\define motion(keys) <$set name=kbd filter="[enlist:raw[$keys$]addprefix[<kbd>]addsuffix[</kbd>]]"><<kbd>></$set>
+
+!! Unreleased
+
+!!! Added
+
+* Added <<motion "g g">> and <<motion "G">> shortcuts to navigate to the first and last tiddler in the story river, respectively.
+* Added <<motion "d">> shortcut to delete the selected tiddler.
+
+!! 0.1.1 - 2022-02-14
+
+!!! Changed
+
+* Changed Tailwind utility class prefix from `motion-` to `tw-`.
+
+!! 0.1.0 - 2022-02-05
+
+Initial release

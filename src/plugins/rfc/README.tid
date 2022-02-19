@@ -1,45 +1,5 @@
 title: $:/plugins/benwebber/rfc/README
 
-\define plugin() $:/plugins/benwebber/rfc
-\define install()
-<$list
-  filter="[<transclusion>prefix[{$(plugin)$/README|$(plugin)$/README|||}]]"
-  emptyMessage="$(plugin)$"
->
-{{ $(plugin)$||$:/core/ui/Components/plugin-info }}
-</$list>
-\end
-
 ''rfc'' makes it easy to reference [[IETF RFCs|https://www.ietf.org/standards/rfcs/]].
 
-! Install
-
-[[Manually install|https://tiddlywiki.com/#Manually%20installing%20a%20plugin]] the plugin by dragging this link to your ~TiddlyWiki:
-
-<<install>>
-
-! Macros
-
-All of these macros accept the same parameters.
-
-;number
-: The RFC number.
-;text
-: If not specified, the macro will generate text like "RFC 4122".
-
-|Macro|Description|h
-|`rfc.txt`|Link to the RFC's plain text version|
-|`rfc.html`|Link to the RFC's HTML version|
-|`rfc.pdf`|Link to the RFC's PDF version|
-|`rfc.tracker`|Link to the Datatracker records for the RFC|
-|`rfc.diff`|Link to the diff of the RFC and its most recent draft|
-|`rfc.errata`|Link to the RFC's errata|
-
-`rfc` is an alias of `rfc.txt`.
-
-! View template
-
-Once installed, this plugin automatically adds a view template to all non-system tiddlers.
-
-If you specify an RFC number in a tiddler's `rfc.number` field, the template will render a header containing links to all the pages described above.
-This is similar to the header found at the top of the HTML version.
+{{$:/plugins/benwebber/rfc/macros/public}}

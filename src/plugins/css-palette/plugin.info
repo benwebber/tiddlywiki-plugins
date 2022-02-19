@@ -1,10 +1,12 @@
 {
   "title": "$:/plugins/benwebber/css-palette",
+  "name": "css-palette",
   "description": "Expose TiddlyWiki palette colours as CSS variables",
   "author": "Ben Webber",
   "version": "0.1.0",
   "core-version": ">=5.0.0",
   "source": "https://github.com/benwebber/tiddlywiki-plugins",
   "plugin-type": "plugin",
-  "list": "README License"
+  "list": "README",
+  "license": "MIT"
 }

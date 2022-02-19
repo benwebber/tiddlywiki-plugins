@@ -1,0 +1,20 @@
+title: css-palette Overview
+tags: css-palette
+caption: Overview
+
+''css-palette'' exposes [[TiddlyWiki palette|https://tiddlywiki.com/#ColourPalettes]] colours as [[CSS variables|https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties]].
+
+This lets you use palette colours in static stylesheets, instead of only within WikiText.
+It also makes it easier to integrate CSS frameworks such as Bootstrap.
+
+!! Example
+
+```
+@@color: var(--tc-alert-highlight);
+Lorem ipsum dolor sit amet.
+@@
+```
+
+@@color: var(--tc-alert-highlight);
+Lorem ipsum dolor sit amet.
+@@

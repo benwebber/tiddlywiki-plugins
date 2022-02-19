@@ -1,0 +1,13 @@
+title: tag-count Overview
+caption: Overview
+tags: tag-count
+
+''tag-count'' adds a small counter to all tag pills showing how many tiddlers have that tag.
+
+!! Example
+
+<<tag Plugin>>
+
+!! Styles
+
+To override the default styles, customize `.tc-tag-label:after`.

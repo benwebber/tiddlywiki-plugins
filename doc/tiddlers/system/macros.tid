@@ -1,0 +1,12 @@
+title: $:/.local/macros
+tags: $:/tags/Macro
+
+\define doc.view-templates(plugin)
+''<<__plugin__>>'' installs the following view templates:
+
+<$list filter="[all[shadows+tiddlers]prefix[$:/plugins/benwebber/$plugin$/]tag[$:/tags/ViewTemplate]]">
+
+; <<currentTiddler>>
+: {{!!description}}
+</$list>
+\end

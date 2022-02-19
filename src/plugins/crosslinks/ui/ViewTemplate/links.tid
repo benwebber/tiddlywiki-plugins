@@ -1,6 +1,7 @@
 title: $:/plugins/benwebber/crosslinks/ui/ViewTemplate/footer
 tags: $:/tags/ViewTemplate
 list-after: $:/core/ui/ViewTemplate/body
+description: Adds a footer to all non-system tiddlers showing the tiddler's links and backlinks.
 
 \import [[$:/plugins/benwebber/crosslinks/macros/private]]
 

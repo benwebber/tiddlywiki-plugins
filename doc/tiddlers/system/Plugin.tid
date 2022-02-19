@@ -1,0 +1,12 @@
+title: $:/.local/ui/ViewTemplate/plugin
+tags: $:/tags/ViewTemplate
+list-before: $:/core/ui/ViewTemplate/body
+
+\define plugin() $:/plugins/benwebber/$(currentTiddler)$
+
+<$list filter="[all[current]tag[Plugin]]">
+<$tiddler tiddler=<<plugin>>>
+{{||$:/core/ui/Components/plugin-info}}
+</$tiddler>
+<$macrocall $name=tabs tabsList="[list<currentTiddler>addprefix[ ]addprefix<currentTiddler>]" default={{{ [list<currentTiddler>addprefix[ ]addprefix<currentTiddler>] }}} />
+</$list>

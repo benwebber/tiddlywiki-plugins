@@ -1,0 +1,8 @@
+title: Philosophy
+
+Plugins in this library should:
+
+* [[do one thing, and one thing well|https://en.wikipedia.org/wiki/Unix_philosophy]]
+* be as small as possible
+* not shadow system tiddlers
+* not depend on each other, nor on other plugins

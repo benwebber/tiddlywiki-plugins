@@ -1,0 +1,9 @@
+title: crosslinks Demo: Target
+tags: crosslinks Demo
+
+\define source() <$link to="crosslinks Demo: Source" />
+
+This tiddler links to <<source>> using a macro.
+This link will not appear in the footer.
+
+The link from <<source>> will appear in the footer as a ''citation''.

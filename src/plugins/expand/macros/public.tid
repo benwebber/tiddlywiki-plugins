@@ -25,3 +25,47 @@ tags: $:/tags/Macro
   </$set>
 </$vars>
 \end
+
+
+!! `expand.dt`
+
+Introduce a term to expand later.
+
+This creates a button that the reader can click to expand the related term.
+The button has the CSS class `expand-dt`.
+
+!!! Parameters
+
+;term
+: The term to define. If you specify `text`, this can be a convenient identifier instead.
+
+;text
+: Optional text to display instead of the term.
+
+!!! Examples
+
+```
+<<expand.dt "tons BOM">>
+<<expand.dt "bom" "tons BOM">>
+```
+
+!! `expand.dd`
+
+Define a term.
+
+The revealed text has the CSS class `expand-dd`.
+
+!!! Parameters
+
+;term
+: The term to define, as specified in `expand.dt`.
+
+;text
+: The definition text.
+
+!!! Examples
+
+```
+<<expand.dd "tons BOM" " (Builder's Own Measurement…)">>
+<<expand.dd "bom" " (Builder's Own Measurement…)">>
+```

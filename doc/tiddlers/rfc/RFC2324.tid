@@ -1,0 +1,5 @@
+title: Hyper Text Coffee Pot Control Protocol (HTCPCP/1.0)
+tags: rfc Demo
+rfc.number: 2324
+
+Describes HTCPCP, a protocol for controlling, monitoring, and diagnosing coffee pots.

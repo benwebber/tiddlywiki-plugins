@@ -1,7 +1,29 @@
 title: tiddlywiki-plugins
 
-! Plugins
+A collection of small [[TiddlyWiki|https://tiddlywiki.com]] plugins.
 
-<$list filter="[prefix[$:/plugins/benwebber/]field:plugin-type[plugin]]">
+!! Plugins
+
+<$list filter="[prefix[$:/plugins/benwebber/]field:plugin-type[plugin]sort[]]">
+
+; ''<$link to={{!!name}} />''
+: {{!!description}}
+</$list>
+
+!! Install
+
+Drag the plugin info boxes below to your own wiki.
+
+<$reveal type="nomatch" state=<<qualify "$:/state/details">> text="show">
+<$button set=<<qualify "$:/state/details">> setTo="show" class="tc-btn-invisible">{{$:/core/images/right-arrow}} Plugins</$button>
+</$reveal>
+<$reveal type="match" state=<<qualify "$:/state/details">> text="show">
+<$button set=<<qualify "$:/state/details">> setTo="hide" class="tc-btn-invisible">{{$:/core/images/down-arrow}} Plugins</$button>
+<$list filter="[prefix[$:/plugins/benwebber/]sort[]]">
 {{||$:/core/ui/Components/plugin-info}}
 </$list>
+</$reveal>
+
+!! License
+
+All plugins are licensed under the [[MIT License|License]].

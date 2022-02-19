@@ -1,0 +1,11 @@
+title: motion Overview
+tags: motion
+caption: Overview
+
+''motion'' adds Vim-like keyboard shortcuts to navigate your wiki and interact with the story river.
+
+''motion'' is installed in this wiki. Try it now.
+
+---
+
+{{ $:/plugins/benwebber/motion/Help }}
