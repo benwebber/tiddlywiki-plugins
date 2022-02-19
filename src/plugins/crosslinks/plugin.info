@@ -7,6 +7,6 @@
   "core-version": ">=5.0.0",
   "source": "https://github.com/benwebber/tiddlywiki-plugins",
   "plugin-type": "plugin",
-  "list": "README",
+  "list": "README Settings",
   "license": "MIT"
 }

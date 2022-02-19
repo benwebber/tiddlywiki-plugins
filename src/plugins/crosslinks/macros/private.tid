@@ -8,3 +8,15 @@ title: $:/plugins/benwebber/crosslinks/macros/private
   <$action-createtiddler $basetitle=<<stateTiddler>> text="true" />
 </$list>
 \end
+
+\define crosslinks.filter-should-show()
+[all[current]get[crosslinks.show]]
+~[{$:/plugins/benwebber/crosslinks/config/ViewTemplate/footer}]
++[match:caseinsensitive[true]]
+\end
+
+\define crosslinks.filter-has-links()
+[all[current]links[]]
+[all[current]backlinks[]!is[draft]]
++[then<currentTiddler>!is[system]]
+\end

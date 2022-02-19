@@ -1,13 +1,12 @@
 title: $:/plugins/benwebber/crosslinks/ui/ViewTemplate/footer
 tags: $:/tags/ViewTemplate
 list-after: $:/core/ui/ViewTemplate/body
-description: Adds a footer to all non-system tiddlers showing the tiddler's links and backlinks.
+description: Adds a footer to all non-system tiddlers showing the tiddler's links and backlinks. Enable or disable this footer in the plugin settings. Setting a tiddler's `crosslinks.show` field to `true` will ''always'' show the footer. Setting it to `false` will ''never'' show the footer.
 
 \import [[$:/plugins/benwebber/crosslinks/macros/private]]
 
-<$list filter="[all[current]!is[system]]">
-  <!-- Has any links or backlinks. -->
-  <$list filter="[all[current]links[]then<currentTiddler>first[]] [all[current]backlinks[]!is[draft]then<currentTiddler>first[]]">
+<$list filter=<<crosslinks.filter-should-show>> variable=noop>
+  <$list filter=<<crosslinks.filter-has-links>>>
     <$vars stateTiddler=<<qualify "$:/state/plugins/benwebber/crosslinks">>>
       <div class="crosslinks tw-border-solid tw-border-t tw-border-x-0 tw-border-b-0 tw-py-2">
         <$list filter="[<stateTiddler>is[tiddler]]" variable=noop>

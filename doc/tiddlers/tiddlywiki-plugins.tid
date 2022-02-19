@@ -1,4 +1,5 @@
 title: tiddlywiki-plugins
+crosslinks.show: false
 
 A collection of small [[TiddlyWiki|https://tiddlywiki.com]] plugins.
 
