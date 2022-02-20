@@ -2,6 +2,12 @@ title: tag-count History
 tags: tag-count
 caption: History
 
+!! Unreleased
+
+!!! Changed
+
+* Cache tag counts using an indexer module instead of rendering a `count` widget for each tag.
+
 !! 0.1.0 - 2022-02-17
 
 Initial release
