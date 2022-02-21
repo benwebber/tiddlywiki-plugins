@@ -7,6 +7,8 @@ caption: History
 !!! Changed
 
 * Cache tag counts using an indexer module instead of rendering a `count` widget for each tag.
+* Ported to TypeScript.
+* ''tag-count'' now only supports modern browsers (ES2019+).
 
 !! 0.1.0 - 2022-02-17
 
