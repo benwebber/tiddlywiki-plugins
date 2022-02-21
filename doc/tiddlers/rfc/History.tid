@@ -4,6 +4,8 @@ caption: History
 
 !! Unreleased
 
+!! 0.2.0 - 2022-02-21
+
 !!! Added
 
 * Added `rfc.bibtex` and `rfc.inline-errata` macros.
