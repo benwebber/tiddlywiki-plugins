@@ -2,6 +2,12 @@ title: rfc History
 tags: rfc
 caption: History
 
+!! Unreleased
+
+!!! Changed
+
+* Link to [[RFC Editor|https://www.rfc-editor.org/]] URLs instead of `tools.ietf.org`.
+
 !! 0.1.0 - 2022-02-17
 
 Initial release
