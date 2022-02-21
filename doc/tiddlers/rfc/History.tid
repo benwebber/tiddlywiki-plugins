@@ -4,6 +4,10 @@ caption: History
 
 !! Unreleased
 
+!!! Added
+
+* Added `rfc.bibtex` and `rfc.inline-errata` macros.
+
 !!! Changed
 
 * Link to [[RFC Editor|https://www.rfc-editor.org/]] URLs instead of `tools.ietf.org`.

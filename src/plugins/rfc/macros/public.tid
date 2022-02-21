@@ -31,6 +31,16 @@ tags: $:/tags/Macro
 <$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/errata/rfc$number$" text=<<__text__>> />
 \end
 
+\define rfc.inline-errata(number, text: "")
+\import [[$:/plugins/benwebber/rfc/macros/private]]
+<$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/rfc/inline-errata/rfc$number$.html" text=<<__text__>> />
+\end
+
+\define rfc.bibtex(number, text: "")
+\import [[$:/plugins/benwebber/rfc/macros/private]]
+<$macrocall $name=rfc.link number=<<__number__>> url="https://datatracker.ietf.org/doc/rfc$number$/bibtex/" text=<<__text__>> />
+\end
+
 \define rfc(number, text: "") <$macrocall $name=rfc.txt number=<<__number__>> text=<<__text__>> />
 
 All ''rfc'' macros accept the same parameters.
@@ -47,5 +57,7 @@ All ''rfc'' macros accept the same parameters.
 |`rfc.tracker`|Link to the Datatracker records for the RFC|
 |`rfc.diff`|Link to the diff of the RFC and its most recent draft|
 |`rfc.errata`|Link to the RFC's errata|
+|`rfc.inline-errata`|Link to an HTML version of the RFC with inline errata|
+|`rfc.bibtex`|Link to RFC's BibTeX record|
 
 `rfc` is an alias of `rfc.txt`.
