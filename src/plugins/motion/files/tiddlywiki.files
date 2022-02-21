@@ -8,5 +8,31 @@
         "tags": "$:/tags/Stylesheet"
       }
     }
+  ],
+  "directories": [
+    {
+      "path": "library",
+      "filesRegExp": "^.*\\.min.js$",
+      "fields": {
+        "title": {
+          "source": "filename",
+          "prefix": "$:/plugins/benwebber/motion/modules/library/"
+        },
+        "type": "application/javascript",
+        "module-type": "library"
+      }
+    },
+    {
+      "path": "startup",
+      "filesRegExp": "^.*\\.min.js$",
+      "fields": {
+        "title": {
+          "source": "filename",
+          "prefix": "$:/plugins/benwebber/motion/modules/startup/"
+        },
+        "type": "application/javascript",
+        "module-type": "startup"
+      }
+    }
   ]
 }

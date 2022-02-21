@@ -1,17 +1,20 @@
-/*\
-title: $:/plugins/benwebber/motion/modules/startup/init.js
-type: application/javascript
-module-type: startup
-\*/
-(function() {
-'use strict';
+declare global {
+  const $tw: any;
+  const Mousetrap: any;
+  interface Window { _motion: any; }
+}
 
-exports.platforms = ['browser'];
-exports.after = ['startup'];
-exports.synchronous = true;
+export const platforms = ['browser'];
+export const after = ['startup'];
+export const synchronous = true;
 
-const motion = {
-  selectedStateTiddlerTitle: '$:/state/plugins/benwebber/motion/selected',
+type ClosingTiddlerEvent = {
+  param: string;
+}
+
+class Motion {
+  private selectedStateTiddlerTitle = '$:/state/plugins/benwebber/motion/selected';
+  private navigatorWidget: any;
 
   init() {
     this.navigatorWidget = this.getNavigatorWidget($tw.rootWidget);
@@ -167,7 +170,7 @@ const motion = {
         // Close help modal if it's open.
         // HACK: Close the modal by clicking the button to dispatch the internal
         // tm-close-tiddler message.
-        const button = document.querySelector('.motion-help .tc-modal-footer button')
+        const button: HTMLElement | null = document.querySelector('.motion-help .tc-modal-footer button');
         if (button) {
           button.click();
         }
@@ -179,49 +182,49 @@ const motion = {
       const shortcut = this.getShortcut(name);
       Mousetrap.bind(shortcut, handler);
     };
-  },
+  }
 
-  getShortcut(name) {
+  getShortcut(name: string) {
     return $tw.wiki.getTiddlerText(`$:/plugins/benwebber/motion/config/Shortcuts/${name}/Key`);
-  },
+  }
 
-  handleClosingTiddler(event) {
+  handleClosingTiddler(event: ClosingTiddlerEvent) {
     const selectedTiddler = $tw.wiki.getTiddlerText(this.selectedStateTiddlerTitle);
     if (event.param == selectedTiddler) {
       $tw.wiki.deleteTiddler(this.selectedStateTiddlerTitle);
     }
     return event;
-  },
+  }
 
-  toggleTiddler(title) {
+  toggleTiddler(title: string) {
     if ($tw.wiki.getTiddlerText(`$:/state/folded/${title}`) == 'hide') {
       this.unfoldTiddler(title);
     } else {
       this.foldTiddler(title);
     }
-  },
+  }
 
-  foldTiddler(title) {
+  foldTiddler(title: string) {
     $tw.wiki.setText(`$:/state/folded/${title}`, 'text', null, 'hide');
-  },
+  }
 
-  unfoldTiddler(title) {
+  unfoldTiddler(title: string) {
     $tw.wiki.deleteTiddler(`$:/state/folded/${title}`);
-  },
+  }
 
-  getNavigatorWidget(widget) {
+  getNavigatorWidget(widget: any): any {
     const child = widget.children[0];
     if (child.parseTreeNode.type == 'navigator') {
       return child;
     }
     return this.getNavigatorWidget(child);
-  },
+  }
+}
 
-};
-
-exports.startup = function() {
-  $tw.modules.execute('$:/plugins/benwebber/motion/modules/mousetrap.min.js');
+export function startup() {
+  $tw.modules.execute('$:/plugins/benwebber/motion/modules/library/mousetrap.min.js');
+  const motion = new Motion();
   motion.init();
   window._motion = motion;
 };
-})();
+
