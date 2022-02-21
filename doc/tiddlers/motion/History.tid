@@ -6,6 +6,8 @@ caption: History
 
 !! Unreleased
 
+!! 0.2.0 - 2022-02-21
+
 !!! Added
 
 * Added <<motion "g g">> and <<motion "G">> shortcuts to navigate to the first and last tiddler in the story river, respectively.
