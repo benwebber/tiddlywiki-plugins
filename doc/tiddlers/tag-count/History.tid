@@ -4,6 +4,8 @@ caption: History
 
 !! Unreleased
 
+!! 0.2.0 - 2022-02-21
+
 !!! Changed
 
 * Cache tag counts using an indexer module instead of rendering a `count` widget for each tag.
