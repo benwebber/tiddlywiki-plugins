@@ -11,18 +11,6 @@
         "type": "application/javascript",
         "module-type": "indexer"
       }
-    },
-    {
-      "path": "macros",
-      "filesRegExp": "^.*\\.min.js$",
-      "fields": {
-        "title": {
-          "source": "filename",
-          "prefix": "$:/plugins/benwebber/tag-count/modules/macros/"
-        },
-        "type": "application/javascript",
-        "module-type": "macro"
-      }
     }
   ]
 }

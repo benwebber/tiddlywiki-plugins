@@ -1,5 +1,5 @@
 title: $:/plugins/benwebber/tag-count/templates/rules
 
 <$list filter="[all[current]indexes[]]" variable=tag>
-[data-tag-title="<$macrocall $name=tag-count.escapecss title=<<tag>> />"] .tc-tag-label:after{content:"<$transclude index=<<tag>> />";}
+[data-tag-title={{{ [<tag>escapecss[]] }}}] .tc-tag-label:after{content:"{{{ [all[current]getindex<tag>] }}}";}
 </$list>

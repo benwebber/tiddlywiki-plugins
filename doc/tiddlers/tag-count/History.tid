@@ -4,6 +4,10 @@ caption: History
 
 !! Unreleased
 
+!!! Changed
+
+* Eliminated unnecessary macro in CSS template.
+
 !! 0.2.0 - 2022-02-21
 
 !!! Changed
