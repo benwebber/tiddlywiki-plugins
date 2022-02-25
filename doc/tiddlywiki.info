@@ -1,5 +1,7 @@
 {
-  "plugins": ["tiddlywiki/github-fork-ribbon"
+  "plugins": [
+    "tiddlywiki/github-fork-ribbon",
+    "tiddlywiki/railroad"
   ],
   "themes": [
     "tiddlywiki/vanilla"
@@ -7,7 +9,7 @@
   "build": {
     "index": [
       "--output", "./",
-      "--rendertiddler", "$:/core/save/all", "index.html", "text/plain"
+      "--render", "$:/core/save/all", "index.html", "text/plain"
     ]
   }
 }

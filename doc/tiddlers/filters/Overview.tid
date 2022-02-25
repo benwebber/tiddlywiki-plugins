@@ -1,0 +1,34 @@
+title: filters Overview
+caption: Overview
+tags: filters
+
+\define example(run)
+```
+$run$
+```
+{{{$run$}}}
+\end
+
+''filters'' adds new and experimental filter operators.
+
+!! surround
+
+''surround'' adds text to the start and end of each title in the input list.
+It is a shortcut for `addprefix[p]addsuffix[s]`.
+
+<$railroad text="""
+surround "[" prefix "]" [: "," "[" suffix "]"]
+"""/>
+
+!!! Parameters
+
+;prefix
+: Add this string to the start of each title in the input list.
+;suffix (optional)
+: Add this string to the end of each title in the input list. If not specified, add ''prefix'' to the end of each title.
+
+!!! Examples
+
+<<example """a b c +[surround["]]""">>
+
+<<example """a b c +[surround[<],[>]]""">>

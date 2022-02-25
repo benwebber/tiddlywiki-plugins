@@ -1,0 +1,6 @@
+title: $:/plugins/benwebber/filters/README
+
+''filters'' adds new and experimental filter operators.
+
+;`surround`
+: Surround titles with text, similar to `addprefix[x]addsuffix[y]`.

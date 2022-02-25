@@ -3,4 +3,4 @@ node_modules/
 index.html
 *.min.css
 *.js
-*.min.js
+!*.spec.js

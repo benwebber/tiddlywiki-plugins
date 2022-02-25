@@ -1,0 +1,16 @@
+{
+  "directories": [
+    {
+      "path": "modules/filters",
+      "filesRegExp": "^.*\\.min.js$",
+      "fields": {
+        "title": {
+          "source": "filename",
+          "prefix": "$:/plugins/benwebber/filters/modules/filters/"
+        },
+        "type": "application/javascript",
+        "module-type": "filteroperator"
+      }
+    }
+  ]
+}

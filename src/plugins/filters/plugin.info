@@ -1,0 +1,12 @@
+{
+  "title": "$:/plugins/benwebber/filters",
+  "name": "filters",
+  "description": "New and experimental filter operators",
+  "author": "Ben Webber",
+  "version": "0.1.0",
+  "core-version": ">=5.0.0",
+  "source": "https://github.com/benwebber/tiddlywiki-filters",
+  "plugin-type": "plugin",
+  "list": "README",
+  "license": "MIT"
+}

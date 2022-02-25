@@ -1,0 +1,9 @@
+title: filters History
+tags: filters
+caption: History
+
+!! 0.1.0 - 2022-02-27
+
+!!! Added
+
+* Added `surround` filter.
