@@ -8,6 +8,8 @@ caption: History
 
 !! Unreleased
 
+!! 0.2.1 - 2022-12-07
+
 !!! Fixed
 
 * Fixed compatibility with the <a href="https://cdruan.github.io/tw-external-js/">External JS</a> plugin (<<github-issue 2>>). Thanks to <<github-user Marxsal>> for the bug report and <<github-user cdruan>> for the fix.
