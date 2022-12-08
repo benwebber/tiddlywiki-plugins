@@ -3,8 +3,14 @@ tags: motion
 caption: History
 
 \define motion(keys) <$set name=kbd filter="[enlist:raw[$keys$]addprefix[<kbd>]addsuffix[</kbd>]]"><<kbd>></$set>
+\define github-user(username) <a href="https://github.com/$username$">@$username$</a>
+\define github-issue(number) <a href="https://github.com/benwebber/tiddlywiki-plugins/issues/$number$">#$number$</a>
 
 !! Unreleased
+
+!!! Fixed
+
+* Fixed compatibility with the <a href="https://cdruan.github.io/tw-external-js/">External JS</a> plugin (<<github-issue 2>>). Thanks to <<github-user Marxsal>> for the bug report and <<github-user cdruan>> for the fix.
 
 !! 0.2.0 - 2022-02-21
 

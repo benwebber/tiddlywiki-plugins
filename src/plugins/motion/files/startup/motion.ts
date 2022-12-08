@@ -5,7 +5,7 @@ declare global {
 }
 
 export const platforms = ['browser'];
-export const after = ['startup'];
+export const after = ['render'];
 export const synchronous = true;
 
 type ClosingTiddlerEvent = {
