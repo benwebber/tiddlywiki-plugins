@@ -1,0 +1,25 @@
+title: input Overview
+tags: input
+caption: Overview
+
+''input'' adds new macros to render special input field types.
+
+!! Examples
+
+!!! Macros
+
+Edit the `date` field of this tiddler (<code>{{!!date}}</code>).
+
+```
+<<input.date>>
+```
+
+<<input.date>>
+
+Edit the `date.reviewed` field of of [[input Demo]] (<code>{{input Demo!!date.reviewed}}</code>):
+
+```
+<<input.date "input Demo" field:date.reviewed>>
+```
+
+<<input.date "input Demo" field:date.reviewed>>

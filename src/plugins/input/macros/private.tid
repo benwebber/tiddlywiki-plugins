@@ -1,0 +1,8 @@
+title: $:/plugins/benwebber/input/macros/private
+
+\define input.date.inputActions()
+<$action-setfield $tiddler=<<inputDateTiddler>> $field=<<inputDateField>> $value={{{[<inputDateStateTiddler>get[text]search-replace:g[-],[]]}}} $timestamp=<<inputDateTimestamp>> />
+<$action-deletetiddler $tiddler=<<inputDateStateTiddler>> />
+\end
+
+\define input.date.format() [UTC]YYYY-0MM-0DD

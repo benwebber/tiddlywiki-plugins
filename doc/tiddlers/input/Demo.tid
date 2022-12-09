@@ -1,0 +1,8 @@
+title: input Demo
+tags: input Demo
+date: 20220101
+date.reviewed: 20220131
+
+This tiddler's `date` field is <code>{{!!date}}</code>.
+
+This tiddler's `date.reviewed` field is <code>{{!!date.reviewed}}</code>.

@@ -1,0 +1,5 @@
+title: $:/plugins/benwebber/input/README
+
+''input'' adds new macros to render special `<input>` field types.
+
+{{$:/plugins/benwebber/input/macros/public}}
