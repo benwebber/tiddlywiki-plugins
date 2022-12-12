@@ -4,6 +4,10 @@ caption: History
 
 !! Unreleased
 
+!!! Fixed
+
+* ''crosslinks'' no longer includes CSS from other plugins.
+
 !! 0.2.0 - 2022-02-21
 
 !!! Added

@@ -25,7 +25,7 @@ index.html: $(MIN_CSS) $(MIN_JS)
 	yarn run tiddlywiki doc/ --verbose --build
 
 %.min.css: %.css
-	yarn run tailwindcss -m -i $< -o $@
+	yarn run tailwindcss --input $< --output $@ --minify --content "$(shell echo $< | cut -d/ -f1-3 | sed 's|$$|/**/*.tid|')"
 
 %.min.js: %.ts
 	yarn run tsc
