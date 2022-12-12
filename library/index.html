@@ -1,0 +1,243 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="application-name" content="TiddlyWiki Plugin Library" />
+<meta name="application-version" content="v0.0.0" />
+<meta name="copyright" content="Copyright 2015 Jeremy Ruston" />
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<title>Plugin Library</title>
+<script>
+var assetList = [
+    {
+        "title": "$:/plugins/benwebber/checklist",
+        "name": "checklist",
+        "description": "Add simple checklists to tiddlers",
+        "author": "Ben Webber",
+        "version": "0.1.0",
+        "core-version": ">=5.2.3",
+        "source": "https://github.com/benwebber/tiddlywiki-plugins",
+        "plugin-type": "plugin",
+        "list": "README",
+        "license": "MIT",
+        "dependents": "",
+        "type": "application/json",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/benwebber/crosslinks",
+        "name": "crosslinks",
+        "description": "Add a footer showing a tiddler's links and backlinks",
+        "author": "Ben Webber",
+        "version": "0.2.1",
+        "core-version": ">=5.0.0",
+        "source": "https://github.com/benwebber/tiddlywiki-plugins",
+        "plugin-type": "plugin",
+        "list": "README Settings",
+        "license": "MIT",
+        "dependents": "",
+        "type": "application/json",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/benwebber/css-palette",
+        "name": "css-palette",
+        "description": "Expose TiddlyWiki palette colours as CSS variables",
+        "author": "Ben Webber",
+        "version": "0.2.0",
+        "core-version": ">=5.0.0",
+        "source": "https://github.com/benwebber/tiddlywiki-plugins",
+        "plugin-type": "plugin",
+        "list": "README Settings",
+        "license": "MIT",
+        "dependents": "",
+        "type": "application/json",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/benwebber/expand",
+        "name": "expand",
+        "description": "Expand upon terms without breaking the flow of text",
+        "author": "Ben Webber",
+        "version": "0.1.1",
+        "core-version": ">=5.0.0",
+        "source": "https://github.com/benwebber/tiddlywiki-plugins",
+        "plugin-type": "plugin",
+        "list": "README",
+        "license": "MIT",
+        "dependents": "",
+        "type": "application/json",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/benwebber/filters",
+        "name": "filters",
+        "description": "New and experimental filter operators",
+        "author": "Ben Webber",
+        "version": "0.1.0",
+        "core-version": ">=5.0.0",
+        "source": "https://github.com/benwebber/tiddlywiki-filters",
+        "plugin-type": "plugin",
+        "list": "README",
+        "license": "MIT",
+        "dependents": "",
+        "type": "application/json",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/benwebber/input",
+        "name": "input",
+        "description": "Macros to render special input field types",
+        "author": "Ben Webber",
+        "version": "0.1.0",
+        "core-version": ">=5.2.1",
+        "source": "https://github.com/benwebber/tiddlywiki-plugins",
+        "plugin-type": "plugin",
+        "list": "README",
+        "license": "MIT",
+        "dependents": "",
+        "type": "application/json",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/benwebber/motion",
+        "name": "motion",
+        "description": "Vim-like keyboard shortcuts for TiddlyWiki",
+        "author": "Ben Webber",
+        "version": "0.2.2",
+        "core-version": ">=5.1.20",
+        "source": "https://github.com/benwebber/tiddlywiki-motion",
+        "plugin-type": "plugin",
+        "list": "README",
+        "license": "MIT",
+        "dependents": "",
+        "type": "application/json",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/benwebber/rfc",
+        "name": "rfc",
+        "description": "Link to IETF RFCs",
+        "author": "Ben Webber",
+        "version": "0.2.1",
+        "core-version": ">=5.0.0",
+        "source": "https://github.com/benwebber/tiddlywiki-plugins",
+        "plugin-type": "plugin",
+        "list": "README",
+        "license": "MIT",
+        "dependents": "",
+        "type": "application/json",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/benwebber/tag-count",
+        "name": "tag-count",
+        "description": "Add a count to all tag pills",
+        "author": "Ben Webber",
+        "version": "0.2.2",
+        "core-version": ">=5.1.20",
+        "source": "https://github.com/benwebber/tiddlywiki-plugins",
+        "plugin-type": "plugin",
+        "list": "README",
+        "license": "MIT",
+        "dependents": "",
+        "type": "application/json",
+        "requires-reload": "yes"
+    }
+];
+
+/*\
+title: $:/plugins/tiddlywiki/pluginlibrary/libraryserver.js
+type: application/javascript
+module-type: library
+
+A simple HTTP-over-window.postMessage implementation of a standard TiddlyWeb-compatible server. It uses real HTTP to load the individual tiddler JSON files.
+
+\*/
+(function(){
+
+/*jslint node: true, browser: true */
+/*global $tw: false */
+"use strict";
+
+// Listen for window messages
+window.addEventListener("message",function listener(event){
+	console.log("plugin library: Received message from",event.origin);
+	console.log("plugin library: Message content",event.data);
+	switch(event.data.verb) {
+		case "GET":
+			if(event.data.url === "recipes/library/tiddlers.json") {
+				// Route for recipes/library/tiddlers.json
+				event.source.postMessage({
+					verb: "GET-RESPONSE",
+					status: "200",
+					cookies: event.data.cookies,
+					url: event.data.url,
+					type: "application/json",
+					body: JSON.stringify(assetList,null,4)
+				},"*");
+			} else if(event.data.url.indexOf("recipes/library/tiddlers/") === 0) {
+				var url = "recipes/library/tiddlers/" + encodeURIComponent(removePrefix(event.data.url,"recipes/library/tiddlers/"));
+				// Route for recipes/library/tiddlers/<uri-encoded-tiddler-title>.json
+				httpGet(url,function(err,responseText) {
+					if(err) {
+						event.source.postMessage({
+							verb: "GET-RESPONSE",
+							status: "404",
+							cookies: event.data.cookies,
+							url: event.data.url,
+							type: "text/plain",
+							body: "Not found"
+						},"*");
+					} else {
+						event.source.postMessage({
+							verb: "GET-RESPONSE",
+							status: "200",
+							cookies: event.data.cookies,
+							url: event.data.url,
+							type: "application/json",
+							body: responseText
+						},"*");
+					}
+				});
+			} else {
+				event.source.postMessage({
+					verb: "GET-RESPONSE",
+					status: "404",
+					cookies: event.data.cookies,
+					url: event.data.url,
+					type: "text/plain",
+					body: "Not found"
+				},"*");
+			}
+			break;
+	}
+},false);
+
+// Helper to remove string prefixes
+function removePrefix(string,prefix) {
+	if(string.indexOf(prefix) === 0) {
+		return string.substr(prefix.length);
+	} else {
+		return string;
+	}
+}
+
+// Helper for HTTP GET
+function httpGet(url,callback) {
+	var http = new XMLHttpRequest();
+	http.open("GET",url,true);
+	http.onreadystatechange = function() {
+		if(http.readyState == 4 && http.status == 200) {
+			callback(null,http.responseText);
+		}
+	};
+	http.send();
+}
+
+})();
+
+</script>
+</head>
+<body><h1>HelloThere</h1><p>This is the TiddlyWiki plugin library. It is not intended to be opened directly in the browser.</p><p>See <a href="https://tiddlywiki.com/" target="_blank">https://tiddlywiki.com/</a> for details of how to install plugins.</p></body>
+</html>
