@@ -1,0 +1,11 @@
+title: $:/pluginlibrary/benwebber/stable
+tags: $:/tags/PluginLibrary
+url: https://benwebber.github.io/library/
+caption: benwebber
+crosslinks.show: false
+
+Plugins by [ext[@benwebber|https://github.com/benwebber]].
+
+Drag this tiddler to your wiki to install the library:
+
+<<currentTiddler>>

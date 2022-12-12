@@ -13,7 +13,13 @@ A collection of small [[TiddlyWiki|https://tiddlywiki.com]] plugins.
 
 !! Install
 
-Drag the plugin info boxes below to your own wiki.
+Drag the link below to your wiki to install the plugin library.
+
+$:/pluginlibrary/benwebber/stable
+
+Then [ext[install the plugins|https://tiddlywiki.com/#Installing%20a%20plugin%20from%20the%20plugin%20library]] you want from the ''benwebber'' library.
+
+Or, drag the plugin info boxes below to your wiki to install plugins individually.
 
 <$reveal type="nomatch" state=<<qualify "$:/state/details">> text="show">
 <$button set=<<qualify "$:/state/details">> setTo="show" class="tc-btn-invisible">{{$:/core/images/right-arrow}} Plugins</$button>

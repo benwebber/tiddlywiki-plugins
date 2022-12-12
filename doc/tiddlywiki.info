@@ -1,6 +1,7 @@
 {
   "plugins": [
     "tiddlywiki/github-fork-ribbon",
+    "tiddlywiki/pluginlibrary",
     "tiddlywiki/railroad"
   ],
   "themes": [
@@ -8,8 +9,13 @@
   ],
   "build": {
     "index": [
-      "--output", "./",
       "--render", "$:/core/save/all", "index.html", "text/plain"
+    ],
+    "library": [
+      "--makelibrary", "$:/UpgradeLibrary",
+      "--savelibrarytiddlers", "$:/UpgradeLibrary", "[prefix[$:/]] -[prefix[$:/plugins/tiddlywiki/]] -[prefix[$:/themes/tiddlywiki/]] -[prefix[$:/languages/]]", "recipes/library/tiddlers/", "$:/UpgradeLibrary/List",
+      "--save", "$:/UpgradeLibrary/List", "recipes/library/tiddlers.json",
+      "--render","$:/plugins/tiddlywiki/pluginlibrary/library.template.html", "index.html", "text/plain"
     ]
   }
 }
