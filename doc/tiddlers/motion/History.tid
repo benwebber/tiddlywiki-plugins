@@ -8,6 +8,8 @@ caption: History
 
 !! Unreleased
 
+!! 0.2.2 - 2022-12-12
+
 !!! Fixed
 
 * ''motion'' no longer includes CSS from other plugins.
