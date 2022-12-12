@@ -1,11 +1,10 @@
 {
-  "name": "tiddlywiki-motion",
+  "name": "tiddlywiki-plugins",
   "version": "0.1.0",
-  "description": "Vim-like keyboard shortcuts for TiddlyWiki",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/benwebber/tiddlywiki-motion"
+    "url": "https://github.com/benwebber/tiddlywiki-plugins"
   },
   "scripts": {
     "build": "make"
