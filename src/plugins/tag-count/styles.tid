@@ -7,6 +7,7 @@ tags: $:/tags/Stylesheet
   font-size: 0.8em;
   opacity: calc(2/3);
   vertical-align: middle;
+  margin-left: 0.25em;
 }
 
 {{$:/temp/plugins/benwebber/tag-count/cache||$:/plugins/benwebber/tag-count/templates/rules}}
