@@ -4,6 +4,8 @@ caption: History
 
 !! Unreleased
 
+!! 0.2.2 - 2022-12-12
+
 !!! Fixed
 
 * Restored whitespace after tag name in ~TiddlyWiki 5.2.3+ (<a href="https://github.com/Jermolene/TiddlyWiki5/pull/6740" target="_blank"rel="noopener">''Jermolene/TiddlyWiki5#6740''</a>).
