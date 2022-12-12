@@ -12,11 +12,9 @@
   },
   "author": "Ben Webber <benjamin.webber@gmail.com>",
   "devDependencies": {
-    "tailwindcss": "^3.0.22",
-    "tiddlywiki": "^5.2.1",
-    "typescript": "^4.5.5"
-  },
-  "dependencies": {
-    "terser": "^5.10.0"
+    "tailwindcss": "^3.2.4",
+    "terser": "^5.16.1",
+    "tiddlywiki": "^5.2.3",
+    "typescript": "^4.9.4"
   }
 }
