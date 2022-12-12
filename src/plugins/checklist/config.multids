@@ -1,0 +1,4 @@
+title: $:/plugins/benwebber/checklist/config/
+
+DefaultField: checklist
+DefaultDoneSuffix: .done

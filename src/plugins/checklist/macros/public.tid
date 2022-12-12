@@ -1,0 +1,75 @@
+title: $:/plugins/benwebber/checklist/macros/public
+tags: $:/tags/Macro
+
+\define checklist(tiddler, field)
+\import [[$:/plugins/benwebber/checklist/macros/private]]
+<$let
+  tiddler={{{ [<__tiddler__>is[blank]then<currentTiddler>else<__tiddler__>] }}}
+  defaultField={{$:/plugins/benwebber/checklist/config/DefaultField}}
+  field={{{ [<__field__>is[blank]then<defaultField>else<__field__>] }}}
+  list=<<list>>
+  doneList=<<doneList>>
+>
+<div class="checklist">
+  <ul class="tw-p-0 tw-m-0">
+    <$list variable="item" filter="[list<list>]">
+      {{$:/plugins/benwebber/checklist/templates/item}}
+    </$list>
+      <$reveal type="nomatch" state=<<newStateTiddler>> text="" tag=li class="checklist-item tw-list-none tw-group hover:tw-border-y tw-border-0 tw-border-solid hover:-tw-my-[1px]">
+        <div>
+          <div class="tw-flex tw-space-x-2 checklist-item-row tw-p-0.5">
+            <div class="checklist-item-handle tw-flex-shrink-0 tw-pt-0.5 tw-invisible">
+              {{$:/core/images/menu-button}}
+            </div>
+            <div class="tw-flex-grow">
+              <div class="tw-flex tw-items-start">
+                <input type="checkbox" disabled />
+                <$keyboard actions=<<add>> key=enter class="tw-flex-grow tw-inline-block">
+                  <$keyboard actions=<<hide>> key=escape>
+                    <$edit-text tiddler=<<editStateTiddler>> tag=input placeholder="" default="" focus=true class="tw-w-full" />
+                  </$keyboard>
+                </$keyboard>
+              </div>
+            </div>
+            <div class="tw-invisible tw-flex-shrink-0 group-hover:tw-visible tw-flex tw-space-x-2">
+              <$button actions=<<add>> class="tc-btn-invisible" aria-label="Save" tooltip="Save">
+                {{$:/core/images/done-button}}
+              </$button>
+              <$button actions=<<hide>> class="tc-btn-invisible" aria-label="Cancel" tooltip="Cancel">
+                {{$:/core/images/close-button}}
+              </$button>
+            </div>
+          </div>
+        </div>
+      </$reveal>
+  </ul>
+  <$droppable actions=<<append>> tag=div>
+    <$list filter="[title<dragStateTiddler>get[text]] -[list<list>last[]]">
+      <div class={{{ checklist-item-droppable-placeholder tw-h-8 tw-hidden +[join[ ]] }}} />
+    </$list>
+    <$reveal type="match" state=<<newStateTiddler>> text="" tag=div class="tw-pl-6 tw-py-2">
+      <$button actions=<<show>>>
+        {{$:/core/images/new-button}} add
+      </$button>
+    </$reveal>
+    <$reveal type="nomatch" state=<<newStateTiddler>> text="" tag=div class="tw-pl-6 tw-py-2">
+      <$button actions=<<hide>>>
+        {{$:/core/images/done-button}} done
+      </$button>
+    </$reveal>
+  </$droppable>
+</div>
+</$let>
+\end
+
+!! `checklist`
+
+Render a checklist.
+
+!!! Parameters
+
+;tiddler
+: Optional title of the tiddler to modify. The default is the <a href="https://tiddlywiki.com/#Current%20Tiddler" rel="noopener" target="_blank">current tiddler</a>.
+
+;field
+: List field that represents the checklist. The default is <code>{{$:/plugins/benwebber/checklist/config/DefaultField}}</code>.

@@ -1,0 +1,6 @@
+title: checklist Demo
+tags: checklist
+caption: Overview
+todo: [[Recycle hex decimals]] [[Normalize power]] [[Obfuscate Quigley matrix]]
+
+<<checklist field:"todo">>

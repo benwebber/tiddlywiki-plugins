@@ -1,0 +1,25 @@
+title: checklist Overview
+tags: checklist
+caption: Overview
+
+''checklist'' adds a macro to render simple checklists.
+
+!! Examples
+
+!!! Macros
+
+Render the `checklist` field of this tiddler as a checklist.
+
+```
+<<checklist>>
+```
+
+<<checklist>>
+
+Render the `todo` field of [[checklist Demo]] as a checklist.
+
+```
+<<checklist "checklist Demo" "todo">>
+```
+
+<<checklist "checklist Demo" "todo">>

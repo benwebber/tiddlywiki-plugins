@@ -1,0 +1,89 @@
+title: $:/plugins/benwebber/checklist/templates/item
+
+\define showInput()
+<$action-setfield $tiddler=<<inputStateTiddler>> $field="text" $value=<<item>> />
+<$action-setfield $tiddler=<<showInputStateTiddler>> $field="text" $value="true" />
+\end
+
+\define hideInput()
+<$action-deletetiddler $tiddler=<<showInputStateTiddler>> />
+<$action-deletetiddler $tiddler=<<inputStateTiddler>> />
+\end
+
+\define saveInput()
+<$list filter="[title<inputStateTiddler>get[text]!is[blank]]">
+<$list filter="[title<inputStateTiddler>get[text]] -[title<item>]">
+<$action-listops $tiddler=<<tiddler>> $field=<<field>> $filter="[list<list>] [<inputStateTiddler>get[text]] +[replace<item>]" />
+</$list>
+<<hideInput>>
+</$list>
+\end
+
+\define cancelInput()
+<<hideInput>>
+\end
+
+\define startDrag()
+<$action-setfield $tiddler=<<dragStateTiddler>> $field="text" $value=<<item>> />
+\end
+
+\define stopDrag()
+<$action-deletetiddler $tiddler=<<dragStateTiddler>> />
+\end
+
+\define inputStateTiddler() $:/state/plugins/benwebber/checklist/$(tiddler)$/$(field)$/$(item)$/input
+\define showInputStateTiddler() $:/state/plugins/benwebber/checklist/$(tiddler)$/$(field)$/$(item)$/showInput
+
+<$draggable
+  tiddler=<<item>>
+  selector=".checklist-item-handle"
+  tag=li
+  class="checklist-item tw-list-none tw-group hover:tw-border-y tw-border-0 tw-border-solid hover:-tw-my-[1px]"
+  startactions=<<startDrag>>
+  endactions=<<stopDrag>>
+>
+  <$droppable actions=<<insertBefore>> tag=div>
+    <div class="checklist-item-droppable-placeholder tw-h-8 tw-hidden" />
+      <div class="tw-flex tw-space-x-2 tw-p-0.5">
+      <div class="checklist-item-handle hover:tw-cursor-grab tw-flex-shrink-0 tw-pt-0.5 tw-invisible group-hover:tw-visible" draggable="true">
+        {{$:/core/images/menu-button}}
+      </div>
+      <$reveal type="match" state=<<showInputStateTiddler>> text="" tag=div class="tw-flex-grow">
+        <$checkbox tiddler=<<tiddler>> listField=<<doneList>> checked=<<item>> class="tw-flex tw-items-start checklist-item-label">
+          <$list filter="[title<item>is[tiddler]]">
+            <$link to=<<item>> />
+          </$list>
+          <$list filter="[title<item>!is[tiddler]]">
+            <<item>>
+          </$list>
+        </$checkbox>
+      </$reveal>
+      <$reveal type="nomatch" state=<<showInputStateTiddler>> text="" tag=div class="tw-flex-grow">
+        <div class="tw-flex tw-items-start">
+          <input type="checkbox" disabled />
+          <$keyboard actions=<<saveInput>> key=enter class="tw-flex-grow tw-inline-block">
+            <$keyboard actions=<<cancelInput>> key=escape>
+              <$edit-text tiddler=<<inputStateTiddler>> tag=input placeholder="" default="" focus=true class="tw-w-full" />
+            </$keyboard>
+          </$keyboard>
+        </div>
+      </$reveal>
+      <$reveal type="match" state=<<showInputStateTiddler>> text="" tag=div class="tw-invisible tw-flex-shrink-0 group-hover:tw-visible tw-flex tw-space-x-2">
+        <$button actions=<<showInput>> class="tc-btn-invisible" aria-label="Edit" tooltip="Edit">
+          {{$:/core/images/edit-button}}
+        </$button>
+        <$button actions=<<remove>> class="tc-btn-invisible" aria-label="Delete" tooltip="Delete">
+          {{$:/core/images/delete-button}}
+        </$button>
+      </$reveal>
+      <$reveal type="nomatch" state=<<showInputStateTiddler>> text="" tag=div class="tw-invisible tw-flex-shrink-0 group-hover:tw-visible tw-flex tw-space-x-2">
+        <$button actions=<<saveInput>> class="tc-btn-invisible" aria-label="Save" tooltip="Save">
+          {{$:/core/images/done-button}}
+        </$button>
+        <$button actions=<<cancelInput>> class="tc-btn-invisible" aria-label="Cancel" tooltip="Cancel">
+          {{$:/core/images/close-button}}
+        </$button>
+      </$reveal>
+    </div>
+  </$droppable>
+</$draggable>

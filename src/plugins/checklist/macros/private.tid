@@ -1,0 +1,34 @@
+title: $:/plugins/benwebber/checklist/macros/private
+
+\define insertBefore()
+<$action-listops $tiddler=<<tiddler>> $field=<<field>> $filter="[list<list>insertbefore<actionTiddler>,<item>]" />
+\end
+
+\define append()
+<$action-listops $tiddler=<<tiddler>> $field=<<field>> $filter="[list<list>] [<actionTiddler>]" />
+\end
+
+\define remove()
+<$action-listops $tiddler=<<tiddler>> $field=<<field>> $filter="[list<list>remove<item>]" />
+\end
+
+\define show()
+<$action-setfield $tiddler=<<newStateTiddler>> $field="text" $value="true" />
+\end
+
+\define hide()
+<$action-deletetiddler $tiddler=<<newStateTiddler>> />
+\end
+
+\define add()
+<$action-listops $tiddler=<<tiddler>> $field=<<field>> $subfilter="[<editStateTiddler>get[text]]" />
+<$action-deletetiddler $tiddler=<<editStateTiddler>> />
+</$list>
+\end
+
+
+\define dragStateTiddler() $:/state/plugins/benwebber/checklist/$(tiddler)$/$(field)$/drag
+\define newStateTiddler() $:/state/plugins/benwebber/checklist/$(tiddler)$/$(field)$/new
+\define editStateTiddler() $:/state/plugins/benwebber/checklist/$(tiddler)$/$(field)$/edit
+\define list() $(tiddler)$!!$(field)$
+\define doneList() $(field)${{$:/plugins/benwebber/checklist/config/DefaultFieldDoneSuffix}}

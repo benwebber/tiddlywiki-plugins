@@ -5,6 +5,8 @@ A collection of useful plugins for [TiddlyWiki](https://tiddlywiki.com/).
 ## Plugins
 
 <dl>
+  <dt><a href="https://benwebber.github.io/tiddlywiki-plugins/#%24%3A%2Fplugins%2Fbenwebber%2Fchecklist">checklist</a></dt>
+  <dd>Add simple checklists to tiddlers</dd>
   <dt><a href="https://benwebber.github.io/tiddlywiki-plugins/#%24%3A%2Fplugins%2Fbenwebber%2Fcrosslinks">crosslinks</a></dt>
   <dd>Add a footer showing a tiddler's links and backlinks</dd>
   <dt><a href="https://benwebber.github.io/tiddlywiki-plugins/#%24%3A%2Fplugins%2Fbenwebber%2Fcss-palette">css-palette</a></dt>

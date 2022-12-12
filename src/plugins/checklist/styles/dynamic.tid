@@ -1,0 +1,45 @@
+title: $:/plugins/benwebber/checklist/styles/dynamic
+tags: $:/tags/Stylesheet
+
+.checklist-item:hover {
+  border-color: <<colour "muted-foreground">>;
+}
+
+.checklist-item-handle svg {
+  height: 1em;
+  width: 1em;
+  vertical-align: middle;
+  fill: <<colour "muted-foreground">>;
+}
+
+.checklist .checklist-item button svg {
+  fill: <<colour "muted-foreground">>;
+}
+
+.checklist button:hover svg {
+  fill: <<colour "foreground">>;
+}
+
+.checklist-item input[type="checkbox"] {
+  margin: 4px;
+  margin-left: 0;
+}
+
+.checklist-item-label span {
+  padding-left: 2px;
+  padding-top: 2px;
+}
+
+.checklist-item-new input {
+  background-color: <<colour "tiddler-editor-background">>;
+}
+
+.checklist .tc-dragover .checklist-item-droppable-placeholder {
+  display: block;
+  background-color: <<colour "tiddler-editor-background">>;
+}
+
+.checklist .tc-dragging .tc-dragover .checklist-item-droppable-placeholder,
+.checklist .tc-dragging + li .checklist-item-droppable-placeholder {
+  display: none;
+}

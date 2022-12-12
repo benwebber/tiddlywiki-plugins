@@ -1,0 +1,5 @@
+title: $:/plugins/benwebber/checklist/README
+
+''checklist'' adds a macro to render simple checklists.
+
+{{$:/plugins/benwebber/checklist/macros/public}}

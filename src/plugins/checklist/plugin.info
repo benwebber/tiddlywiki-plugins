@@ -1,0 +1,12 @@
+{
+  "title": "$:/plugins/benwebber/checklist",
+  "name": "checklist",
+  "description": "Add simple checklists to tiddlers",
+  "author": "Ben Webber",
+  "version": "0.1.0",
+  "core-version": ">=5.2.3",
+  "source": "https://github.com/benwebber/tiddlywiki-plugins",
+  "plugin-type": "plugin",
+  "list": "README",
+  "license": "MIT"
+}
