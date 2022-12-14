@@ -4,7 +4,7 @@ list-before: $:/core/ui/ViewTemplate/body
 
 \define plugin() $:/plugins/benwebber/$(currentTiddler)$
 
-<$list filter="[all[current]tag[Plugin]]">
+<$list filter="[all[current]tag[Plugins]]">
 <$tiddler tiddler=<<plugin>>>
 {{||$:/core/ui/Components/plugin-info}}
 </$tiddler>
