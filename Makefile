@@ -25,7 +25,7 @@ test: $(MIN_JS)
 
 dist/index.html: $(MIN_CSS) $(MIN_JS)
 	yarn run tiddlywiki --version
-	yarn run tiddlywiki doc/ --output dist/ doc/ --verbose --build index
+	yarn run tiddlywiki doc/ --output dist/ --verbose --build index
 
 dist/library/index.html: dist/index.html
 	TIDDLYWIKI_PLUGIN_PATH=doc/ yarn run tiddlywiki doc/ --output dist/library --verbose --build library
