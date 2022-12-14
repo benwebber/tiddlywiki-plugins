@@ -1,0 +1,12 @@
+{
+  "title": "$:/plugins/benwebber/semantic",
+  "name": "semantic",
+  "description": "Add semantic metadata to your wiki",
+  "author": "Ben Webber",
+  "version": "0.1.0",
+  "core-version": ">=5.0.0",
+  "source": "https://github.com/benwebber/tiddlywiki-plugins",
+  "plugin-type": "plugin",
+  "list": "README",
+  "license": "MIT"
+}

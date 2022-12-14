@@ -1,0 +1,15 @@
+title: $:/plugins/benwebber/semantic/metadata
+tags: $:/tags/RawMarkupWikified
+
+\whitespace trim
+<pre>
+<$list filter="[tag{$:/plugins/benwebber/semantic/config/Tags/DublinCore}first[]]">
+`<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">`&#10;
+<$list filter="[tag{$:/plugins/benwebber/semantic/config/Tags/DublinCore}]">
+{{||$:/plugins/benwebber/semantic/templates/dublin-core}}
+</$list>
+</$list>
+<$list filter="[tag{$:/plugins/benwebber/semantic/config/Tags/OpenGraph}]">
+{{||$:/plugins/benwebber/semantic/templates/open-graph}}
+</$list>
+</pre>

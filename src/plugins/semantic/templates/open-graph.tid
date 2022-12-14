@@ -1,0 +1,10 @@
+title: $:/plugins/benwebber/semantic/templates/open-graph
+
+\whitespace trim
+<$list filter="[all[current]fields[]prefix[og.]] [all[current]fields[]prefix[og:]] +[sort[]encodehtml[]]" variable=label>
+<$list filter="[all[current]get<label>enlist-input[]encodehtml[]]" variable=value>
+<$set name=label filter="[<label>search-replace[.],[:]]" select=0>
+`<meta property="`<<label>>`" content="`<<value>>`">`&#10;
+</$set>
+</$list>
+</$list>

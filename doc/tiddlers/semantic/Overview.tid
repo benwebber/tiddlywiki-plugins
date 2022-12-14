@@ -1,0 +1,47 @@
+title: semantic Overview
+tags: semantic
+caption: Overview
+
+When installed, this plugin will automatically render fields from specially tagged tiddlers as <code>[ext[<meta>|https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta]]</code> tags.
+
+!! Example
+
+Here is the semantic metadata for this wiki. This metadata is defined in the [[$:/.local/metadata]] tiddler.
+
+{{$:/plugins/benwebber/semantic/metadata}}
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <$list filter="[[$:/.local/metadata]fields:exclude[list tags title]sort[]]" variable="field">
+      <tr>
+        <th><<field>></th>
+        <td><code><$view tiddler="$:/.local/metadata" field=<<field>> /></code></td>
+      </tr>
+    </$list>
+  </tbody>
+</table>
+
+!! Metadata
+
+Both Dublin Core and OpenGraph support multiple copies of the same `<meta>` tag.
+
+Therefore, the fields referenced below are [ext[list fields|https://tiddlywiki.com/#Title%20List]].
+Each value in the list will be rendered as a distinct `<meta>` tag.
+Enclose values that contain spaces with `[[`/`]]` or transclude the value (e.g., `{{$:/SiteTitle}}`).
+
+!!! Dublin Core Metadata Initiative (DCMI)
+
+Tag one or more tiddlers with <$macrocall $name="tag-pill" tag={{$:/plugins/benwebber/semantic/config/Tags/DublinCore}} />.
+Any fields prefixed with `dc.` will be rendered as the corresponding [ext[DCMI meta tag|https://www.dublincore.org/specifications/dublin-core/dc-html/]].
+
+!!! OpenGraph
+
+Tag one or more tiddlers with <$macrocall $name="tag-pill" tag={{$:/plugins/benwebber/semantic/config/Tags/OpenGraph}} />.
+Any fields prefixed with `og.` will be rendered as the corresponding [ext[OpenGraph meta tag|https://ogp.me/]].
+The plugin automatically replaces `.` characters in the field name with `:` characters.

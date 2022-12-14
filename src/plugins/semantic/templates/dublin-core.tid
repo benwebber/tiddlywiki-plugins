@@ -1,0 +1,10 @@
+title: $:/plugins/benwebber/semantic/templates/dublin-core
+
+\whitespace trim
+<$list filter="[all[current]fields[]prefix[dc.]sort[]encodehtml[]]" variable=label>
+<$list filter="[all[current]get<label>enlist-input[]encodehtml[]]" variable=value>
+<$set name=label filter="[<label>removeprefix[dc.]addprefix[DC.]]" select=0>
+`<meta name="`<<label>>`" content="`<<value>>`">`&#10;
+</$set>
+</$list>
+</$list>

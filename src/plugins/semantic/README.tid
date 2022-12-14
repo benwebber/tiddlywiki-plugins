@@ -1,0 +1,16 @@
+title: $:/plugins/benwebber/semantic/README
+
+Add semantic metadata to your TiddlyWiki.
+
+!! Metadata
+
+!!! Dublin Core Metadata Initiative (DCMI)
+
+To add [ext[Dublin Core|https://www.dublincore.org/specifications/dublin-core/]] tags to your wiki, tag a tiddler with <$macrocall $name=tag-pill tag={{$:/plugins/benwebber/semantic/config/Tags/DublinCore}} />.
+Any fields prefixed `dc.` will be rendered as DCMI `<meta>` tags.
+
+!!! OpenGraph
+
+To add [ext[Open Graph|https://ogp.me/]] tags to your wiki, tag a tiddler with <$macrocall $name=tag-pill tag={{$:/plugins/benwebber/semantic/config/Tags/OpenGraph}} />.
+Fields prefixed with `og.` will be rendered as ~OpenGraph `<meta>` tags.
+Note that the plugin will automatically replace `.` characters in the field name with `:`.
