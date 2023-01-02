@@ -24,7 +24,7 @@ dist: all
 
 .PHONY: deploy
 deploy:
-	git -C dist && git push
+	git -C dist push
 
 .PHONY: test
 test: $(MIN_JS)
