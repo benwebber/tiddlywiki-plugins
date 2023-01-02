@@ -1,25 +1,32 @@
-.PHONY: all clean deploy test
-
 CSS := $(shell find src -type f -name '*.css' ! -name '*.min.css')
 MIN_CSS := $(patsubst %.css, %.min.css, $(CSS))
 TS := $(shell find src -type f -name '*.ts' ! -name '*.d.ts')
 JS := $(patsubst %.ts, %.js, $(TS))
 MIN_JS := $(patsubst %.js, %.min.js, $(JS))
 
+.PHONY: all
 all: dist/index.html dist/library/index.html
 
+.PHONY: clean
 clean:
 	$(RM) dist/index.html
 	$(RM) -r dist/library
 
+.PHONY: cleanall
 cleanall: clean
 	$(RM) $(MIN_CSS)
 	$(RM) $(JS)
 	$(RM) $(MIN_JS)
 
-deploy:
-	./bin/deploy
+.PHONY: dist
+dist: all
+	./bin/publish
 
+.PHONY: deploy
+deploy:
+	git -C dist && git push
+
+.PHONY: test
 test: $(MIN_JS)
 	yarn run tiddlywiki test/
 

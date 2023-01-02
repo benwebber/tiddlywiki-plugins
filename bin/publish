@@ -7,4 +7,3 @@ git worktree add dist gh-pages || true
 git -C dist/ add index.html
 git -C dist/ add library/
 TZ=UTC git -C dist/ commit -m "Publish $(git log -1 --format='%h')"
-git -C dist/ push
