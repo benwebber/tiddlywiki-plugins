@@ -4,6 +4,8 @@ caption: History
 
 !! Unreleased
 
+* The links footer only appears when a tiddler has any links or backlinks.
+
 !! 0.2.2 - 2023-01-01
 
 !!! Fixed
