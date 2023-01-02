@@ -10,3 +10,5 @@ tags: $:/tags/Macro
 : {{!!description}}
 </$list>
 \end
+
+\define doc.new() <span class="badge">New</span>

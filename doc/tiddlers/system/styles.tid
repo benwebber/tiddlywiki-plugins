@@ -1,0 +1,16 @@
+title: $:/.local/styles
+tags: $:/tags/Stylesheet
+
+.badge {
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-weight: bold;
+  background: <<colour primary>>;
+  color: <<colour tag-foreground>>;
+  margin-left: 2px;
+  padding: 1px 4px;
+  line-height: 1rem;
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 4px;
+}
