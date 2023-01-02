@@ -1,0 +1,35 @@
+title: rating Overview
+tags: rating
+caption: Overview
+
+''rating'' adds a macro to render simple star ratings.
+
+The rating component has the CSS class `.rating`. Refer to [[$:/plugins/benwebber/rating/styles/dynamic]] to see how to customize the fill colour and other styles. The component supports keyboard input.
+
+!! Examples
+
+!!! Macros
+
+Render the `rating` field of this tiddler.
+
+```
+<<rating>>
+```
+
+<<rating>>
+
+Render the `stars` field of [[rating Demo]], which ranges from 1 to 10.
+
+```
+<<rating tiddler:"rating Demo" field:"stars" min:1 max:10>>
+```
+
+<<rating tiddler:"rating Demo" field:"stars" min:1 max:10>>
+
+Render a read-only rating component for this tiddler.
+
+```
+<<rating disabled:"yes">>
+```
+
+<<rating disabled:"yes">>

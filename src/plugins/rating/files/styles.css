@@ -1,0 +1,19 @@
+@tailwind utilities;
+
+.rating input {
+  appearance: none;
+  cursor: pointer;
+  height: 1rem;
+  mask-image: var(--mask-image);
+  mask-size: contain;
+  width: 1rem;
+}
+
+.rating input:disabled {
+  cursor: default;
+}
+
+.rating.rating-disabled .rating-cancel {
+  /* TODO: Figure out how to remove !important. */
+  display: none !important;
+}

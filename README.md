@@ -17,6 +17,8 @@ A collection of useful plugins for [TiddlyWiki](https://tiddlywiki.com/).
   <dd>Macros to render special `<input>` types</dd>
   <dt><a href="https://benwebber.github.io/tiddlywiki-plugins/#%24%3A%2Fplugins%2Fbenwebber%2Fmotion">motion</a></dt>
   <dd>Vim-like keyboard shortcuts</dd>
+  <dt><a href="https://benwebber.github.io/tiddlywiki-plugins/#%24%3A%2Fplugins%2Fbenwebber%2Frating">rating</a></dt>
+  <dd>Add simple star ratings to tiddlers</dd>
   <dt><a href="https://benwebber.github.io/tiddlywiki-plugins/#%24%3A%2Fplugins%2Fbenwebber%2Frfc">rfc</a></dt>
   <dd>Link to IETF RFCs</dd>
   <dt><a href="https://benwebber.github.io/tiddlywiki-plugins/#%24%3A%2Fplugins%2Fbenwebber%2Fsemantic">semantic</a></dt>

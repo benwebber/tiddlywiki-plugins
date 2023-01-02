@@ -1,0 +1,8 @@
+title: $:/plugins/benwebber/rating/macros/private
+
+\define clear()
+<$action-deletefield $tiddler=<<tiddler>> $field=<<field>> />
+\end
+
+<!-- https://www.telumire.be/TiddlyTweaks/#Trick%20to%20convert%20the%20core%20images%20to%20SVG%20image -->
+\define svgTiddlerDataURI() <$text text={{{[[data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"]][[ width="22pt" height="22pt">]][title<__icon__>get[text]][[</svg>]]+[join[]]}}} />

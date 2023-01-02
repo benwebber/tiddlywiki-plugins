@@ -1,0 +1,5 @@
+title: rating Demo
+tags: rating
+stars: 7
+
+<<rating field:"stars" min:1 max:10>>

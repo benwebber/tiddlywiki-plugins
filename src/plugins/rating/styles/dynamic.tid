@@ -1,0 +1,36 @@
+title: $:/plugins/benwebber/rating/styles/dynamic
+tags: $:/tags/Stylesheet
+
+.rating .rating-list-item input {
+  background: <<colour muted-foreground>>;
+}
+
+.rating .rating-list-item-selected input {
+  background: <<colour foreground>>;
+}
+
+.rating .rating-list-item-selected:last-child ~ .rating-list-item input {
+  background: <<colour muted-foreground>>;
+}
+
+.rating .rating-list:hover .rating-list-item input:not(:disabled),
+.rating .rating-list:focus-within .rating-list-item input:not(:disabled) {
+  background: <<colour foreground>>;
+}
+
+.rating .rating-list-item:hover ~ .rating-list-item input:not(:disabled),
+.rating .rating-list-item:focus-within ~ .rating-list-item input:not(:disabled) {
+  background: <<colour muted-foreground>>;
+}
+
+.rating .rating-list:focus-within  .rating-list-item input:not(:disabled):focus-visible {
+  background: <<colour primary>>;
+}
+
+.rating .rating-cancel {
+  fill: <<colour muted-foreground>>;
+}
+
+.rating:hover .rating-cancel:hover {
+  fill: <<colour foreground>>;
+}

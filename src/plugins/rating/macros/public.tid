@@ -1,0 +1,52 @@
+title: $:/plugins/benwebber/rating/macros/public
+tags: $:/tags/Macro
+
+\define rating(tiddler, field, min: "1", max: "5", icon: "$:/core/images/star-filled", disabled: "no")
+\import [[$:/plugins/benwebber/rating/macros/private]]
+<$let
+  tiddler={{{ [<__tiddler__>is[blank]then<currentTiddler>else<__tiddler__>] }}}
+  defaultField={{$:/plugins/benwebber/rating/config/DefaultField}}
+  field={{{ [<__field__>is[blank]then<defaultField>else<__field__>] }}}
+  svgImageDataURI=<<datauri """$icon$""">>
+  dataURI={{{ [title<__icon__>field:type[image/svg+xml]then<svgImageDataURI>else<svgTiddlerDataURI>] }}}
+>
+<$wikify name=style text="""`--`mask-image:url('<<dataURI>>');""">
+<div class={{{ tw-flex tw-group rating [<__disabled__>match:caseinsensitive[yes]then[rating-disabled]] +[join[ ]] }}} style=<<style>>>
+  <ul  class="rating-list tw-flex tw-m-0 tw-p-0 tw-space-x-0.5">
+    <$list filter="[range<__min__>,<__max__>]" variable="i">
+      <li class={{{ tw-list-none rating-list-item [title<tiddler>get<field>compare:number:gteq<i>then[rating-list-item-selected]] +[join[ ]] }}}>
+        <$radio field=<<field>> value=<<i>> disabled=<<__disabled__>>><span class="tw-sr-only"><<i>></span></$radio>
+      </li>
+    </$list>
+  </ul>
+  <$button class="tc-btn-invisible tw-hidden tw-h-[0.8rem] tw-ml-2 tw-mt-px tw-w-[0.8rem] group-hover:tw-block group-focus-within:tw-block rating-cancel" tooltip="Clear" aria-label="Clear" actions=<<clear>>>
+    {{$:/core/images/close-button}}
+  </$button>
+</div>
+</$wikify>
+</$let>
+\end
+
+!! `rating`
+
+Render a star rating.
+
+!!! Parameters
+
+;tiddler
+: Optional title of the tiddler to modify. The default is the [ext[current tiddler|https://tiddlywiki.com/#Current%20Tiddler]].
+
+;field
+: Field that will store the rating. The default is <code>{{$:/plugins/benwebber/rating/config/DefaultField}}</code>.
+
+;min
+: Minimum rating (positive integer). The default is <code>1</code>.
+
+;max
+: Maximum rating (positive integer). The default is <code>5</code>.
+
+;icon
+: An SVG to use as a mask. Supports embedded SVG elements (e.g., [ext[core images|https://tiddlywiki.com/#Icon%20Gallery]]) as well as [ext[SVG document tiddlers|https://tiddlywiki.com/#Using%20SVG]]. The default is [[$:/core/images/star-filled]].
+
+;disabled
+: If `yes`, render a read-only version of the component. The default is `no`.

@@ -1,0 +1,5 @@
+title: $:/plugins/benwebber/rating/README
+
+''rating'' adds a macro to render simple star ratings.
+
+{{$:/plugins/benwebber/rating/macros/public}}
