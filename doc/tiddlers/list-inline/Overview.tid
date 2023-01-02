@@ -1,0 +1,51 @@
+title: list-inline Overview
+tags: list-inline
+caption: Overview
+
+''list-inline'' adds a macro to render a selection of tiddlers as an inline list or series.
+
+''list-inline'' was inspired by a [ext[similar macro|https://talk.tiddlywiki.org/t/celebrating-the-new-year-coming-with-and-inline-list-macro-and-more/5667]] published by Anthony Muscio.
+
+!! Examples
+
+!!! Macros
+
+Render a selection of one tiddler.
+
+```
+<<list-inline "[[Leslie Lamport]]">>
+```
+
+<<list-inline "[[Leslie Lamport]]">>
+
+Render a selection of two tiddlers.
+
+```
+<<list-inline "[[Whitfield Diffie]] [[Martin Hellman]]">>
+```
+
+<<list-inline "[[Whitfield Diffie]] [[Martin Hellman]]">>
+
+Render a selection of three or more tiddlers.
+
+```
+<<list-inline "[[Ron Rivest]] [[Adi Shamir]] [[Leonard Adleman]]">>
+```
+
+<<list-inline "[[Ron Rivest]] [[Adi Shamir]] [[Leonard Adleman]]">>
+
+Specify a different string to join items in the list.
+
+```
+<<list-inline "[[Rivest, Ron]] [[Shamir, Adi]] [[Adleman, Leonard]]" join:"; ">>
+```
+
+<<list-inline "[[Rivest, Ron]] [[Shamir, Adi]] [[Adleman, Leonard]]" join:"; ">>
+
+Render the list without an Oxford comma.
+
+```
+<<list-inline "[[Ron Rivest]] [[Adi Shamir]] [[Leonard Adleman]] joinLast:"no">>
+```
+
+<<list-inline "[[Ron Rivest]] [[Adi Shamir]] [[Leonard Adleman]]" joinLast:"no">>

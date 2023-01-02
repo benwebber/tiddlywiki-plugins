@@ -1,0 +1,12 @@
+{
+  "title": "$:/plugins/benwebber/list-inline",
+  "name": "list-inline",
+  "description": "Render a selection of tiddlers as an inline list",
+  "author": "Ben Webber",
+  "version": "0.1.0",
+  "core-version": ">=5.2.1",
+  "source": "https://github.com/benwebber/tiddlywiki-plugins",
+  "plugin-type": "plugin",
+  "list": "README",
+  "license": "MIT"
+}

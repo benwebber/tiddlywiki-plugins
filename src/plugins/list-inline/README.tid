@@ -1,0 +1,5 @@
+title: $:/plugins/benwebber/list-inline/README
+
+''list-inline'' adds a macro to render a selection of tiddlers as an inline list or series.
+
+{{$:/plugins/benwebber/list-inline/macros/public}}
