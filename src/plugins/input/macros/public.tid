@@ -28,7 +28,7 @@ Render an ''edit-text'' widget with `<input type="date">` to edit a date field.
 !!! Parameters
 
 ;tiddler
-: Optional title of the tiddler to modify. The default is the <a href="https://tiddlywiki.com/#Current%20Tiddler" rel="noopener" target="_blank">current tiddler</a>.
+: Optional title of the tiddler to modify. The default is the [ext[current tiddler|https://tiddlywiki.com/#Current%20Tiddler]].
 
 ;field
 : Field to modify. The default is `date`.
