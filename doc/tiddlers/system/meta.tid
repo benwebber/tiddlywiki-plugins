@@ -1,0 +1,5 @@
+title: $:/.local/metadata
+tags: $:/plugins/benwebber/semantic/tags/DublinCore $:/plugins/benwebber/semantic/tags/OpenGraph
+dc.title: {{$:/SiteTitle}}
+og.title: {{$:/SiteTitle}}
+og.url: https://benwebber.github.io/tiddlywiki-plugins/
