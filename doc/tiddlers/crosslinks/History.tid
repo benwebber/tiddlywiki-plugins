@@ -4,6 +4,10 @@ caption: History
 
 !! Unreleased
 
+!!! Fixed
+
+* The links footer now appears once when a tiddler contains multiple links or is referenced by multiple tiddlers. Fixes regression introduced in 0.2.0.
+
 !! 0.2.1 - 2022-12-12
 
 !!! Fixed

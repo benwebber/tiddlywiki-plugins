@@ -18,5 +18,5 @@ title: $:/plugins/benwebber/crosslinks/macros/private
 \define crosslinks.filter-has-links()
 [all[current]links[]]
 [all[current]backlinks[]!is[draft]]
-+[then<currentTiddler>!is[system]]
++[<currentTiddler>!is[system]]
 \end
