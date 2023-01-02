@@ -20,4 +20,4 @@ Render CSS variables for all the colours defined in the given palette.
 : A filter tiddler reference to the palette (e.g., `{$:/palette}` or `[$:/palettes/Vanilla]`).  The default is the current palette (`{$:/palette}`).
 
 ;prefix
-: Prefix variable names with this prefix. The default matches ~TiddlyWiki classes (`tc-`).
+: Prefix variable names with this prefix. The default matches TiddlyWiki classes (`tc-`).
