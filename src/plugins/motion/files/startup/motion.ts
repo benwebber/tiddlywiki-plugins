@@ -13,6 +13,7 @@ type ClosingTiddlerEvent = {
 }
 
 class Motion {
+  private prefix = '$:/plugins/benwebber/motion';
   private selectedStateTiddlerTitle = '$:/state/plugins/benwebber/motion/selected';
   private navigatorWidget: any;
 
@@ -22,7 +23,7 @@ class Motion {
 
     const shortcuts = {
       ShowHelp: () => {
-        this.navigatorWidget.dispatchEvent({type: 'tm-modal', param: '$:/plugins/benwebber/motion/Help'});
+        this.navigatorWidget.dispatchEvent({type: 'tm-modal', param: this.getPluginTitle('Help')});
         return false;
       },
       FocusSearch: () => {
@@ -34,7 +35,7 @@ class Motion {
         return false;
       },
       DeleteTiddler: () => {
-        let selectedTiddler = $tw.wiki.getTiddlerText('$:/state/plugins/benwebber/motion/selected') || '';
+        let selectedTiddler = $tw.wiki.getTiddlerText(this.selectedStateTiddlerTitle) || '';
         if (!selectedTiddler) {
           return;
         }
@@ -46,7 +47,7 @@ class Motion {
         return false;
       },
       SelectNextTiddler: () => {
-        let selectedTiddler = $tw.wiki.getTiddlerText('$:/state/plugins/benwebber/motion/selected') || '';
+        let selectedTiddler = $tw.wiki.getTiddlerText(this.selectedStateTiddlerTitle) || '';
         const storyList = this.navigatorWidget.story.getStoryList();
         if (!storyList.length) {
           return;
@@ -59,13 +60,13 @@ class Motion {
           nextTiddlerIndex = Math.min(currentTiddlerIndex + 1, storyList.length - 1);
         }
         selectedTiddler = storyList[nextTiddlerIndex];
-        $tw.wiki.addTiddler({title: '$:/state/plugins/benwebber/motion/selected', text: selectedTiddler});
+        $tw.wiki.addTiddler({title: this.selectedStateTiddlerTitle, text: selectedTiddler});
         this.navigatorWidget.dispatchEvent({type: 'tm-navigate', navigateTo: selectedTiddler});
         this.focusTiddler(selectedTiddler);
         return false;
       },
       SelectPreviousTiddler: () => {
-        let selectedTiddler = $tw.wiki.getTiddlerText('$:/state/plugins/benwebber/motion/selected') || '';
+        let selectedTiddler = $tw.wiki.getTiddlerText(this.selectedStateTiddlerTitle) || '';
         const storyList = this.navigatorWidget.story.getStoryList();
         if (!storyList.length) {
           return;
@@ -78,7 +79,7 @@ class Motion {
           nextTiddlerIndex = Math.max(currentTiddlerIndex - 1, 0);
         }
         selectedTiddler = storyList[nextTiddlerIndex];
-        $tw.wiki.addTiddler({title: '$:/state/plugins/benwebber/motion/selected', text: selectedTiddler});
+        $tw.wiki.addTiddler({title: this.selectedStateTiddlerTitle, text: selectedTiddler});
         this.navigatorWidget.dispatchEvent({type: 'tm-navigate', navigateTo: selectedTiddler})
         this.focusTiddler(selectedTiddler);
         return false;
@@ -89,7 +90,7 @@ class Motion {
           return;
         }
         const selectedTiddler = storyList[0];
-        $tw.wiki.addTiddler({title: '$:/state/plugins/benwebber/motion/selected', text: selectedTiddler});
+        $tw.wiki.addTiddler({title: this.selectedStateTiddlerTitle, text: selectedTiddler});
         this.navigatorWidget.dispatchEvent({type: 'tm-navigate', navigateTo: selectedTiddler})
         this.focusTiddler(selectedTiddler);
         return false;
@@ -100,13 +101,13 @@ class Motion {
           return;
         }
         const selectedTiddler = storyList[storyList.length - 1];
-        $tw.wiki.addTiddler({title: '$:/state/plugins/benwebber/motion/selected', text: selectedTiddler});
+        $tw.wiki.addTiddler({title: this.selectedStateTiddlerTitle, text: selectedTiddler});
         this.navigatorWidget.dispatchEvent({type: 'tm-navigate', navigateTo: selectedTiddler})
         this.focusTiddler(selectedTiddler);
         return false;
       },
       EditTiddler: () => {
-        const selectedTiddler = $tw.wiki.getTiddlerText('$:/state/plugins/benwebber/motion/selected');
+        const selectedTiddler = $tw.wiki.getTiddlerText(this.selectedStateTiddlerTitle);
         if (!selectedTiddler) {
           return;
         }
@@ -114,7 +115,7 @@ class Motion {
         return false;
       },
       CloseTiddler: () => {
-        const selectedTiddler = $tw.wiki.getTiddlerText('$:/state/plugins/benwebber/motion/selected');
+        const selectedTiddler = $tw.wiki.getTiddlerText(this.selectedStateTiddlerTitle);
         if (!selectedTiddler) {
           return;
         }
@@ -126,7 +127,7 @@ class Motion {
         return false;
       },
       ToggleTiddler: () => {
-        const selectedTiddler = $tw.wiki.getTiddlerText('$:/state/plugins/benwebber/motion/selected');
+        const selectedTiddler = $tw.wiki.getTiddlerText(this.selectedStateTiddlerTitle);
         if (!selectedTiddler) {
           return;
         }
@@ -134,7 +135,7 @@ class Motion {
         return false;
       },
       UnfoldTiddler: () => {
-        const selectedTiddler = $tw.wiki.getTiddlerText('$:/state/plugins/benwebber/motion/selected');
+        const selectedTiddler = $tw.wiki.getTiddlerText(this.selectedStateTiddlerTitle);
         if (!selectedTiddler) {
           return;
         }
@@ -142,7 +143,7 @@ class Motion {
         return false;
       },
       FoldTiddler: () => {
-        const selectedTiddler = $tw.wiki.getTiddlerText('$:/state/plugins/benwebber/motion/selected');
+        const selectedTiddler = $tw.wiki.getTiddlerText(this.selectedStateTiddlerTitle);
         if (!selectedTiddler) {
           return;
         }
@@ -179,21 +180,21 @@ class Motion {
           button.click();
         }
         // Deselect tiddler.
-        $tw.wiki.deleteTiddler('$:/state/plugins/benwebber/motion/selected');
+        $tw.wiki.deleteTiddler(this.selectedStateTiddlerTitle);
       },
     };
     for (const [name, handler] of Object.entries(shortcuts)) {
-      const shortcut = this.getShortcut(name);
+      const shortcut = this.getSetting(`Shortcuts/${name}/Key`);
       Mousetrap.bind(shortcut, handler);
     };
   }
 
   getSetting(name: string): string {
-    return $tw.wiki.getTiddlerText(`$:/plugins/benwebber/motion/config/${name}`);
+    return $tw.wiki.getTiddlerText(this.getPluginTitle(`config/${name}`));
   }
 
-  getShortcut(name: string): string {
-    return this.getSetting(`Shortcuts/${name}/Key`);
+  getPluginTitle(title: string): string {
+    return `${this.prefix}/${title}`;
   }
 
   handleClosingTiddler(event: ClosingTiddlerEvent) {
