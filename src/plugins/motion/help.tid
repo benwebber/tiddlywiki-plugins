@@ -1,6 +1,6 @@
 title: $:/plugins/benwebber/motion/Help
 subtitle: Keyboard shortcuts
-class: tw-help
+class: motion-help
 
 \define shortcut(shortcut)
 <$set name=kbd filter="[enlist:raw{$:/plugins/benwebber/motion/config/Shortcuts/$shortcut$/Key}addprefix[<kbd>]addsuffix[</kbd>]]">
