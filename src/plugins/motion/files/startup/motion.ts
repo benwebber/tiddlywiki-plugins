@@ -60,7 +60,8 @@ class Motion {
         }
         selectedTiddler = storyList[nextTiddlerIndex];
         $tw.wiki.addTiddler({title: '$:/state/plugins/benwebber/motion/selected', text: selectedTiddler});
-        this.navigatorWidget.dispatchEvent({type: 'tm-navigate', navigateTo: selectedTiddler})
+        this.navigatorWidget.dispatchEvent({type: 'tm-navigate', navigateTo: selectedTiddler});
+        this.focusTiddler(selectedTiddler);
         return false;
       },
       SelectPreviousTiddler: () => {
@@ -79,6 +80,7 @@ class Motion {
         selectedTiddler = storyList[nextTiddlerIndex];
         $tw.wiki.addTiddler({title: '$:/state/plugins/benwebber/motion/selected', text: selectedTiddler});
         this.navigatorWidget.dispatchEvent({type: 'tm-navigate', navigateTo: selectedTiddler})
+        this.focusTiddler(selectedTiddler);
         return false;
       },
       GoToFirstTiddler: () => {
@@ -89,6 +91,7 @@ class Motion {
         const selectedTiddler = storyList[0];
         $tw.wiki.addTiddler({title: '$:/state/plugins/benwebber/motion/selected', text: selectedTiddler});
         this.navigatorWidget.dispatchEvent({type: 'tm-navigate', navigateTo: selectedTiddler})
+        this.focusTiddler(selectedTiddler);
         return false;
       },
       GoToLastTiddler: () => {
@@ -99,6 +102,7 @@ class Motion {
         const selectedTiddler = storyList[storyList.length - 1];
         $tw.wiki.addTiddler({title: '$:/state/plugins/benwebber/motion/selected', text: selectedTiddler});
         this.navigatorWidget.dispatchEvent({type: 'tm-navigate', navigateTo: selectedTiddler})
+        this.focusTiddler(selectedTiddler);
         return false;
       },
       EditTiddler: () => {
@@ -184,8 +188,12 @@ class Motion {
     };
   }
 
-  getShortcut(name: string) {
-    return $tw.wiki.getTiddlerText(`$:/plugins/benwebber/motion/config/Shortcuts/${name}/Key`);
+  getSetting(name: string): string {
+    return $tw.wiki.getTiddlerText(`$:/plugins/benwebber/motion/config/${name}`);
+  }
+
+  getShortcut(name: string): string {
+    return this.getSetting(`Shortcuts/${name}/Key`);
   }
 
   handleClosingTiddler(event: ClosingTiddlerEvent) {
@@ -218,6 +226,19 @@ class Motion {
       return child;
     }
     return this.getNavigatorWidget(child);
+  }
+
+  getTiddlerElement(title: string): HTMLElement | null {
+    return document.querySelector(`[data-tiddler-title="${CSS.escape(title)}"]`);
+  }
+
+  focusTiddler(title: string): void {
+    const el = this.getTiddlerElement(title);
+    const focusSelected = this.getSetting('FocusSelected');
+    if (el && focusSelected === 'true') {
+      el.tabIndex = -1;
+      el.focus();
+    }
   }
 }
 

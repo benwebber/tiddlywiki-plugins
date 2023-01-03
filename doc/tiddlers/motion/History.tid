@@ -8,6 +8,10 @@ caption: History
 
 !! Unreleased
 
+!!! Added
+
+* Automatically focus the selected tiddler for faster tab navigation.
+
 !! 0.2.2 - 2022-12-12
 
 !!! Fixed
