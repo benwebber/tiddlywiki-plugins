@@ -4,6 +4,8 @@ caption: History
 
 !! Unreleased
 
+!! 0.1.1 - 2023-01-04
+
 !!! Fixed
 
 * Eliminated flicker when cursor was between icons.
