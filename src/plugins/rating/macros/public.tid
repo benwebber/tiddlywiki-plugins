@@ -12,9 +12,9 @@ tags: $:/tags/Macro
 >
 <$wikify name=style text="""`--`mask-image:url('<<dataURI>>');""">
 <div class={{{ tw-flex tw-group rating [<__disabled__>match:caseinsensitive[yes]then[rating-disabled]] +[join[ ]] }}} style=<<style>>>
-  <ul  class="rating-list tw-flex tw-m-0 tw-p-0 tw-space-x-0.5">
+  <ul class="rating-list tw-flex tw-m-0 tw-p-0">
     <$list filter="[range<__min__>,<__max__>]" variable="i">
-      <li class={{{ tw-list-none rating-list-item [title<tiddler>get<field>compare:number:gteq<i>then[rating-list-item-selected]] +[join[ ]] }}}>
+      <li class={{{ tw-list-none first-of-type:tw-p-0 tw-pl-0.5 rating-list-item [title<tiddler>get<field>compare:number:gteq<i>then[rating-list-item-selected]] +[join[ ]] }}}>
         <$radio field=<<field>> value=<<i>> disabled=<<__disabled__>>><span class="tw-sr-only"><<i>></span></$radio>
       </li>
     </$list>
