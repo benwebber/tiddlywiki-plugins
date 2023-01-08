@@ -1,0 +1,9 @@
+title: expand 0.1.1
+tags: expand
+.plugin: expand
+.date: 20221212
+.version: 0.1.1
+
+!!! Fixed
+
+* ''expand'' no longer includes CSS from other plugins.

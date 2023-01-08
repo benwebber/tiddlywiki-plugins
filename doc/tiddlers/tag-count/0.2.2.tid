@@ -1,0 +1,9 @@
+title: tag-count 0.2.2
+tags: tag-count
+.plugin: tag-count
+.version: 0.2.2
+.date: 20221212
+
+!!! Fixed
+
+* Restored whitespace after tag name in TiddlyWiki 5.2.3 ([ext[Jermolene/TiddlyWiki5#6740|https://github.com/Jermolene/TiddlyWiki5/pull/6740]]).

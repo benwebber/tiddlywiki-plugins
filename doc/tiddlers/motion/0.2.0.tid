@@ -1,0 +1,15 @@
+title: motion 0.2.0
+tags: motion
+.plugin: motion
+.version: 0.2.0
+.date: 20220221
+
+!!! Added
+
+* Added <<.motion "g g">> and <<.motion "G">> shortcuts to navigate to the first and last tiddler in the story river, respectively.
+* Added <<.motion "d">> shortcut to delete the selected tiddler.
+
+!!! Changed
+
+* Ported to TypeScript.
+* ''motion'' now only supports modern browsers (ES2019+).

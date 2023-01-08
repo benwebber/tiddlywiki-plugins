@@ -1,0 +1,9 @@
+title: rfc 0.2.1
+tags: rfc
+.plugin: rfc
+.version: 0.2.1
+.date: 20221212
+
+!!! Fixed
+
+* ''rfc'' no longer includes CSS from other plugins.

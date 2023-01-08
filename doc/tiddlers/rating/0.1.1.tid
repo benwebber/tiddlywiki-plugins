@@ -1,0 +1,9 @@
+title: rating 0.1.1
+tags: rating
+.plugin: rating
+.version: 0.1.1
+.date: 20230104
+
+!!! Fixed
+
+* Eliminated flicker when cursor was between icons.

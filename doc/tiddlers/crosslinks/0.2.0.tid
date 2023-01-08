@@ -1,0 +1,10 @@
+title: crosslinks 0.2.0
+tags: crosslinks
+.plugin: crosslinks
+.date: 20220221
+.version: 0.2.0
+
+!!! Added
+
+* Added settings form.
+* Added setting to enable or disable link footer by default.

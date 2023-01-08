@@ -2,8 +2,4 @@ title: input History
 tags: input
 caption: History
 
-!! Unreleased
-
-!! 0.1.0 - 2022-12-08
-
-Initial release
+<<.changelog "input">>

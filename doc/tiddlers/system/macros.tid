@@ -12,3 +12,29 @@ tags: $:/tags/Macro
 \end
 
 \define doc.new() <span class="badge">New</span>
+
+\define .sortsub() [get[.version]]
+\define .href() #$(id)$
+\define .format() [UTC]YYYY-0MM-0DD
+
+\define .changelog(plugin)
+<$list filter="[all[tiddlers]field:.plugin[$plugin$]has:field[.version]field:.version[]is[tiddler]]">
+
+!! Unreleased
+<$transclude tiddler=<<currentTiddler>> mode="block" />
+</$list>
+<$list filter="[all[tiddlers]field:.plugin[$plugin$]has[.version]!sortsub<.sortsub>]">
+<$vars
+  date={{{[all[current]get[.date]format:date<.format>]}}}
+  id={{{[[$plugin$]slugify[]addsuffix[-]addsuffix{!!.version}addprefix[#]]}}}
+>
+
+!! <a id=<<id>> href=<<.href>>>{{!!.version}}</a> - <<date>>
+<$transclude tiddler=<<currentTiddler>> mode="block" />
+</$vars>
+</$list>
+\end
+
+\define .motion(keys) <$set name=kbd filter="[enlist:raw[$keys$]addprefix[<kbd>]addsuffix[</kbd>]]"><<kbd>></$set>
+\define .github-user(username) [ext[@$username$|https://github.com/$username$]]
+\define .github-issue(number) [ext[#$number$|https://github.com/benwebber/tiddlywiki-plugins/issues/$number$]]

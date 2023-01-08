@@ -2,24 +2,4 @@ title: rfc History
 tags: rfc
 caption: History
 
-!! Unreleased
-
-!! 0.2.1 - 2022-12-12
-
-!!! Fixed
-
-* ''rfc'' no longer includes CSS from other plugins.
-
-!! 0.2.0 - 2022-02-21
-
-!!! Added
-
-* Added `rfc.bibtex` and `rfc.inline-errata` macros.
-
-!!! Changed
-
-* Link to [[RFC Editor|https://www.rfc-editor.org/]] URLs instead of `tools.ietf.org`.
-
-!! 0.1.0 - 2022-02-17
-
-Initial release
+<<.changelog "rfc">>

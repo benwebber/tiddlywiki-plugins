@@ -1,0 +1,9 @@
+title: css-palette 0.2.0
+tags: css-palette
+.plugin: css-palette
+.version: 0.2.0
+.date: 20220221
+
+!!! Added
+
+* Added settings form.

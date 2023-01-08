@@ -1,0 +1,9 @@
+title: crosslinks 0.2.2
+tags: crosslinks
+.plugin: crosslinks
+.date: 20230101
+.version: 0.2.2
+
+!!! Fixed
+
+* The links footer now appears once when a tiddler contains multiple links or is referenced by multiple tiddlers. Fixes regression introduced in 0.2.0.

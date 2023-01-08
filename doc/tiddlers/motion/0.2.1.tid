@@ -1,0 +1,9 @@
+title: motion 0.2.1
+tags: motion
+.plugin: motion
+.version: 0.2.1
+.date: 20221207
+
+!!! Fixed
+
+* Fixed compatibility with the [ext[External JS|https://cdruan.github.io/tw-external-js/]] plugin (<<.github-issue 2>>). Thanks to <<.github-user Marxsal>> for the bug report and <<.github-user cdruan>> for the fix.

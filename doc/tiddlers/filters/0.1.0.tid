@@ -1,0 +1,9 @@
+title: filters 0.1.0
+tags: filters
+.plugin: filters
+.date: 20220227
+.version: 0.1.0
+
+!!! Added
+
+* Added `surround` filter.

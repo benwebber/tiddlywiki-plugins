@@ -1,0 +1,9 @@
+title: motion 0.2.2
+tags: motion
+.plugin: motion
+.version: 0.2.2
+.date: 20221212
+
+!!! Fixed
+
+* ''motion'' no longer includes CSS from other plugins.

@@ -1,0 +1,9 @@
+title: crosslinks 0.2.3
+tags: crosslinks
+.plugin: crosslinks
+.date: 20230102
+.version: 0.2.3
+
+!!! Fixed
+
+* The links footer only appears when a tiddler has any links or backlinks.

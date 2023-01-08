@@ -1,0 +1,13 @@
+title: motion 0.3.0
+tags: motion
+.plugin: motion
+.version: 0.3.0
+.date: 20230102
+
+!!! Added
+
+* Automatically focus the selected tiddler for faster tab navigation.
+
+!!! Fixed
+
+* <<.motion "esc">> now correctly dismisses the help modal. Fixes regression introduced in 0.1.1.

@@ -1,0 +1,13 @@
+title: rfc 0.2.0
+tags: rfc
+.plugin: rfc
+.version: 0.2.0
+.date: 20220221
+
+!!! Added
+
+* Added `rfc.bibtex` and `rfc.inline-errata` macros.
+
+!!! Changed
+
+* Link to [ext[RFC Editor|https://www.rfc-editor.org/]] URLs instead of `tools.ietf.org`.

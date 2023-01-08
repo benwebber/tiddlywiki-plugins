@@ -2,31 +2,4 @@ title: crosslinks History
 tags: crosslinks
 caption: History
 
-!! Unreleased
-
-!! 0.2.3 - 2023-01-02
-
-* The links footer only appears when a tiddler has any links or backlinks.
-
-!! 0.2.2 - 2023-01-01
-
-!!! Fixed
-
-* The links footer now appears once when a tiddler contains multiple links or is referenced by multiple tiddlers. Fixes regression introduced in 0.2.0.
-
-!! 0.2.1 - 2022-12-12
-
-!!! Fixed
-
-* ''crosslinks'' no longer includes CSS from other plugins.
-
-!! 0.2.0 - 2022-02-21
-
-!!! Added
-
-* Added settings form.
-* Added setting to enable or disable link footer by default.
-
-!! 0.1.0 - 2022-02-17
-
-Initial release
+<<.changelog "crosslinks">>

@@ -1,0 +1,9 @@
+title: crosslinks 0.2.1
+tags: crosslinks
+.plugin: crosslinks
+.date: 20221212
+.version: 0.2.1
+
+!!! Fixed
+
+* ''crosslinks'' no longer includes CSS from other plugins.

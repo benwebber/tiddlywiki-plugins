@@ -2,14 +2,4 @@ title: expand History
 tags: expand
 caption: History
 
-!! Unreleased
-
-!! 0.1.1 - 2022-12-12
-
-!!! Fixed
-
-* ''expand'' no longer includes CSS from other plugins.
-
-!! 0.1.0 - 2022-02-14
-
-Initial release
+<<.changelog "expand">>

@@ -2,14 +2,4 @@ title: css-palette History
 tags: css-palette
 caption: History
 
-!! Unreleased
-
-!! 0.2.0 - 2022-02-21
-
-!!! Added
-
-* Added settings form.
-
-!! 0.1.0 - 2022-02-14
-
-Initial release
+<<.changelog "css-palette">>

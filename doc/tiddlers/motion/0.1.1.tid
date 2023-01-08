@@ -1,0 +1,9 @@
+title: motion 0.1.1
+tags: motion
+.plugin: motion
+.version: 0.1.1
+.date: 20220214
+
+!!! Changed
+
+* Changed Tailwind utility class prefix from `motion-` to `tw-`.

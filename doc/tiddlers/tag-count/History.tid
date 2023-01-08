@@ -2,28 +2,4 @@ title: tag-count History
 tags: tag-count
 caption: History
 
-!! Unreleased
-
-!! 0.2.2 - 2022-12-12
-
-!!! Fixed
-
-* Restored whitespace after tag name in TiddlyWiki 5.2.3 ([ext[Jermolene/TiddlyWiki5#6740|https://github.com/Jermolene/TiddlyWiki5/pull/6740]]).
-
-!! 0.2.1 - 2022-02-27
-
-!!! Removed
-
-* Removed unnecessary macro in CSS template.
-
-!! 0.2.0 - 2022-02-21
-
-!!! Changed
-
-* Cache tag counts using an indexer module instead of rendering a `count` widget for each tag.
-* Ported to TypeScript.
-* ''tag-count'' now only supports modern browsers (ES2019+).
-
-!! 0.1.0 - 2022-02-17
-
-Initial release
+<<.changelog "tag-count">>
