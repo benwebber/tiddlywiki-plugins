@@ -1,14 +1,15 @@
 title: $:/plugins/benwebber/list-inline/macros/public
 tags: $:/tags/Macro
 
-\define list-inline(filter join:", " last:" and " joinLast:"yes")
+\define list-inline(filter join:", " last:" and " joinLast:"yes" caption:"caption")
+\import [[$:/plugins/benwebber/list-inline/macros/private]]
 <$let
   filter="""$filter$"""
   count={{{[all[tiddlers]subfilter<filter>count[]]}}}
   join={{{[<count>compare:number:gt[2]then["""$join$"""]]}}}
   joinLast={{{[title[$joinLast$]match:caseinsensitive[yes]then<join>]}}}
 >
-<$list filter="[all[tiddlers]subfilter<filter>first[]]"><$link><<currentTiddler>></$link></$list><$list filter="[all[tiddlers]subfilter<filter>butfirst[]butlast[]]"><<join>><$link><<currentTiddler>></$link></$list><$list filter="[all[tiddlers]subfilter<filter>butfirst[]last[]]"><<joinLast>>$last$<$link><<currentTiddler>></$link></$list>
+<$list filter="[all[tiddlers]subfilter<filter>first[]]"><<list-inline-link>></$list><$list filter="[all[tiddlers]subfilter<filter>butfirst[]butlast[]]"><<join>><<list-inline-link>></$list><$list filter="[all[tiddlers]subfilter<filter>butfirst[]last[]]"><<joinLast>>$last$<<list-inline-link>></$list>
 </$let>
 \end
 
@@ -29,3 +30,6 @@ Render a selection of tiddlers as an inline list or series.
 
 ;joinLast
 : Whether to render `join` before `last` in a list with three (3) or more items. In other words, render a [ext[serial comma|https://en.wikipedia.org/wiki/Serial_comma]]. Can be `yes` or `no`. The default is `yes`.
+
+;caption
+: Render this field, falling back on the tiddler `title`. The default is `caption`.

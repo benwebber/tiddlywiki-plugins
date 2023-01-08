@@ -1,0 +1,8 @@
+title: list-inline Unreleased
+tags: list-inline
+.plugin: list-inline
+.version:
+
+!!! Added
+
+* ''list-inline'' now supports rendering `caption` or another field instead of the tiddler title.

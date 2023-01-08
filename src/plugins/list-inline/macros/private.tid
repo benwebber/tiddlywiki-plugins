@@ -1,0 +1,12 @@
+title: $:/plugins/benwebber/list-inline/macros/private
+
+\define list-inline-link()
+\whitespace trim
+<$link to={{!!title}}>
+<$let tv-wikilinks="no">
+<$transclude field=<<__caption__>>>
+<$view field="title"/>
+</$transclude>
+</$let>
+</$link>
+\end
