@@ -1,0 +1,6 @@
+title: $:/plugins/benwebber/decimal/styles/dynamic
+tags: $:/tags/Stylesheet
+
+.decimal th {
+  border-color: <<colour "table-border">>;
+}

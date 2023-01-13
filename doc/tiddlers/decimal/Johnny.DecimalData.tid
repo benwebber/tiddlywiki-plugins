@@ -1,0 +1,19 @@
+title: decimal Demo: Johnny.Decimal Data
+type: application/x-tiddler-dictionary
+tags: decimal Demo
+
+00: System
+00.00: Index
+10: Finances
+11: Income
+12: Expenses
+13: Assets
+14: Liabilities
+15: Taxes
+15.01: 2020
+15.02: 2021
+15.03: 2022
+20: Documents
+21: CV
+22: Letters
+23: Presentations

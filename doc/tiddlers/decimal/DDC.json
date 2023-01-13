@@ -1,0 +1,62 @@
+[
+  {
+    "title": "decimal Demo: Computer programming, programs, data",
+    "tags": "decimal Demo",
+    "caption": "Computer programming, programs, data",
+    "decimal.id": "005"
+  },
+  {
+    "title": "decimal Demo: Programming",
+    "tags": "decimal Demo",
+    "caption": "Programming",
+    "decimal.id": "005.1"
+  },
+  {
+    "title": "decimal Demo: Programming languages",
+    "tags": "decimal Demo",
+    "caption": "Programming languages",
+    "decimal.id": "005.13"
+  },
+  {
+    "title": "decimal Demo: General programming languages",
+    "tags": "decimal Demo",
+    "caption": "General programming languages",
+    "decimal.id": "005.133"
+  },
+  {
+    "title": "decimal Demo: Programming for specific types of computers",
+    "tags": "decimal Demo",
+    "caption": "Programming for specific types of computers",
+    "decimal.id": "005.2"
+  },
+  {
+    "title": "decimal Demo: Programs",
+    "tags": "decimal Demo",
+    "caption": "Programs",
+    "decimal.id": "005.3"
+  },
+  {
+    "title": "decimal Demo: Systems programming and programs",
+    "tags": "decimal Demo",
+    "caption": "Systems programming and programs",
+    "decimal.id": "005.4"
+  },
+  {
+    "title": "decimal Demo: General purpose application programs",
+    "tags": "decimal Demo",
+    "caption": "General purpose application programs",
+    "decimal.id": "005.5"
+  },
+  {
+    "title": "decimal Demo: Data in computer systems",
+    "tags": "decimal Demo",
+    "caption": "Data in computer systems",
+    "decimal.id": "005.7"
+  },
+  {
+    "title": "decimal Demo: Data security",
+    "tags": "decimal Demo",
+    "caption": "Data security",
+    "decimal.id": "005.8"
+  }
+]

@@ -1,0 +1,41 @@
+title: $:/plugins/benwebber/decimal/templates/index
+
+\define row(tag)
+<tr
+  class={{{ [subfilter<__headings__>] :intersection[<id>] +[then[decimal-heading]] +[join[ ]] }}}
+  data-decimal-id=<<id>>
+  data-decimal-level={{{ [<id>split<__separator__>count[]] }}}
+>
+  <$tag$ class="decimal-id tw-border-0 tw-w-0 tw-whitespace-nowrap">
+    <data value={{{ [<id>] }}}>
+      <$list filter="[<id>split<__separator__>count[]compare:number:gt[1]]" emptyMessage=<<id>>>
+        <$let
+          prefix={{{ [<id>split<__separator__>butlast[]join<__separator__>] }}}
+          suffix={{{ [<id>split<__separator__>last[]addprefix<__separator__>] }}}
+        >
+          <span class="tw-invisible"><<prefix>></span><<suffix>>
+        </$let>
+      </$list>
+    </data>
+  </$tag$>
+  <$tag$ class="decimal-label tw-border-0">
+    <$link>
+      <$transclude field=<<__caption__>>>
+        {{!!title}}
+      </$transclude>
+    </$link>
+  </$tag$>
+</tr>
+\end
+
+<$list filter="[<currentTiddler>] -[[$:/plugins/benwebber/decimal/templates/index]]">
+  <table class={{{ [<__class__>!is[blank]] decimal tw-border-0 tw-w-full +[join[ ]] }}}>
+    <$list filter=<<ids>> variable=id>
+      <$list filter=<<tiddlers>>>
+        <$let tag={{{ [subfilter<__headings__>] :intersection[<id>] +[then[th]] ~[[td]] }}}>
+          <$macrocall $name=row tag=<<tag>> />
+          </$let>
+      </$list>
+    </$list>
+  </table>
+</$list>

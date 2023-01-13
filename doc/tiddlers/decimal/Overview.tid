@@ -1,0 +1,83 @@
+title: decimal Overview
+tags: decimal
+caption: Overview
+
+''decimal'' makes it easy to maintain a decimal classification system using TiddlyWiki.
+
+There are two ways to maintain a system:
+
+# Describe the entire system in a [ext[data tiddler|https://tiddlywiki.com/#DataTiddlers]].
+# Create a tiddler for each member in the system, storing the system ID in a field.
+
+''decimal'' was designed to work with [ext[Johnny.Decimal|https://johnnydecimal.com/]], but it is generic enough to work with other simple systems.
+
+!! Examples
+
+These examples work with a slice of the [ext[Dewey Decimal Classification (DDC)|https://en.wikipedia.org/wiki/Dewey_Decimal_Classification]] system.
+Also check out the [[Johnny.Decimal demo|decimal Demo: Johnny.Decimal]].
+
+!!! Use a data tiddler
+
+For a small system, it might be useful to define the entire index in a data tiddler.
+See [[decimal Index]] as an example.
+
+Use the `decimal.index` macro to render an index for a data tiddler:
+
+```
+<<decimal.index "decimal Index">>
+```
+
+<<decimal.index "decimal Index">>
+
+(Note that the titles as shown do not exist in this wiki.)
+
+!!! Use a selection of tiddlers
+
+The following tiddlers all store classification numbers in the `decimal.id` field.
+
+<details>
+
+<<list-links "[tag[decimal]has[decimal.id]]">>
+</details>
+
+Use the `decimal.list-index` macro to render an index for these tiddlers:
+
+```
+<<decimal.list-index "[tag[decimal]]">>
+```
+
+<<decimal.list-index "[tag[decimal]]">>
+
+Note that the macro rendered the `caption` field for each member, similar to `list-links`.
+
+!!! Highlight headings
+
+Both index macros support a `headings` filter.
+The output of this filter should be the IDs that correspond to top-level classes in the system.
+Rows for these IDs will be rendered as table headers (`th` tags).
+
+Consider the following examples of `headings` values.
+
+<details>
+<summary>Select a single ID</summary>
+<pre><$text text="""005""" /></pre>
+<$macrocall $name="decimal.index" tiddler="decimal Index" headings="005" />
+</details>
+
+<details>
+<summary>Select all IDs without sub-levels</summary>
+<pre><$text text="""[[decimal Index]indexes[]] :filter[split[.]count[]compare:number:lteq[1]]""" /></pre>
+<$macrocall $name="decimal.index" tiddler="decimal Index" headings="[[decimal Index]indexes[]] :filter[split[.]count[]compare:number:lteq[1]]" />
+</details>
+
+<details>
+<summary>Select all IDs matching a prefix</summary>
+<pre><$text text="""[[decimal Index]indexes[]prefix[005.1]]""" /></pre>
+<$macrocall $name="decimal.index" tiddler="decimal Index" headings="[[decimal Index]indexes[]prefix[005.1]]" />
+</details>
+
+!! Limitations
+
+''decimal'' does not support Johnny.Decimal category ranges (e.g., `00-09 System`).
+Use the first number in the range instead (`00 System`).
+See the [[Johnny.Decimal demo|decimal Demo: Johnny.Decimal]].

@@ -1,0 +1,4 @@
+title: $:/plugins/benwebber/decimal/macros/private
+
+<!-- NOTE: addprefix should not use `separator` to treat IDs as decimals. -->
+\define sortsub() [all[current]search-replace:g<__separator__>,[]addprefix[.]]

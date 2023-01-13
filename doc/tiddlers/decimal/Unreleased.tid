@@ -1,0 +1,10 @@
+title: decimal 0.1.0
+tags: decimal
+.plugin: decimal
+.version: 0.1.0
+.date: 20230113
+
+!!! Added
+
+* Added `decimal.index` macro.
+* Added `decimal.list-index` macro.

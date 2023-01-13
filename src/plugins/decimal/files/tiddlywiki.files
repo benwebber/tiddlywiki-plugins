@@ -1,0 +1,12 @@
+{
+  "tiddlers": [
+    {
+      "file": "styles.min.css",
+      "fields": {
+        "title": "$:/plugins/benwebber/decimal/styles/static",
+        "type": "text/css",
+        "tags": "$:/tags/Stylesheet"
+      }
+    }
+  ]
+}

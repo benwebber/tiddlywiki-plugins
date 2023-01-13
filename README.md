@@ -11,6 +11,8 @@ A collection of useful plugins for [TiddlyWiki](https://tiddlywiki.com/).
   <dd>Add a footer showing a tiddler's links and backlinks</dd>
   <dt><a href="https://benwebber.github.io/tiddlywiki-plugins/#%24%3A%2Fplugins%2Fbenwebber%2Fcss-palette">css-palette</a></dt>
   <dd>Expose TiddlyWiki palette colours as CSS variables</dd>
+  <dt><a href="https://benwebber.github.io/tiddlywiki-plugins/#%24%3A%2Fplugins%2Fbenwebber%2Fdecimal">decimal</a></dt>
+  <dd>Manage decimal classification systems</dd>
   <dt><a href="https://benwebber.github.io/tiddlywiki-plugins/#%24%3A%2Fplugins%2Fbenwebber%2Fexpand">expand</a></dt>
   <dd>Expand upon terms without breaking the flow of text</dd>
   <dt><a href="https://benwebber.github.io/tiddlywiki-plugins/#%24%3A%2Fplugins%2Fbenwebber%2Finput">input</a></dt>

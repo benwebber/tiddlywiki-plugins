@@ -1,0 +1,8 @@
+@tailwind utilities;
+
+.decimal th {
+  text-align: start;
+  background: none;
+  border-style: solid;
+  border-width: 1px 0;
+}

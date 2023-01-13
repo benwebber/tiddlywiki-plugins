@@ -1,0 +1,5 @@
+title: $:/plugins/benwebber/decimal/README
+
+''decimal'' helps you manage decimal classification systems with TiddlyWiki.
+
+{{$:/plugins/benwebber/decimal/macros/public}}
