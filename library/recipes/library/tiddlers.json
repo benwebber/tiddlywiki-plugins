@@ -45,6 +45,21 @@
         "requires-reload": "no"
     },
     {
+        "title": "$:/plugins/benwebber/decimal",
+        "name": "decimal",
+        "description": "Manage decimal classification systems",
+        "author": "Ben Webber",
+        "version": "0.1.0",
+        "core-version": ">=5.2.1",
+        "source": "https://github.com/benwebber/tiddlywiki-plugins",
+        "plugin-type": "plugin",
+        "list": "README",
+        "license": "MIT",
+        "dependents": "",
+        "type": "application/json",
+        "requires-reload": "no"
+    },
+    {
         "title": "$:/plugins/benwebber/expand",
         "name": "expand",
         "description": "Expand upon terms without breaking the flow of text",
