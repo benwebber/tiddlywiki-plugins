@@ -94,7 +94,7 @@
         "name": "list-inline",
         "description": "Render a selection of tiddlers as an inline list",
         "author": "Ben Webber",
-        "version": "0.1.0",
+        "version": "0.2.0",
         "core-version": ">=5.2.1",
         "source": "https://github.com/benwebber/tiddlywiki-plugins",
         "plugin-type": "plugin",
