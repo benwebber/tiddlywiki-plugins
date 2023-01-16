@@ -25,8 +25,10 @@ tags: $:/tags/Macro
               <div class="tw-flex tw-items-start">
                 <input type="checkbox" disabled />
                 <$keyboard actions=<<add>> key=enter class="tw-flex-grow tw-inline-block">
-                  <$keyboard actions=<<hide>> key=escape>
-                    <$edit-text tiddler=<<editStateTiddler>> tag=input placeholder="" default="" focus=true class="tw-w-full" />
+                  <$keyboard actions=<<noop>> key="shift+enter">
+                    <$keyboard actions=<<hide>> key=escape>
+                      <$edit-text tiddler=<<editStateTiddler>> default="" class="tw-resize-none tw-w-full" placeholder="" focus=true minHeight=0 rows=1 />
+                    </$keyboard>
                   </$keyboard>
                 </$keyboard>
               </div>

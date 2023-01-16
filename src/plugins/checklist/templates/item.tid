@@ -62,8 +62,10 @@ title: $:/plugins/benwebber/checklist/templates/item
         <div class="tw-flex tw-items-start">
           <input type="checkbox" disabled />
           <$keyboard actions=<<saveInput>> key=enter class="tw-flex-grow tw-inline-block">
-            <$keyboard actions=<<cancelInput>> key=escape>
-              <$edit-text tiddler=<<inputStateTiddler>> tag=input placeholder="" default="" focus=true class="tw-w-full" />
+            <$keyboard actions=<<noop>> key="shift+enter">
+              <$keyboard actions=<<cancelInput>> key=escape>
+                <$edit-text tiddler=<<inputStateTiddler>> default="" class="tw-resize-none tw-w-full" placeholder="" focus=true minHeight=0 rows=1 />
+              </$keyboard>
             </$keyboard>
           </$keyboard>
         </div>

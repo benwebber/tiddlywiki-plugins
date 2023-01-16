@@ -1,0 +1,8 @@
+title: checklist Unreleased
+tags: checklist
+.plugin: checklist
+.version:
+
+!!! Changed
+
+* The item input field is now a `<textarea>`, making it easier to enter long items.

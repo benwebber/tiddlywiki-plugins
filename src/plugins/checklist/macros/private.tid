@@ -32,3 +32,6 @@ title: $:/plugins/benwebber/checklist/macros/private
 \define editStateTiddler() $:/state/plugins/benwebber/checklist/$(tiddler)$/$(field)$/edit
 \define list() $(tiddler)$!!$(field)$
 \define doneList() $(field)${{$:/plugins/benwebber/checklist/config/DefaultFieldDoneSuffix}}
+
+<!-- Used to trap Shift+Enter and suppress line breaks in list items. -->
+\define noop() _
