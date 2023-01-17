@@ -1,5 +1,7 @@
 title: $:/plugins/benwebber/decimal/templates/index
 
+\whitespace trim
+
 \define row(tag)
 <tr
   class={{{ [subfilter<__headings__>] :intersection[<id>] +[then[decimal-heading]] +[join[ ]] }}}
@@ -29,7 +31,7 @@ title: $:/plugins/benwebber/decimal/templates/index
 \end
 
 <$list filter="[<currentTiddler>] -[[$:/plugins/benwebber/decimal/templates/index]]">
-  <table class={{{ [<__class__>!is[blank]] decimal tw-border-0 tw-w-full +[join[ ]] }}}>
+  <table class={{{ [<__class__>!is[blank]] decimal tw-border-0 tw-w-full empty:tw-hidden +[join[ ]] }}}>
     <$list filter=<<ids>> variable=id>
       <$list filter=<<tiddlers>>>
         <$let tag={{{ [subfilter<__headings__>] :intersection[<id>] +[then[th]] ~[[td]] }}}>

@@ -1,10 +1,9 @@
-title: decimal 0.1.0
+title: decimal Unreleased
 tags: decimal
 .plugin: decimal
-.version: 0.1.0
-.date: 20230113
+.version:
+.date:
 
-!!! Added
+!!! Fixed
 
-* Added `decimal.index` macro.
-* Added `decimal.list-index` macro.
+* Empty indices no longer take up space.
