@@ -8,7 +8,7 @@ tags: $:/tags/Macro
   defaultField={{$:/plugins/benwebber/checklist/config/DefaultField}}
   field={{{ [<__field__>is[blank]then<defaultField>else<__field__>] }}}
   list=<<list>>
-  doneList=<<doneList>>
+  doneList={{{ [<field>addsuffix{$:/plugins/benwebber/checklist/config/DefaultDoneSuffix}] }}}
 >
 <div class="checklist">
   <ul class="tw-p-0 tw-m-0">

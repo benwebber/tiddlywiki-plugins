@@ -1,0 +1,17 @@
+title: checklist 0.2.0
+tags: checklist
+.plugin: checklist
+.version: 0.2.0
+.date: 20230116
+
+!!! Changed
+
+* The item input field is now a `<textarea>`, making it easier to enter long items.
+
+!!! Fixed
+
+* Fixed removing items that contain spaces.
+
+!!! Removed
+
+* Removed unused CSS.
