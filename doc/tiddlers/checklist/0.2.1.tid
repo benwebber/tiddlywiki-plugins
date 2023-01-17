@@ -1,8 +1,8 @@
-title: checklist Unreleased
+title: checklist 0.2.1
 tags: checklist
 .plugin: checklist
-.version:
-.date:
+.version: 0.2.1
+.date: 20230116
 
 !!! Fixed
 
