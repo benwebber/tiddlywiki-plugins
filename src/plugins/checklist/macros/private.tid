@@ -9,7 +9,7 @@ title: $:/plugins/benwebber/checklist/macros/private
 \end
 
 \define remove()
-<$action-listops $tiddler=<<tiddler>> $field=<<field>> $filter="[list<list>remove<item>]" />
+<$action-listops $tiddler=<<tiddler>> $field=<<field>> $filter="[list<list>] -[<item>]" />
 \end
 
 \define show()
