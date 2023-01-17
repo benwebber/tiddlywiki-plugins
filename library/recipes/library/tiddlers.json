@@ -4,7 +4,7 @@
         "name": "checklist",
         "description": "Add simple checklists to tiddlers",
         "author": "Ben Webber",
-        "version": "0.2.0",
+        "version": "0.2.1",
         "core-version": ">=5.2.3",
         "source": "https://github.com/benwebber/tiddlywiki-plugins",
         "plugin-type": "plugin",
