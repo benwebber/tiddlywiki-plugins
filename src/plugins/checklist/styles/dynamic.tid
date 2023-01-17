@@ -30,10 +30,6 @@ tags: $:/tags/Stylesheet
   padding-top: 2px;
 }
 
-.checklist-item-new input {
-  background-color: <<colour "tiddler-editor-background">>;
-}
-
 .checklist .tc-dragover .checklist-item-droppable-placeholder {
   display: block;
   background-color: <<colour "tiddler-editor-background">>;
