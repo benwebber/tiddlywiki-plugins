@@ -1,7 +1,7 @@
 title: $:/plugins/benwebber/rfc/macros/private
 
-\define rfc.link(number, url, text: "")
+\define rfc.link(number, url, text: "", class:"")
 <$set name=text filter="[<__text__>is[blank]] +[then[RFC $number$]else<__text__>]" select=0>
-  <a href=<<__url__>> rel="noopener noreferrer"><<text>></a>
+  <a href=<<__url__>> rel="noopener noreferrer" class={{{ [<__class__>] rfc +[!is[blank]join[ ]] }}} data-rfc-number="$number$"><data value="RFC $number$"><<text>></data></a>
 </$set>
 \end

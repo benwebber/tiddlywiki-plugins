@@ -1,0 +1,12 @@
+title: rfc Unreleased
+tags: rfc
+.plugin: rfc
+.version:
+.date:
+
+!!! Added
+
+* Added `class` parameter to add custom class to link.
+* Added `rfc.class` field to add custom class to view template header.
+* Added `<data>` representation to RFC links.
+* Added `data-rfc-number` attribute to RFC links.

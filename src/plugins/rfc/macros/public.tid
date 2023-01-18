@@ -1,47 +1,47 @@
 title: $:/plugins/benwebber/rfc/macros/public
 tags: $:/tags/Macro
 
-\define rfc.txt(number, text: "")
+\define rfc.txt(number, text: "", class:"")
 \import [[$:/plugins/benwebber/rfc/macros/private]]
-<$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/rfc/rfc$number$.txt" text=<<__text__>> />
+<$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/rfc/rfc$number$.txt" text=<<__text__>> class=<<__class__>> />
 \end
 
-\define rfc.html(number, text: "")
+\define rfc.html(number, text: "", class:"")
 \import [[$:/plugins/benwebber/rfc/macros/private]]
-<$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/rfc/rfc$number$.html" text=<<__text__>> />
+<$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/rfc/rfc$number$.html" text=<<__text__>> class=<<__class__>> />
 \end
 
-\define rfc.pdf(number, text: "")
+\define rfc.pdf(number, text: "", class:"")
 \import [[$:/plugins/benwebber/rfc/macros/private]]
-<$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/rfc/pdfrfc/rfc$number$.txt.pdf" text=<<__text__>> />
+<$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/rfc/pdfrfc/rfc$number$.txt.pdf" text=<<__text__>> class=<<__class__>> />
 \end
 
-\define rfc.tracker(number, text: "")
+\define rfc.tracker(number, text: "", class:"")
 \import [[$:/plugins/benwebber/rfc/macros/private]]
-<$macrocall $name=rfc.link number=<<__number__>> url="https://datatracker.ietf.org/doc/rfc$number$/" text=<<__text__>> />
+<$macrocall $name=rfc.link number=<<__number__>> url="https://datatracker.ietf.org/doc/rfc$number$/" text=<<__text__>> class=<<__class__>> />
 \end
 
-\define rfc.diff(number, text: "")
+\define rfc.diff(number, text: "", class:"")
 \import [[$:/plugins/benwebber/rfc/macros/private]]
-<$macrocall $name=rfc.link number=<<__number__>> url="https://tools.ietf.org/rfcdiff?url2=rfc$number$" text=<<__text__>> />
+<$macrocall $name=rfc.link number=<<__number__>> url="https://tools.ietf.org/rfcdiff?url2=rfc$number$" text=<<__text__>> class=<<__class__>> />
 \end
 
-\define rfc.errata(number, text: "")
+\define rfc.errata(number, text: "", class:"")
 \import [[$:/plugins/benwebber/rfc/macros/private]]
-<$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/errata/rfc$number$" text=<<__text__>> />
+<$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/errata/rfc$number$" text=<<__text__>> class=<<__class__>> />
 \end
 
-\define rfc.inline-errata(number, text: "")
+\define rfc.inline-errata(number, text: "", class:"")
 \import [[$:/plugins/benwebber/rfc/macros/private]]
-<$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/rfc/inline-errata/rfc$number$.html" text=<<__text__>> />
+<$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/rfc/inline-errata/rfc$number$.html" text=<<__text__>> class=<<__class__>> />
 \end
 
-\define rfc.bibtex(number, text: "")
+\define rfc.bibtex(number, text: "", class:"")
 \import [[$:/plugins/benwebber/rfc/macros/private]]
-<$macrocall $name=rfc.link number=<<__number__>> url="https://datatracker.ietf.org/doc/rfc$number$/bibtex/" text=<<__text__>> />
+<$macrocall $name=rfc.link number=<<__number__>> url="https://datatracker.ietf.org/doc/rfc$number$/bibtex/" text=<<__text__>> class=<<__class__>> />
 \end
 
-\define rfc(number, text: "") <$macrocall $name=rfc.txt number=<<__number__>> text=<<__text__>> />
+\define rfc(number, text: "", class:"") <$macrocall $name=rfc.txt number=<<__number__>> text=<<__text__>> class=<<__class__>> />
 
 All ''rfc'' macros accept the same parameters.
 
@@ -49,6 +49,8 @@ All ''rfc'' macros accept the same parameters.
 : The RFC number.
 ;text
 : If not specified, the macro will generate text like "RFC 4122".
+;class
+: An optional CSS class to add to the link.
 
 |Macro|Description|h
 |`rfc.txt`|Link to the RFC's plain text version|

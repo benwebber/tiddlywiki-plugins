@@ -8,10 +8,23 @@ caption: Overview
 
 !!! Macros
 
-<$list filter="4122 7159 7231">
+```
+<<rfc 4122>>
+```
 
-* <$macrocall $name=rfc.txt number=<<currentTiddler>> />
-</$list>
+<<rfc 4122>>
+
+```
+<<rfc.txt 7159>>
+```
+
+<<rfc.txt 7159>>
+
+```
+<<rfc.html 7231 "Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content">>
+```
+
+<<rfc.html 7231 "Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content">>
 
 !!! View Templates
 

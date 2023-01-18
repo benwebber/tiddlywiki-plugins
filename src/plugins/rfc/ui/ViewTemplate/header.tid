@@ -1,10 +1,10 @@
 title: $:/plugins/benwebber/rfc/ui/ViewTemplate/header
 tags: $:/tags/ViewTemplate
 list-before: $:/core/ui/ViewTemplate/body
-description: When a tiddler defines an `rfc.number` field, add a header with links to common pages for that RFC. This is similar to the header shown in the HTML version.
+description: When a tiddler defines an `rfc.number` field, add a header with links to common pages for that RFC. This is similar to the header shown in the HTML version. Add a custom class to the header with the `rfc.class` field.
 
 <$list filter="[all[current]!is[system]get[rfc.number]]" variable=number>
-  <table class="rfc tw-w-full">
+  <table class={{{ [all[current]get[rfc.class]] rfc tw-w-full +[!is[blank]join[ ]] }}}>
     <tr class="tw-flex">
       <td class="tw-block tw-border-l-0 tw-border-r tw-border-t-0 tw-px-2 tw-py-1"><strong>RFC <<number>></strong></td>
       <td class="tw-block tw-border-r tw-border-t-0 tw-px-2 tw-py-1"><$macrocall $name=rfc.txt number=<<number>> text="TXT" /></td>
