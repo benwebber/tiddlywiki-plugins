@@ -1,0 +1,9 @@
+title: expand Unreleased
+tags: expand
+.plugin: expand
+.version:
+.date:
+
+!!! Added
+
+* Added `class` parameters to add custom classes to the term and text.

@@ -1,25 +1,25 @@
 title: $:/plugins/benwebber/expand/macros/public
 tags: $:/tags/Macro
 
-\define expand.dt(term, text)
+\define expand.dt(term, text, class:"")
 \whitespace trim
 \import [[$:/plugins/benwebber/expand/macros/private]]
 <$vars stateTiddler=<<qualify "$:/state/plugins/benwebber/expand/$term$">>>
   <$set name=text filter="[<__text__>is[blank]] +[then<__term__>else<__text__>]" select=0>
-    <$button class="expand-dd tw-bg-transparent tw-border-none tw-cursor-pointer tw-decoration-dotted tw-m-0 tw-p-0 tw-underline hover:tw-decoration-solid" actions=<<expand.toggle>>>
+    <$button class={{{ [<__class__>] expand-dd tw-bg-transparent tw-border-none tw-cursor-pointer tw-decoration-dotted tw-m-0 tw-p-0 tw-underline hover:tw-decoration-solid +[!is[blank]join[ ]] }}} actions=<<expand.toggle>>>
       <<text>>
     </$button>
   </$set>
 </$vars>
 \end
 
-\define expand.dd(term, text)
+\define expand.dd(term, text, class:"")
 \whitespace trim
 \import [[$:/plugins/benwebber/expand/macros/private]]
 <$vars stateTiddler=<<qualify "$:/state/plugins/benwebber/expand/$term$">>>
   <!-- HACK: Preserve leading space (e.g., before a new sentence). -->
   <$set name=space filter="[<__text__>prefix[ ]] +[then[&#32;]else[]]" select=0>
-    <$reveal type="nomatch" state=<<stateTiddler>> text="" class="expand-dt">
+    <$reveal type="nomatch" state=<<stateTiddler>> text="" class={{{ [<__class__>] expand-dt +[!is[blank]join[ ]] }}}>
       <<space>><<__text__>>
     </$reveal>
   </$set>
@@ -42,6 +42,9 @@ The button has the CSS class `expand-dt`.
 ;text
 : Optional text to display instead of the term.
 
+;class
+: Optional class to add to the term button.
+
 !!! Examples
 
 ```
@@ -62,6 +65,9 @@ The revealed text has the CSS class `expand-dd`.
 
 ;text
 : The definition text.
+
+;class
+: Optional class to add to the revealed text.
 
 !!! Examples
 
