@@ -1,14 +1,14 @@
 title: $:/plugins/benwebber/crosslinks/ui/ViewTemplate/footer
 tags: $:/tags/ViewTemplate
 list-after: $:/core/ui/ViewTemplate/body
-description: Adds a footer to all non-system tiddlers showing the tiddler's links and backlinks. Enable or disable this footer in the plugin settings. Setting a tiddler's `crosslinks.show` field to `true` will ''always'' show the footer. Setting it to `false` will ''never'' show the footer.
+description: Adds a footer to all non-system tiddlers showing the tiddler's links and backlinks. Enable or disable this footer in the plugin settings. Setting a tiddler's `crosslinks.show` field to `true` will ''always'' show the footer. Setting it to `false` will ''never'' show the footer. Add a custom class to the footer with the `crosslinks.class` field.
 
 \import [[$:/plugins/benwebber/crosslinks/macros/private]]
 
 <$list filter=<<crosslinks.filter-should-show>> variable=noop>
   <$list filter=<<crosslinks.filter-has-links>> variable=noop>
     <$vars stateTiddler=<<qualify "$:/state/plugins/benwebber/crosslinks">>>
-      <div class="crosslinks tw-border-solid tw-border-t tw-border-x-0 tw-border-b-0 tw-py-2">
+      <div class={{{ [all[current]get[crosslinks.class]] crosslinks tw-border-solid tw-border-t tw-border-x-0 tw-border-b-0 tw-py-2 +[!is[blank]join[ ]] }}}>
         <$list filter="[<stateTiddler>is[tiddler]]" variable=noop>
           <$button actions=<<crosslinks.toggle>> class="tc-btn-invisible crosslinks-button crosslinks-button-active tw-align-middle tw-font-bold">
             {{$:/core/images/down-arrow}} Links

@@ -1,0 +1,9 @@
+title: crosslinks Unreleased
+tags: crosslinks
+.plugin: crosslinks
+.date:
+.version:
+
+!!! Added
+
+* Added `crosslinks.class` field to apply custom class to footer.
