@@ -1,7 +1,7 @@
 title: $:/plugins/benwebber/checklist/macros/public
 tags: $:/tags/Macro
 
-\define checklist(tiddler, field)
+\define checklist(tiddler, field, class:"")
 \import [[$:/plugins/benwebber/checklist/macros/private]]
 <$let
   tiddler={{{ [<__tiddler__>is[blank]then<currentTiddler>else<__tiddler__>] }}}
@@ -10,7 +10,7 @@ tags: $:/tags/Macro
   list=<<list>>
   doneList={{{ [<field>addsuffix{$:/plugins/benwebber/checklist/config/DefaultDoneSuffix}] }}}
 >
-<div class="checklist">
+<div class={{{ [<__class__>] checklist +[!is[blank]join[ ]] }}}>
   <ul class="tw-p-0 tw-m-0">
     <$list variable="item" filter="[list<list>]">
       {{$:/plugins/benwebber/checklist/templates/item}}
@@ -75,3 +75,6 @@ Render a checklist.
 
 ;field
 : List field that represents the checklist. The default is <code>{{$:/plugins/benwebber/checklist/config/DefaultField}}</code>.
+
+;class
+: Optional class to add to the checklist `<div>`.

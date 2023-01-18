@@ -1,0 +1,9 @@
+title: checklist Unreleased
+tags: checklist
+.plugin: checklist
+.version:
+.date:
+
+!!! Added
+
+* Added `class` parameter to add custom class to the checklist.
