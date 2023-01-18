@@ -1,7 +1,7 @@
 title: $:/plugins/benwebber/list-inline/macros/public
 tags: $:/tags/Macro
 
-\define list-inline(filter join:", " last:" and " joinLast:"yes" caption:"caption")
+\define list-inline(filter join:", " last:" and " joinLast:"yes" caption:"caption" class:"")
 \import [[$:/plugins/benwebber/list-inline/macros/private]]
 <$let
   filter="""$filter$"""
@@ -9,7 +9,7 @@ tags: $:/tags/Macro
   join={{{[<count>compare:number:gt[2]then["""$join$"""]]}}}
   joinLast={{{[title[$joinLast$]match:caseinsensitive[yes]then<join>]}}}
 >
-<$list filter="[all[tiddlers]subfilter<filter>first[]]"><<list-inline-link>></$list><$list filter="[all[tiddlers]subfilter<filter>butfirst[]butlast[]]"><<join>><<list-inline-link>></$list><$list filter="[all[tiddlers]subfilter<filter>butfirst[]last[]]"><<joinLast>>$last$<<list-inline-link>></$list>
+<span class={{{ [<__class__>] list-inline +[!is[blank]join[ ]] }}}><$list filter="[all[tiddlers]subfilter<filter>first[]]"><<list-inline-link>></$list><$list filter="[all[tiddlers]subfilter<filter>butfirst[]butlast[]]"><<join>><<list-inline-link>></$list><$list filter="[all[tiddlers]subfilter<filter>butfirst[]last[]]"><<joinLast>>$last$<<list-inline-link>></$list></span>
 </$let>
 \end
 
@@ -33,3 +33,6 @@ Render a selection of tiddlers as an inline list or series.
 
 ;caption
 : Render this field, falling back on the tiddler `title`. The default is `caption`.
+
+;class
+: Optional class to add to the list `<span>`.

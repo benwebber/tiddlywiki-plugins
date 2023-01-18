@@ -1,0 +1,13 @@
+title: list-inline Unreleased
+tags: list-inline
+.plugin: list-inline
+.version:
+.date:
+
+!!! Added
+
+* ''list-inline'' supports adding a custom class to the wrapper `<span>`.
+
+!!! Changed
+
+* ''list-inline'' now wraps the list in a `<span>` with class `list-inline`.
