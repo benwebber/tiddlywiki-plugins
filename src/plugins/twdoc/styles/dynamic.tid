@@ -1,0 +1,36 @@
+title: $:/plugins/benwebber/twdoc/styles/dynamic
+tags: $:/tags/Stylesheet
+
+.twdoc-macros > * + * {
+  border-color: <<colour "table-border">>;
+  border-style: solid;
+  border-width: 0;
+  border-top-width: 1px;
+}
+
+.twdoc-macros > *:first-child {
+  padding-top: 0;
+}
+
+.twdoc-macro-signature {
+  font-family: {{$:/themes/tiddlywiki/vanilla/settings/codefontfamily}};
+}
+
+.twdoc-macro {
+  color: <<colour "code-foreground">>;
+}
+
+.twdoc-macro-signature svg {
+  fill: <<colour "muted-foreground">>;
+}
+
+.twdoc-macro-signature a:hover svg {
+  fill: <<colour "foreground">>;
+}
+
+.twdoc-macro-signature svg {
+  height: 1rem;
+  margin: 0;
+  vertical-align: middle;
+  width: 1rem;
+}

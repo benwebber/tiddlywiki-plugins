@@ -1,0 +1,5 @@
+title: twdoc Macros
+tags: twdoc
+caption: Macros
+
+<<twdoc.list-macros "[all[shadows]tag[$:/tags/Macro]prefix[$:/plugins/benwebber/twdoc/]]">>

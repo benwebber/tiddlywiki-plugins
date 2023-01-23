@@ -1,0 +1,26 @@
+{
+  "tiddlers": [
+    {
+      "file": "styles.min.css",
+      "fields": {
+        "title": "$:/plugins/benwebber/twdoc/styles/static",
+        "type": "text/css",
+        "tags": "$:/tags/Stylesheet"
+      }
+    }
+  ],
+  "directories": [
+    {
+      "path": "modules/filters",
+      "filesRegExp": "^.*\\.min.js$",
+      "fields": {
+        "title": {
+          "source": "filename",
+          "prefix": "$:/plugins/benwebber/twdoc/modules/filters/"
+        },
+        "type": "application/javascript",
+        "module-type": "filteroperator"
+      }
+    }
+  ]
+}

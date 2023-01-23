@@ -1,0 +1,13 @@
+title: $:/plugins/benwebber/twdoc/macros/public/macro
+tags: $:/tags/Macro
+twdoc.description: Render a macro name. Use this to reference macros in documentation.
+twdoc.param.name: The macro name.
+twdoc.param.class: A class name to add to the `<code>` tag.
+twdoc.param.class.optional: true
+
+\define twdoc.macro(name, class)
+\whitespace trim
+<$let class={{{ [<__class__>] twdoc twdoc-macro tw-bg-transparent tw-border-none tw-font-bold tw-p-0 +[!is[blank]join[ ]] }}}>
+  <code class=<<class>>>$name$</code>
+</$let>
+\end

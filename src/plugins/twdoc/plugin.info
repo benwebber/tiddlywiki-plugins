@@ -1,0 +1,12 @@
+{
+  "title": "$:/plugins/benwebber/twdoc",
+  "name": "twdoc",
+  "description": "Generate documentation for plugins",
+  "author": "Ben Webber",
+  "version": "0.1.0",
+  "core-version": ">=5.2.4",
+  "source": "https://github.com/benwebber/tiddlywiki-plugins",
+  "plugin-type": "plugin",
+  "list": "README",
+  "license": "MIT"
+}

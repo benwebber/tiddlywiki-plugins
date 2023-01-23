@@ -1,0 +1,31 @@
+title: $:/plugins/benwebber/twdoc/macros/private
+
+\define signature()
+\whitespace trim
+<dt id=<<id>> class="twdoc-macro-signature tw-font-normal tw-group tw-mb-2">
+  <$macrocall $name=twdoc.macro name=<<name>> />
+  (
+  <$list filter="[enlist<indexes>]" variable=i>
+    <$list filter="[<i>compare:number:gt[0]]">,&#32;</$list>
+    <$macrocall $name=twdoc.param name={{{ [<params>jsonget<i>,[name]] }}} />
+    <$list filter="[<params>jsonget<i>,[default]]" variable=default>
+      :"<$text text=<<default>> />"
+    </$list>
+  </$list>
+  )
+  <a class="tw-hidden group-hover:tw-inline" href={{{ [<id>addprefix[#]] }}} title="Permalink to $(name)$">{{$:/core/images/permalink-button}}</a>
+</dt>
+\end
+
+\define includesName() [subfilter<__names__>] :intersection[<currentTiddler>]
+\define maybeOptional()
+[<default>!is[blank]]
+[<tiddlerOptional>regexp[(?i)^(true|yes)$]]
+[<macroOptional>regexp[(?i)^(true|yes)$]]
++[first[]]
+\end
+\define isNotRequired()
+[<tiddlerOptional>!regexp[(?i)^(false|no)$]]
+[<macroOptional>!regexp[(?i)^(false|no)$]]
++[first[]]
+\end

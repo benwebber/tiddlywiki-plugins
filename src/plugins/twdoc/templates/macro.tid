@@ -1,0 +1,43 @@
+title: $:/plugins/benwebber/twdoc/templates/macro
+
+\import [[$:/plugins/benwebber/twdoc/macros/private]]
+<$tiddler tiddler={{{ [<macro>jsonget[title]] }}}>
+  <$let name={{{ [<macro>jsonget[name]] }}}>
+    <$qualify title={{{ [<name>addprefix[#]] }}} name=id>
+      <$list filter="[<__names__>is[blank]] [<name>filter<includesName>]" variable=_>
+        <$let
+          params={{{ [<macro>jsonextract[params]] }}}
+          indexes={{{ [<params>jsonindexes[]join[ ]] }}}
+        >
+          <div class="tw-pt-2 tw-pb-4">
+            <<signature>>
+            <dd class="tw-m-0">
+              <$transclude field={{{ twdoc [<name>] description +[join[.]] }}}>
+                <$transclude field=twdoc.description />
+              </$transclude>
+              <dl>
+                <$list filter="[enlist<indexes>]" variable=i>
+                  <$let
+                    param={{{ [<params>jsonget<i>,[name]] }}}
+                    default={{{ [<params>jsonget<i>,[default]] }}}
+                    macroOptionalField={{{ twdoc [<name>] param [<param>] optional +[join[.]] }}}
+                    tiddlerOptionalField={{{ twdoc param [<param>] optional +[join[.]] }}}
+                    macroOptional={{{ [<currentTiddler>get<macroOptionalField>] }}}
+                    tiddlerOptional={{{ [<currentTiddler>get<tiddlerOptionalField>] }}}
+                  >
+                    <dt class="tw-font-normal"><$macrocall $name=twdoc.param name=<<param>> class="tw-font-bold" /><$list filter=<<maybeOptional>>><$list filter=<<isNotRequired>>> (optional)</$list></$list></dt>
+                    <dd>
+                      <$transclude field={{{ twdoc [<name>] param [<param>] +[join[.]] }}}>
+                        <$transclude field={{{ twdoc.param [<param>] +[join[.]] }}} />
+                      </$transclude>
+                    </dd>
+                  </$let>
+                </$list>
+              </dl>
+            </dd>
+          </div>
+        </$let>
+      </$list>
+    </$qualify>
+  </$let>
+</$tiddler>

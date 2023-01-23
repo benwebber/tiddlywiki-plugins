@@ -1,0 +1,16 @@
+title: $:/plugins/benwebber/twdoc/macros/public/list-macros
+tags: $:/tags/Macro
+twdoc.description: Render documentation for a set of macros. Supports WikiText and JavaScript macros.
+twdoc.param.filter: A <<twdoc.ext "Filters" "filter">> selecting which tiddlers to search for macro definitions.
+twdoc.param.names: A <<twdoc.ext "Filters" "filter">> matching macro names. If not specified, render all macros found in the tiddlers matched by <<twdoc.param filter>>.
+twdoc.param.names.optional: true
+twdoc.param.class: A class name to add to the macro list.
+twdoc.param.class.optional: true
+
+\define twdoc.list-macros(filter, names, class)
+<dl class={{{ [<__class__>] twdoc twdoc-macros tw-m-0 +[!is[blank]join[ ]] }}}>
+  <$list filter="""$filter$ +[twdoc.macros[]]""" variable=macro>
+    <$transclude tiddler="$:/plugins/benwebber/twdoc/templates/macro" />
+  </$list>
+</dl>
+\end

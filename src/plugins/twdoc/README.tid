@@ -1,0 +1,5 @@
+title: $:/plugins/benwebber/twdoc/README
+
+''twdoc'' makes it easy to document TiddlyWiki plugins.
+
+<<twdoc.list-macros "[all[shadows]tag[$:/tags/Macro]prefix[$:/plugins/benwebber/twdoc/]]">>

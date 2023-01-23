@@ -1,0 +1,76 @@
+title: twdoc Overview
+tags: twdoc
+caption: Overview
+
+''twdoc'' makes it easy to document TiddlyWiki plugins.
+
+This plugin requires <<twdoc.ext "Release 5.2.4" "TiddlyWiki 5.2.4">> or newer.
+
+!! Macros
+
+The main macro provided by this plugin is <<twdoc.macro twdoc.list-macros>>.
+
+<details>
+<summary>Documentation</summary>
+
+<<twdoc.list-macros "[all[shadows]tag[$:/tags/Macro]prefix[$:/plugins/benwebber/twdoc/]]" "twdoc.list-macros">>
+</details>
+
+<<twdoc.macro twdoc.list-macros>> extracts macro definitions from a selection of tiddlers, then renders a documentation block for each macro.
+The macro transcludes documentation from a number of macro tiddler fields:
+
+;twdoc.description
+: A general description of the macro.
+
+;<$text text="twdoc.param.<param>" />
+: A description of the macro parameter `<param>`.
+
+;<$text text="twdoc.param.<param>.optional" />
+: Whether `<param>` is optional (`true`/`yes`) or required (`false`/`no`). A parameter is automatically considered optional if it has a default value. Note that it is not possible to distinguish between no default value and the empty string (`""`).
+
+It is also possible to document multiple macros in the same tiddler.
+Use `twdoc.<macro>` as the field prefix instead of `twdoc` (e.g., <code>twdoc.<strong>twdoc.list-macros</strong>.description</code>).
+
+!! Example
+
+Render documentation for <<twdoc.macro "twdoc.list-macros">>, defined in this plugin.
+
+<pre><$text text="""<<twdoc.list-macros "[[$:/plugins/benwebber/twdoc/macros/public/list-macros]]">>""" />
+</pre>
+
+<details>
+<summary>Output</summary>
+<<twdoc.list-macros "[[$:/plugins/benwebber/twdoc/macros/public/list-macros]]">>
+</details>
+
+Compare the fields belonging to [[that tiddler|$:/plugins/benwebber/twdoc/macros/public/list-macros]].
+
+<$tiddler tiddler="$:/plugins/benwebber/twdoc/macros/public/list-macros">
+  <table class="tw-w-full">
+    <tr>
+      <th>Field</th>
+      <th>Value</th>
+    </tr>
+    <$list filter="[<currentTiddler>fields[]prefix[twdoc.]]" variable=field>
+      <tr>
+        <td>''<<field>>''</td>
+        <td><pre><$text text={{{ [<currentTiddler>get<field>] }}} /></pre></td>
+      </tr>
+    </$list>
+  </table>
+</$tiddler>
+
+See [[twdoc Macros]] for more examples.
+
+!! Recommendations
+
+# Define public macros in individual tiddlers.
+# Only tag macros you intend others to use with <<tag "$:/tags/Macro">>.
+# Use the <<twdoc.ext "Pragma" """`\import` pragma""">> to import helper macros into your public macros.
+
+Remember:
+
+<figure>
+  <blockquote>Tiddlers work best when they are as small as possible so that they can be reused by weaving them together in different ways.</blockquote>
+  <figcaption style="text-align: right;"><cite>---TiddlyWiki documentation, <<twdoc.ext "Tiddlers">></cite></figcaption>
+</figure>

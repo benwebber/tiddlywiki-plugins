@@ -1,0 +1,20 @@
+title: $:/plugins/benwebber/twdoc/macros/public/ext
+tags: $:/tags/Macro
+twdoc.description: Render a link to an external wiki, usually the official TiddlyWiki documentation.
+twdoc.param.tiddler: The title of a tiddler in the external wiki.
+twdoc.param.text: The link text. If not specified, use <<twdoc.param title>>.
+twdoc.param.text.optional: true
+twdoc.param.url: The base URL of the wiki.
+twdoc.param.class: A class name to add to the link.
+twdoc.param.class.optional: true
+
+\define twdoc.ext(tiddler, text, url:"https://tiddlywiki.com/", class)
+\whitespace trim
+<$let
+  url={{{ [<__url__>trim:suffix[/]addsuffix[/#]addsuffix<__tiddler__>] }}}
+  text={{{ [<__text__>!is[blank]else<__tiddler__>] }}}
+  class={{{ [<__class__>] twdoc twdoc-ext +[!is[blank]join[ ]] }}}
+>
+  <a href=<<url>> rel="noopener noreferer"><<text>></a>
+</$let>
+\end
