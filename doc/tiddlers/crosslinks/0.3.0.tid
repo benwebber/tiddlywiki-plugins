@@ -1,8 +1,8 @@
-title: crosslinks Unreleased
+title: crosslinks 0.3.0
 tags: crosslinks
 .plugin: crosslinks
-.date:
-.version:
+.date: 20230201
+.version: 0.3.0
 
 !!! Added
 
