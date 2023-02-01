@@ -2,4 +2,4 @@ title: css-palette Macros
 tags: css-palette
 caption: Macros
 
-{{$:/plugins/benwebber/css-palette/public}}
+<<.macros css-palette>>

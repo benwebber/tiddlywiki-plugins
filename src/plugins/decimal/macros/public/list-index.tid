@@ -1,0 +1,21 @@
+title: $:/plugins/benwebber/decimal/macros/public/list-index
+tags: $:/tags/Macro
+twdoc.description: Render a selection of tiddlers describing a decimal classification system.
+twdoc.param.filter: A filter selecting the tiddlers to list. You do not need to add a filter for the field name. The macro automatically filters this list further by <<twdoc.param field>>.
+twdoc.param.field: The field that stores each tiddler's decimal classification system ID.
+twdoc.param.headings: A filter identifying top-level IDs in the system. These rows will be rendered as table headings (with `th` tags) instead of normal cells.
+twdoc.param.headings.optional: true
+twdoc.param.caption: Render this field, falling back on the tiddler `title`.
+twdoc.param.separator: Use this separator to separate each level in the system.
+twdoc.param.class: Add this class to the table.
+twdoc.param.class.optional: true
+
+\define decimal.list-index(filter field:"decimal.id" headings:"" caption:"caption" separator:"." class)
+\import [[$:/plugins/benwebber/decimal/macros/private]]
+<$let
+  ids="""$filter$ +[get[$field$]sortsub:number<sortsub>]"""
+  tiddlers="""$filter$ :filter[get[$field$]match<id>]"""
+>
+  {{||$:/plugins/benwebber/decimal/templates/index}}
+</$let>
+\end

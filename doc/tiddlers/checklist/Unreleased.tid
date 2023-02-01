@@ -7,3 +7,7 @@ tags: checklist
 !!! Added
 
 * Added `class` parameter to add custom class to the checklist.
+
+!!! Changed
+
+* Documented with [[twdoc]].

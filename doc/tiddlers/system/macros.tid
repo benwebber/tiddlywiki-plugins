@@ -38,3 +38,5 @@ tags: $:/tags/Macro
 \define .motion(keys) <$set name=kbd filter="[enlist:raw[$keys$]addprefix[<kbd>]addsuffix[</kbd>]]"><<kbd>></$set>
 \define .github-user(username) [ext[@$username$|https://github.com/$username$]]
 \define .github-issue(number) [ext[#$number$|https://github.com/benwebber/tiddlywiki-plugins/issues/$number$]]
+
+\define .macros(plugin) <<twdoc.list-macros "[all[shadows]tag[$:/tags/Macro]prefix[$:/plugins/benwebber/$plugin$/]]">>

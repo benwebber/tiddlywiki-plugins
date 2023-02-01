@@ -1,0 +1,20 @@
+title: $:/plugins/benwebber/expand/macros/public/dt
+tags: $:/tags/Macro
+twdoc.description: Introduce a term to expand later. This creates a button that the reader can click to expand the related term. The button has the CSS class `expand-dt`.
+twdoc.param.term: The term to define. If you specify <<twdoc.param text>>, this can be a convenient identifier instead.
+twdoc.param.text: Text to display instead of the term.
+twdoc.param.text.optional: true
+twdoc.param.class: Class to add to the term button.
+twdoc.param.class.optional: true
+
+\define expand.dt(term, text, class)
+\whitespace trim
+\import [[$:/plugins/benwebber/expand/macros/private]]
+<$vars stateTiddler=<<qualify "$:/state/plugins/benwebber/expand/$term$">>>
+  <$set name=text filter="[<__text__>is[blank]] +[then<__term__>else<__text__>]" select=0>
+    <$button class={{{ [<__class__>] expand-dd tw-bg-transparent tw-border-none tw-cursor-pointer tw-decoration-dotted tw-m-0 tw-p-0 tw-underline hover:tw-decoration-solid +[!is[blank]join[ ]] }}} actions=<<expand.toggle>>>
+      <<text>>
+    </$button>
+  </$set>
+</$vars>
+\end

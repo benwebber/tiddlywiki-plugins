@@ -1,0 +1,23 @@
+title: $:/plugins/benwebber/decimal/macros/public/index
+tags: $:/tags/Macro
+twdoc.description: Render a data tiddler describing a decimal classification system.
+twdoc.param.tiddler: The tiddler to render. The default is the [ext[current tiddler|https://tiddlywiki.com/#Current Tiddler]].
+twdoc.param.tiddler.optional: true
+twdoc.param.headings: A filter identifying top-level IDs in the system. These rows will be rendered as table headings (with `th` tags) instead of normal cells.
+twdoc.param.headings.optional: true
+twdoc.param.caption: Render this field, falling back on the tiddler `title`.
+twdoc.param.separator: Use this separator to separate each level in the system.
+twdoc.param.class: Add this class to the table.
+twdoc.param.class.optional: true
+
+\define decimal.index(tiddler headings:"" caption:"caption" separator:"." class)
+<$let
+  tiddler={{{ [<__tiddler__>!is[blank]] ~[<currentTiddler>] }}}
+  ids="[all[current]indexes[]sortsub:number<sortsub>]"
+  tiddlers="[all[current]getindex<id>]"
+>
+  <$tiddler tiddler=<<tiddler>>>
+    {{||$:/plugins/benwebber/decimal/templates/index}}
+  </$tiddler>
+</$let>
+\end

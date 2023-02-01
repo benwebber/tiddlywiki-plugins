@@ -2,4 +2,4 @@ title: input Macros
 tags: input
 caption: Macros
 
-{{$:/plugins/benwebber/input/macros/public}}
+<<.macros input>>

@@ -2,4 +2,6 @@ title: $:/plugins/benwebber/rfc/README
 
 ''rfc'' makes it easy to reference [[IETF RFCs|https://www.ietf.org/standards/rfcs/]].
 
-{{$:/plugins/benwebber/rfc/macros/public}}
+<$list filter="[variables[]match[twdoc.list-macros]]" emptyMessage="Install [ext[twdoc|https://benwebber.github.io/tiddlywiki-plugins/#twdoc]] to view documentation.">
+<<twdoc.list-macros "[all[shadows]tag[$:/tags/Macro]prefix[$:/plugins/benwebber/rfc/]]">>
+</$list>

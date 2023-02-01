@@ -2,4 +2,4 @@ title: checklist Macros
 tags: checklist
 caption: Macros
 
-{{$:/plugins/benwebber/checklist/macros/public}}
+<<.macros checklist>>

@@ -6,7 +6,26 @@ tags: expand
 Readers can click the term to expand the definition at a sensible location.
 This allows the reader to select their desired level of detail.
 
-''expand'' is inspired by [[Expounder|https://skorokithakis.github.io/expounder/]], a similar library for HTML.
+''expand'' is inspired by [ext[Expounder|https://skorokithakis.github.io/expounder/]], a similar library for HTML.
+
+!! Macros
+
+Place a term to expand with <<twdoc.macro expand.dt>>.
+
+```
+<<expand.dt "Lorem">>
+```
+
+<<expand.dt "Lorem">>
+
+Place the definition later in the text with <<twdoc.macro expand.dd>>.
+Clicking the term above will reveal the text below.
+
+```
+<<expand.dd "Lorem" " dolor sit amet">>
+```
+
+<<expand.dd "Lorem" " dolor sit amet">>
 
 !! Example
 

@@ -1,0 +1,9 @@
+title: rating Unreleased
+tags: rating
+.plugin: rating
+.version:
+.date:
+
+!!! Changed
+
+* Documented with [[twdoc]].

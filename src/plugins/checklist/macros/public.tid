@@ -1,7 +1,14 @@
 title: $:/plugins/benwebber/checklist/macros/public
 tags: $:/tags/Macro
+twdoc.description: Render a checklist.
+twdoc.param.tiddler: Optional title of the tiddler to modify. The default is the <<twdoc.ext "Current Tiddler" "current tiddler">>.
+twdoc.param.tiddler.optional: true
+twdoc.param.field: List field that represents the checklist. The default is <code>{{$:/plugins/benwebber/checklist/config/DefaultField}}</code>.
+twdoc.param.field.optional: true
+twdoc.param.class: Optional class to add to the checklist `<div>`.
+twdoc.param.class.optional: true
 
-\define checklist(tiddler, field, class:"")
+\define checklist(tiddler, field, class)
 \import [[$:/plugins/benwebber/checklist/macros/private]]
 <$let
   tiddler={{{ [<__tiddler__>is[blank]then<currentTiddler>else<__tiddler__>] }}}
@@ -66,15 +73,3 @@ tags: $:/tags/Macro
 
 !! `checklist`
 
-Render a checklist.
-
-!!! Parameters
-
-;tiddler
-: Optional title of the tiddler to modify. The default is the [ext[current tiddler|https://tiddlywiki.com/#Current%20Tiddler]].
-
-;field
-: List field that represents the checklist. The default is <code>{{$:/plugins/benwebber/checklist/config/DefaultField}}</code>.
-
-;class
-: Optional class to add to the checklist `<div>`.

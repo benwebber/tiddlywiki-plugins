@@ -1,65 +1,58 @@
 title: $:/plugins/benwebber/rfc/macros/public
 tags: $:/tags/Macro
+twdoc.param.number: The RFC number.
+twdoc.param.text: The link text. If not specified, the macro will generate text like "RFC 4122".
+twdoc.param.text.optional: true
+twdoc.param.class: A CSS class to add to the link.
+twdoc.param.class.optional: true
+twdoc.rfc.description: <<twdoc.macro rfc>> is an alias of <<twdoc.macro rfc.txt>>.
+twdoc.rfc.txt.description: Link to the RFC's plain text version.
+twdoc.rfc.html.description: Link to the RFC's HTML version.
+twdoc.rfc.pdf.description: Link to the RFC's PDF version.
+twdoc.rfc.tracker.description: Link to the Datatracker records for the RFC.
+twdoc.rfc.diff.description: Link to the diff of the RFC and its most recent draft.
+twdoc.rfc.errata.description: Link to the RFC's errata.
+twdoc.rfc.inline-errata.description: Link to an HTML version of the RFC with inline errata.
+twdoc.rfc.bibtex.description: Link to RFC's BibTeX record.
 
-\define rfc.txt(number, text: "", class:"")
+\define rfc.txt(number, text, class)
 \import [[$:/plugins/benwebber/rfc/macros/private]]
 <$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/rfc/rfc$number$.txt" text=<<__text__>> class=<<__class__>> />
 \end
 
-\define rfc.html(number, text: "", class:"")
+\define rfc.html(number, text, class)
 \import [[$:/plugins/benwebber/rfc/macros/private]]
 <$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/rfc/rfc$number$.html" text=<<__text__>> class=<<__class__>> />
 \end
 
-\define rfc.pdf(number, text: "", class:"")
+\define rfc.pdf(number, text, class)
 \import [[$:/plugins/benwebber/rfc/macros/private]]
 <$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/rfc/pdfrfc/rfc$number$.txt.pdf" text=<<__text__>> class=<<__class__>> />
 \end
 
-\define rfc.tracker(number, text: "", class:"")
+\define rfc.tracker(number, text, class)
 \import [[$:/plugins/benwebber/rfc/macros/private]]
 <$macrocall $name=rfc.link number=<<__number__>> url="https://datatracker.ietf.org/doc/rfc$number$/" text=<<__text__>> class=<<__class__>> />
 \end
 
-\define rfc.diff(number, text: "", class:"")
+\define rfc.diff(number, text, class)
 \import [[$:/plugins/benwebber/rfc/macros/private]]
 <$macrocall $name=rfc.link number=<<__number__>> url="https://tools.ietf.org/rfcdiff?url2=rfc$number$" text=<<__text__>> class=<<__class__>> />
 \end
 
-\define rfc.errata(number, text: "", class:"")
+\define rfc.errata(number, text, class)
 \import [[$:/plugins/benwebber/rfc/macros/private]]
 <$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/errata/rfc$number$" text=<<__text__>> class=<<__class__>> />
 \end
 
-\define rfc.inline-errata(number, text: "", class:"")
+\define rfc.inline-errata(number, text, class)
 \import [[$:/plugins/benwebber/rfc/macros/private]]
 <$macrocall $name=rfc.link number=<<__number__>> url="https://www.rfc-editor.org/rfc/inline-errata/rfc$number$.html" text=<<__text__>> class=<<__class__>> />
 \end
 
-\define rfc.bibtex(number, text: "", class:"")
+\define rfc.bibtex(number, text, class)
 \import [[$:/plugins/benwebber/rfc/macros/private]]
 <$macrocall $name=rfc.link number=<<__number__>> url="https://datatracker.ietf.org/doc/rfc$number$/bibtex/" text=<<__text__>> class=<<__class__>> />
 \end
 
-\define rfc(number, text: "", class:"") <$macrocall $name=rfc.txt number=<<__number__>> text=<<__text__>> class=<<__class__>> />
-
-All ''rfc'' macros accept the same parameters.
-
-;number
-: The RFC number.
-;text
-: If not specified, the macro will generate text like "RFC 4122".
-;class
-: An optional CSS class to add to the link.
-
-|Macro|Description|h
-|`rfc.txt`|Link to the RFC's plain text version|
-|`rfc.html`|Link to the RFC's HTML version|
-|`rfc.pdf`|Link to the RFC's PDF version|
-|`rfc.tracker`|Link to the Datatracker records for the RFC|
-|`rfc.diff`|Link to the diff of the RFC and its most recent draft|
-|`rfc.errata`|Link to the RFC's errata|
-|`rfc.inline-errata`|Link to an HTML version of the RFC with inline errata|
-|`rfc.bibtex`|Link to RFC's BibTeX record|
-
-`rfc` is an alias of `rfc.txt`.
+\define rfc(number, text, class) <$macrocall $name=rfc.txt number=<<__number__>> text=<<__text__>> class=<<__class__>> />

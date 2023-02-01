@@ -2,4 +2,4 @@ title: decimal Macros
 tags: decimal
 caption: Macros
 
-{{$:/plugins/benwebber/decimal/macros/public}}
+<<.macros decimal>>

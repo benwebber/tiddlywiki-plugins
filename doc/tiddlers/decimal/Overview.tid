@@ -6,7 +6,7 @@ caption: Overview
 
 There are two ways to maintain a system:
 
-# Describe the entire system in a [ext[data tiddler|https://tiddlywiki.com/#DataTiddlers]].
+# Describe the entire system in a <<twdoc.ext "DataTiddlers" "data tiddler">>.
 # Create a tiddler for each member in the system, storing the system ID in a field.
 
 ''decimal'' was designed to work with [ext[Johnny.Decimal|https://johnnydecimal.com/]], but it is generic enough to work with other simple systems.
@@ -21,7 +21,7 @@ Also check out the [[Johnny.Decimal demo|decimal Demo: Johnny.Decimal]].
 For a small system, it might be useful to define the entire index in a data tiddler.
 See [[decimal Index]] as an example.
 
-Use the `decimal.index` macro to render an index for a data tiddler:
+Use the <<twdoc.macro decimal.index>> macro to render an index for a data tiddler:
 
 ```
 <<decimal.index "decimal Index">>
@@ -40,7 +40,7 @@ The following tiddlers all store classification numbers in the `decimal.id` fiel
 <<list-links "[tag[decimal]has[decimal.id]]">>
 </details>
 
-Use the `decimal.list-index` macro to render an index for these tiddlers:
+Use the <<twdoc.macro decimal.list-index>> macro to render an index for these tiddlers:
 
 ```
 <<decimal.list-index "[tag[decimal]]">>

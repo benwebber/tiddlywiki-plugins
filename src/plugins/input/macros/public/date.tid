@@ -1,0 +1,28 @@
+title: $:/plugins/benwebber/input/macros/public/date
+tags: $:/tags/Macro
+twdoc.description: Render an ''edit-text'' widget with `<input type="date">` to edit a date field.
+twdoc.param.tiddler: Title of the tiddler to modify. The default is the <<twdoc.ext "Current Tiddler" "current tiddler">>.
+twdoc.param.field: Field to modify.
+twdoc.param.timestamp: Whether to modify the tiddler's ''modified'' and/or ''created'' fields. Can be `yes` or `no`.
+twdoc.param.attrs: Widget attributes to pass to the ''edit-text'' widget, as in `"""disabled=yes"""`.
+twdoc.param.attrs.optional: true
+
+\define input.date(tiddler, field: "date", timestamp: "yes", attrs)
+\import [[$:/plugins/benwebber/input/macros/private]]
+<$let
+  inputDateTiddler={{{ [<__tiddler__>!is[blank]else<currentTiddler>] }}}
+  inputDateField=<<__field__>>
+  inputDateStateTiddler={{{ [<inputDateTiddler>] [<inputDateField>] +[join[/]addprefix[$:/temp/plugins/benwebber/input/]] }}}
+  inputDateDefault={{{ [<inputDateTiddler>get<inputDateField>format:date<input.date.format>] }}}
+  inputDateTimestamp=<<__timestamp__>>
+>
+<$edit-text
+  tiddler=<<inputDateStateTiddler>>
+  default=<<inputDateDefault>>
+  tag=input
+  type=date
+  inputActions=<<input.date.inputActions>>
+  $attrs$
+/>
+</$let>
+\end

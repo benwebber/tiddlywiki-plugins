@@ -2,4 +2,6 @@ title: $:/plugins/benwebber/input/README
 
 ''input'' adds new macros to render special `<input>` field types.
 
-{{$:/plugins/benwebber/input/macros/public}}
+<$list filter="[variables[]match[twdoc.list-macros]]" emptyMessage="Install [ext[twdoc|https://benwebber.github.io/tiddlywiki-plugins/#twdoc]] to view documentation.">
+<<twdoc.list-macros "[all[shadows]tag[$:/tags/Macro]prefix[$:/plugins/benwebber/input/]]">>
+</$list>

@@ -2,4 +2,4 @@ title: expand Macros
 caption: Macros
 tags: expand
 
-{{$:/plugins/benwebber/expand/macros/public}}
+<<.macros expand>>

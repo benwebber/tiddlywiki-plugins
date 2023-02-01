@@ -1,0 +1,20 @@
+title: $:/plugins/benwebber/expand/macros/public/dd
+tags: $:/tags/Macro
+twdoc.description: Define a term. The revealed text has the CSS class `expand-dd`.
+twdoc.param.term: The term to define, as specified in <<twdoc.macro expand.dt>>.
+twdoc.param.text: The definition text.
+twdoc.param.class: Class to add to the revealed text.
+twdoc.param.class.optional: true
+
+\define expand.dd(term, text, class)
+\whitespace trim
+\import [[$:/plugins/benwebber/expand/macros/private]]
+<$vars stateTiddler=<<qualify "$:/state/plugins/benwebber/expand/$term$">>>
+  <!-- HACK: Preserve leading space (e.g., before a new sentence). -->
+  <$set name=space filter="[<__text__>prefix[ ]] +[then[&#32;]else[]]" select=0>
+    <$reveal type="nomatch" state=<<stateTiddler>> text="" class={{{ [<__class__>] expand-dt +[!is[blank]join[ ]] }}}>
+      <<space>><<__text__>>
+    </$reveal>
+  </$set>
+</$vars>
+\end

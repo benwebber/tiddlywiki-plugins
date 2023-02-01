@@ -10,3 +10,7 @@ tags: rfc
 * Added `rfc.class` field to add custom class to view template header.
 * Added `<data>` representation to RFC links.
 * Added `data-rfc-number` attribute to RFC links.
+
+!!! Changed
+
+* Documented with [[twdoc]].

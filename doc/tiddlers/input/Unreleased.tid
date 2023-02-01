@@ -1,0 +1,9 @@
+title: input Unreleased
+tags: input
+.plugin: input
+.version:
+.date:
+
+!!! Changed
+
+* Documented with [[twdoc]].

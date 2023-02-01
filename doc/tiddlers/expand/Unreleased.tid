@@ -7,3 +7,7 @@ tags: expand
 !!! Added
 
 * Added `class` parameters to add custom classes to the term and text.
+
+!!! Changed
+
+* Documented with [[twdoc]].

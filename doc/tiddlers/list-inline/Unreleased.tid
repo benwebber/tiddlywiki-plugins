@@ -11,3 +11,4 @@ tags: list-inline
 !!! Changed
 
 * ''list-inline'' now wraps the list in a `<span>` with class `list-inline`.
+* Documented with [[twdoc]].
