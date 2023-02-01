@@ -1,0 +1,4 @@
+title: $:/.local/filters/unreleased
+tags: $:/tags/Filter
+description: &rarr; Plugins with unreleased changes
+filter: [suffix[Unreleased]get[.plugin]sort[]]
