@@ -1,8 +1,8 @@
-title: input Unreleased
+title: input 0.2.0
 tags: input
 .plugin: input
-.version:
-.date:
+.version: 0.2.0
+.date: 20230201
 
 !!! Changed
 
