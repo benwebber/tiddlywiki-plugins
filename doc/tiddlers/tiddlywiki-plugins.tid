@@ -7,7 +7,7 @@ A collection of small [ext[TiddlyWiki|https://tiddlywiki.com]] plugins.
 
 <$list filter="[prefix[$:/plugins/benwebber/]field:plugin-type[plugin]sort[]]">
 
-; ''<$link to={{!!name}} />'' <$list filter="[[$:/.local/new]contains{!!name}]"><<doc.new>></$list>
+; ''<$link to={{!!name}} />'' <$macrocall $name=.new plugin={{!!name}} />
 : {{!!description}}
 </$list>
 

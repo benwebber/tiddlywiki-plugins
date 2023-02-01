@@ -11,7 +11,18 @@ tags: $:/tags/Macro
 </$list>
 \end
 
-\define doc.new() <span class="badge">New</span>
+\define .new(plugin)
+\whitespace trim
+<$let
+  created={{{ [{$plugin$ 0.1.0!!.date}format:date[TIMESTAMP]] }}}
+  .now={{{ [<now TIMESTAMP>] }}}
+  days={{{ [<.now>subtract<created>divide[86400000]floor[]] }}}
+>
+  <$list filter="[<days>compare:number:lt[31]]">
+    <span class="badge">New</span>
+  </$list>
+</$let>
+\end
 
 \define .sortsub() [get[.version]]
 \define .href() #$(id)$
