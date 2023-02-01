@@ -3,7 +3,7 @@
   "name": "expand",
   "description": "Expand upon terms without breaking the flow of text",
   "author": "Ben Webber",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "core-version": ">=5.0.0",
   "source": "https://github.com/benwebber/tiddlywiki-plugins",
   "plugin-type": "plugin",

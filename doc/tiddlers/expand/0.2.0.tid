@@ -1,8 +1,8 @@
-title: expand Unreleased
+title: expand 0.2.0
 tags: expand
 .plugin: expand
-.version:
-.date:
+.version: 0.20
+.date: 20230201
 
 !!! Added
 
