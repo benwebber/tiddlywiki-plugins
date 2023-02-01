@@ -1,8 +1,8 @@
-title: rfc Unreleased
+title: rfc 0.3.0
 tags: rfc
 .plugin: rfc
-.version:
-.date:
+.version: 0.3.0
+.date: 20230201
 
 !!! Added
 

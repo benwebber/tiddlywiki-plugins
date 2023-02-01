@@ -3,7 +3,7 @@
   "name": "rfc",
   "description": "Link to IETF RFCs",
   "author": "Ben Webber",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "core-version": ">=5.0.0",
   "source": "https://github.com/benwebber/tiddlywiki-plugins",
   "plugin-type": "plugin",
