@@ -1,0 +1,20 @@
+title: $:/.local/README
+
+`# `{{$:/SiteTitle}}`
+
+A collection of useful plugins for [TiddlyWiki](https://tiddlywiki.com/).
+
+## Plugins
+
+<dl>`<$list filter="[prefix[$:/plugins/benwebber/]sort[]]">`
+  <dt><a href="https://benwebber.github.io/tiddlywiki-plugins/#%24%3A%2Fplugins%2Fbenwebber%2F`{{!!name}}`">`{{!!name}}`</a></dt>
+  <dd>`{{!!description}}`</dd>`</$list>`
+</dl>
+
+## Demo
+
+https://benwebber.github.io/tiddlywiki-plugins/
+
+## License
+
+MIT`

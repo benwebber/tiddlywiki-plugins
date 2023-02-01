@@ -37,6 +37,9 @@ dist/index.html: $(MIN_CSS) $(MIN_JS)
 dist/library/index.html: dist/index.html
 	TIDDLYWIKI_PLUGIN_PATH=doc/ yarn run tiddlywiki doc/ --output dist/library --verbose --build library
 
+README.md: doc/tiddlers/systems/README.tid
+	TIDDLYWIKI_PLUGIN_PATH=doc/ yarn run tiddlywiki doc/ --output . --verbose --build README
+
 %.min.css: %.css
 	yarn run tailwindcss --input $< --output $@ --minify --content "$(shell echo $< | cut -d/ -f1-3 | sed 's|$$|/**/*.tid|')"
 

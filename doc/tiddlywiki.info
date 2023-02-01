@@ -16,6 +16,9 @@
       "--savelibrarytiddlers", "$:/UpgradeLibrary", "[prefix[$:/]] -[prefix[$:/plugins/tiddlywiki/]] -[prefix[$:/themes/tiddlywiki/]] -[prefix[$:/languages/]]", "recipes/library/tiddlers/", "$:/UpgradeLibrary/List",
       "--save", "$:/UpgradeLibrary/List", "recipes/library/tiddlers.json",
       "--render","$:/plugins/tiddlywiki/pluginlibrary/library.template.html", "index.html", "text/plain"
+    ],
+    "README": [
+      "--render", "$:/.local/README", "README.md", "text/plain"
     ]
   }
 }
