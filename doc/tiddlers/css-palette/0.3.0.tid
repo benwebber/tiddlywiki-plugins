@@ -1,8 +1,8 @@
-title: css-palette Unreleased
+title: css-palette 0.3.0
 tags: css-palette
 .plugin: css-palette
-.version:
-.date:
+.version: 0.3.0
+.date: 20230201
 
 !!! Changed
 
