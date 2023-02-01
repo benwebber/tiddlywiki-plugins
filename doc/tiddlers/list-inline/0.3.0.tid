@@ -1,8 +1,8 @@
-title: list-inline Unreleased
+title: list-inline 0.3.0
 tags: list-inline
 .plugin: list-inline
-.version:
-.date:
+.version: 0.3.0
+.date: 20230201
 
 !!! Added
 
