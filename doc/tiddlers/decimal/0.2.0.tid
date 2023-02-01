@@ -1,8 +1,8 @@
-title: decimal Unreleased
+title: decimal 0.2.0
 tags: decimal
 .plugin: decimal
-.version:
-.date:
+.version: 0.2.0
+.date: 20230201
 
 !!! Fixed
 
