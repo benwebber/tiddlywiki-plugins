@@ -1,7 +1,7 @@
 title: $:/plugins/benwebber/css-palette/public
 tags: $:/tags/Macro
 twdoc.description: Render CSS variables for all the colours defined in the given palette.
-twdoc.param.palette: An <<twdoc.ext "Filter Parameter" "indirect text reference">> to the palette (e.g., `{$:/palette}` or `[$:/palettes/Vanilla]`).  The default is the current palette (`{$:/palette}`).
+twdoc.param.palette: An <<twdoc.ext "Filter Parameter" "filter parameter reference">> to the palette (e.g., `{$:/palette}` or `[$:/palettes/Vanilla]`).  The default is the current palette (`{$:/palette}`).
 twdoc.param.prefix: Prefix variable names with this prefix. The default matches TiddlyWiki classes (`tc-`).
 
 \define css-palette(palette: "{$:/palette}", prefix: "tc-")
