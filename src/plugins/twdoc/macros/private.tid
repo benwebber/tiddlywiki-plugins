@@ -9,7 +9,7 @@ title: $:/plugins/benwebber/twdoc/macros/private
     <$list filter="[<i>compare:number:gt[0]]">,&#32;</$list>
     <$macrocall $name=twdoc.param name={{{ [<params>jsonget<i>,[name]] }}} />
     <$list filter="[<params>jsonget<i>,[default]]" variable=default>
-      :"<$text text=<<default>> />"
+      :"<$text text={{{ [<default>search["]addprefix[""]addsuffix[""]else<default>] }}} />"
     </$list>
   </$list>
   )
