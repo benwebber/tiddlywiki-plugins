@@ -11,20 +11,20 @@ description: Adds a footer to all non-system tiddlers showing the tiddler's link
       <div class={{{ [all[current]get[crosslinks.class]] crosslinks tw-border-solid tw-border-t tw-border-x-0 tw-border-b-0 tw-py-2 +[!is[blank]join[ ]] }}}>
         <$list filter="[<stateTiddler>is[tiddler]]" variable=noop>
           <$button actions=<<crosslinks.toggle>> class="tc-btn-invisible crosslinks-button crosslinks-button-active tw-align-middle tw-font-bold">
-            {{$:/core/images/down-arrow}} Links
+            {{$:/plugins/benwebber/crosslinks/language/Button/Links/Hide}}
           </$button>
           <$list filter="[all[current]links[]then<currentTiddler>first[]]">
-            <h4 class="tw-my-2">References</h4>
+            <h4 class="tw-my-2">{{$:/plugins/benwebber/crosslinks/language/Caption/Links}}</h4>
             <$macrocall $name=list-links filter={{$:/plugins/benwebber/crosslinks/config/Filters/Links}} type="ol" class="tw-m-0" />
           </$list>
           <$list filter="[all[current]backlinks[]then<currentTiddler>first[]]">
-            <h4 class="tw-my-2">Citations</h4>
+            <h4 class="tw-my-2">{{$:/plugins/benwebber/crosslinks/language/Caption/Backlinks}}</h4>
             <$macrocall $name=list-links filter={{$:/plugins/benwebber/crosslinks/config/Filters/Backlinks}} type="ol" class="tw-m-0" />
           </$list>
         </$list>
         <$list filter="[<stateTiddler>!is[tiddler]]" variable=noop>
           <$button actions=<<crosslinks.toggle>> class="tc-btn-invisible crosslinks-button tw-align-middle tw-font-bold">
-            {{$:/core/images/right-arrow}} Links
+            {{$:/plugins/benwebber/crosslinks/language/Button/Links/Show}}
           </$button>
         </$list>
       </div>

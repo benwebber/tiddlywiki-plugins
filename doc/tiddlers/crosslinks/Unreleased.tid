@@ -7,3 +7,7 @@ tags: crosslinks
 !!! Added
 
 * Extracted links and backlinks filters as tiddlers. Now it is easy to customize them. Thanks to <<.github-user SonephetR2>> for the suggestion.
+
+!!! Changed
+
+* Replaced all strings with transcluded caption tiddlers.

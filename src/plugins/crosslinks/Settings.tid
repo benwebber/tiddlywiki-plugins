@@ -4,7 +4,7 @@ title: $:/plugins/benwebber/crosslinks/Settings
 <$action-deletetiddler $tiddler="$:/plugins/benwebber/crosslinks/config/$(__key__)$" />
 \end
 
-\define boolean(key, text)
+\define boolean(key)
 <$checkbox
   tiddler="$:/plugins/benwebber/crosslinks/config/$key$"
   field="text"
@@ -13,8 +13,8 @@ title: $:/plugins/benwebber/crosslinks/Settings
   default={{$:/plugins/benwebber/crosslinks/config/$key$}}
   checkactions=<<checkactions>>
 >
-$text$
+{{$:/plugins/benwebber/crosslinks/language/Caption/Setting/$key$}}
 </$checkbox>
 \end
 
-<<boolean ViewTemplate/footer "Automatically enable links footer">>
+<<boolean ViewTemplate/footer>>

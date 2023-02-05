@@ -1,0 +1,7 @@
+title: $:/plugins/benwebber/crosslinks/language/
+
+Caption/Links: References
+Caption/Backlinks: Citations
+Button/Links/Show: {{$:/core/images/right-arrow}} Links
+Button/Links/Hide: {{$:/core/images/down-arrow}} Links
+Caption/Setting/ViewTemplate/footer: Automatically enable links footer
