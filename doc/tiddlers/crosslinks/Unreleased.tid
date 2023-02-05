@@ -1,0 +1,9 @@
+title: crosslinks Unreleased
+tags: crosslinks
+.plugin: crosslinks
+.date:
+.version:
+
+!!! Added
+
+* Extracted links and backlinks filters as tiddlers. Now it is easy to customize them. Thanks to <<.github-user SonephetR2>> for the suggestion.

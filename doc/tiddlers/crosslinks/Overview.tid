@@ -12,7 +12,22 @@ caption: Overview
 
 The links footer has the CSS class `crosslinks`.
 
+!! Settings
+
+Toggle whether the footer automatically appears in the plugin ''Settings'' tab.
+
+You can also override the filters used to list links and backlinks:
+
+* $:/plugins/benwebber/crosslinks/config/Filters/Links
+* $:/plugins/benwebber/crosslinks/config/Filters/Backlinks
+
+For example, if you only want to link tiddlers that exist, add `has[title]` to the links filter:
+
+```
+[<currentTiddler>links[]has[title]]
+```
+
 !! Limitations
 
 ''crosslinks'' uses the `links` and `backlinks` filter operators.
-These filters can only detect [[hard links|https://tiddlywiki.com/#Hard%20and%20Soft%20Links]].
+These filters can only detect <<twdoc.ext "Hard and Soft Links" "hard links">>.

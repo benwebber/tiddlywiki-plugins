@@ -16,7 +16,7 @@ title: $:/plugins/benwebber/crosslinks/macros/private
 \end
 
 \define crosslinks.filter-has-links()
-[all[current]is[tiddler]links[]]
-[all[current]is[tiddler]backlinks[]!is[draft]]
+[<currentTiddler>is[tiddler]filter{$:/plugins/benwebber/crosslinks/config/Filters/Links}]
+[<currentTiddler>is[tiddler]filter{$:/plugins/benwebber/crosslinks/config/Filters/Backlinks}]
 +[first[]]
 \end
