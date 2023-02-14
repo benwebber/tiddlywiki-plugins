@@ -1,0 +1,6 @@
+title: $:/plugins/benwebber/views/language/
+
+Buttons/NewView/Caption: new view
+Buttons/NewView/Hint: Save open tiddlers as a view
+Filters/Views: ''views'': Views
+SideBar/Views/Caption: Views

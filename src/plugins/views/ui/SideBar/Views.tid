@@ -1,0 +1,18 @@
+title: $:/plugins/benwebber/views/ui/SideBar/Views
+tags: $:/tags/SideBar
+list-after: $:/core/ui/SideBar/Recent
+caption: Views
+
+\whitespace trim
+
+\define actions()
+<$action-listops $tiddler="$:/StoryList" $filter={{!!filter}} />
+\end
+
+<$list filter="[tag{$:/plugins/benwebber/views/config/Tag}]">
+  <div class="tc-menu-list-item">
+    <$messagecatcher $tm-navigate=<<actions>>>
+      <$link tooltip={{!!tooltip}} />
+    </$messagecatcher>
+  </div>
+</$list>

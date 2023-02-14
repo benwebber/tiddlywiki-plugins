@@ -1,0 +1,17 @@
+title: $:/plugins/benwebber/views/ui/PageControls/new-view
+tags: $:/tags/PageControls
+
+\whitespace trim
+
+\define actions()
+<$action-sendmessage $message="tm-new-tiddler" tags={{$:/plugins/benwebber/views/config/Tag}} filter={{$:/StoryList!!list}} />
+\end
+
+<$button class=<<tv-config-toolbar-class>> actions=<<actions>> tooltip={{$:/plugins/benwebber/views/language/Buttons/NewView/Hint}}>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/core/images/plus-button}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">{{$:/plugins/benwebber/views/language/Buttons/NewView/Caption}}</span>
+</$list>
+</$button>

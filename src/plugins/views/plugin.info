@@ -1,0 +1,12 @@
+{
+  "title": "$:/plugins/benwebber/views",
+  "name": "views",
+  "description": "Bookmark individual tiddlers or groups of tiddlers",
+  "author": "Ben Webber",
+  "version": "0.1.0",
+  "core-version": ">=5.2.0",
+  "source": "https://github.com/benwebber/tiddlywiki-plugins",
+  "plugin-type": "plugin",
+  "list": "README",
+  "license": "MIT"
+}

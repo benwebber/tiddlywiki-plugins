@@ -1,0 +1,34 @@
+title: views Overview
+tags: views
+caption: Overview
+
+''views'' adds a new sidebar tab listing saved tiddler views.
+
+A view is essentially a tiddler with a ''filter'' field, similar to [ext[advanced search filters|https://tiddlywiki.com/#SystemTag%3A%20%24%3A%2Ftags%2FFilter]].
+Views are akin to database views or saved searches.
+The built-in <<.tool "$:/core/ui/Buttons/home">> tool is an example of a view.
+
+Use this plugin to bookmark individual tiddlers or groups of tiddlers you access frequently.
+
+!! Usage
+
+!!! Open a saved view
+
+The ''{{$:/plugins/benwebber/language/SideBar/Views/Caption}}'' tab in the sidebar lists all tiddlers tagged <$macrocall $name=tag tag={{$:/plugins/benwebber/views/config/Tag}} />.
+Clicking any of those links will open the tiddlers listed in that tiddler's ''filter'' field.
+
+!!! Create a new view
+
+Use the <<.tool "$:/plugins/benwebber/views/ui/PageControls/new-view">> tool to save open tiddlers as a view.
+You can override the default ''filter'' field to open tiddlers matching another filter.
+
+!! Example
+
+Navigate to ''Views'' in the sidebar and click [[views Demo]].
+This view opens all tiddlers tagged <<tag Demo>>.
+
+!! Limitations
+
+''views'' is simple by design.
+Check out [ext[Favorites|https://kookma.github.io/TW-Favorites/]] if you need more advanced features.
+Also check out <<twdoc.ext "Permaviews" url:"https://evidentlycube.github.io/TW5-PluginShowcase/">>, a similar plugin to create special permaview links.

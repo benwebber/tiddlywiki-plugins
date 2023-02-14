@@ -1,0 +1,9 @@
+title: views 0.1.0
+tags: views
+.plugin: views
+.version: 0.1.0
+.date: 20230214
+
+!!! Added
+
+* Added new view button and views sidebar tab.

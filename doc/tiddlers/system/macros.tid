@@ -51,3 +51,10 @@ tags: $:/tags/Macro
 \define .github-issue(number) [ext[#$number$|https://github.com/benwebber/tiddlywiki-plugins/issues/$number$]]
 
 \define .macros(plugin) <<twdoc.list-macros "[all[shadows]tag[$:/tags/Macro]prefix[$:/plugins/benwebber/$plugin$/]]">>
+
+\define .tool(tiddler)
+\whitespace trim
+<$let tv-config-toolbar-text="yes" tv-config-toolbar-class="">
+  <$transclude tiddler=<<__tiddler__>> />
+</$let>
+\end
