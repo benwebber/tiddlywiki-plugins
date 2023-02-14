@@ -28,7 +28,7 @@ deploy:
 
 .PHONY: test
 test: $(MIN_JS)
-	yarn run tiddlywiki test/
+	yarn run tiddlywiki test/ --test
 
 dist/index.html: $(MIN_CSS) $(MIN_JS)
 	yarn run tiddlywiki --version
