@@ -2,5 +2,8 @@ title: $:/plugins/benwebber/filters/README
 
 ''filters'' adds new and experimental filter operators.
 
+;`normalize`
+: Normalize titles in one of the four Unicode normalization forms.
+
 ;`surround`
 : Surround titles with text, similar to `addprefix[x]addsuffix[y]`.

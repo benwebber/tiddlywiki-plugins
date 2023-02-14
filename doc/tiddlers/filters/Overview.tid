@@ -11,6 +11,22 @@ $run$
 
 ''filters'' adds new and experimental filter operators.
 
+!! normalize
+
+''normalize'' normalizes the input titles in one of the four [ext[Unicode normalization forms|https://www.unicode.org/faq/normalization.html]]: NFC, NFD, NFKC, or NFKD.
+
+<$railroad text="""
+normalize [: ":" (NFC|NFD|NFKC|NFKD) ] "[" "]"
+"""/>
+
+!!! Suffix
+
+One of "NFC", "NFD", "NFKC", or "NFKD". If not specified or invalid, defaults to "NFC". Not case sensitive.
+
+!!! Examples
+
+<<example """ſaſsafras +[normalize:NFKD[]]""">>
+
 !! surround
 
 ''surround'' adds text to the start and end of each title in the input list.

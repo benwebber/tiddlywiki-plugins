@@ -1,0 +1,9 @@
+title: filters Unreleased
+tags: filters
+.plugin: filters
+.date:
+.version:
+
+!!! Added
+
+* Added `normalize` filter.
