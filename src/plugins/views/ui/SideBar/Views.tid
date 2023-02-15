@@ -9,7 +9,7 @@ caption: Views
 <$action-listops $tiddler="$:/StoryList" $filter={{!!filter}} />
 \end
 
-<$list filter="[tag{$:/plugins/benwebber/views/config/Tag}]">
+<$list filter="[tag{$:/plugins/benwebber/views/config/Tag}] [tag[$:/plugins/benwebber/views/Tags/View]]">
   <div class="tc-menu-list-item">
     <$messagecatcher $tm-navigate=<<actions>>>
       <$link tooltip={{!!tooltip}} />

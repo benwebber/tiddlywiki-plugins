@@ -1,4 +1,4 @@
 title: $:/plugins/benwebber/ui/Filters/Views
 tags: $:/tags/Filter
-filter: [tag{$:/plugins/benwebber/views/config/Tag}]
+filter: [tag{$:/plugins/benwebber/views/config/Tag}] [tag[$:/plugins/benwebber/views/Tags/View]]
 description: {{$:/plugins/benwebber/views/language/Filters/Views}}
