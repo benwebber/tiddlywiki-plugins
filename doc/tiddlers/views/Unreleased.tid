@@ -4,6 +4,10 @@ tags: views
 .version:
 .date:
 
+!!! Changed
+
+* The views sidebar now shows the ''caption'' field of view tiddlers instead of the ''title'' field, if applicable.
+
 !!! Deprecated
 
 * The default view tag is now <$macrocall $name=tag tag={{$:/plugins/benwebber/views/config/Tag}}/> instead of <<tag "$:/plugins/benwebber/views/Tags/View">>. Note the difference in capitalization between `Tags` (old) and `tags` (new). Support for <<tag "$:/plugins/benwebber/views/Tags/View">> will be removed in version 1.0.

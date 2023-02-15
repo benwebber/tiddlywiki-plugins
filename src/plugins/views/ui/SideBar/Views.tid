@@ -12,7 +12,13 @@ caption: Views
 <$list filter="[tag{$:/plugins/benwebber/views/config/Tag}] [tag[$:/plugins/benwebber/views/Tags/View]]">
   <div class="tc-menu-list-item">
     <$messagecatcher $tm-navigate=<<actions>>>
-      <$link tooltip={{!!tooltip}} />
+      <$link to={{!!title}} tooltip={{!!tooltip}}>
+        <$let tv-wikilinks="no">
+          <$transclude field="caption">
+            <$view field="title" />
+          </$transclude>
+        </$let>
+      </$link>
     </$messagecatcher>
   </div>
 </$list>
