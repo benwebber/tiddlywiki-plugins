@@ -28,21 +28,21 @@ deploy:
 
 .PHONY: test
 test: $(MIN_JS)
-	yarn run tiddlywiki test/ --test
+	npx tiddlywiki test/ --test
 
 dist/index.html: $(MIN_CSS) $(MIN_JS)
-	yarn run tiddlywiki --version
-	yarn run tiddlywiki doc/ --output dist/ --verbose --build index
+	npx tiddlywiki --version
+	npx tiddlywiki doc/ --output dist/ --verbose --build index
 
 dist/library/index.html: dist/index.html
-	TIDDLYWIKI_PLUGIN_PATH=doc/ yarn run tiddlywiki doc/ --output dist/library --verbose --build library
+	TIDDLYWIKI_PLUGIN_PATH=doc/ npx tiddlywiki doc/ --output dist/library --verbose --build library
 
 README.md: doc/tiddlers/systems/README.tid
-	TIDDLYWIKI_PLUGIN_PATH=doc/ yarn run tiddlywiki doc/ --output . --verbose --build README
+	TIDDLYWIKI_PLUGIN_PATH=doc/ npx tiddlywiki doc/ --output . --verbose --build README
 
 %.min.css: %.css
-	yarn run tailwindcss --input $< --output $@ --minify --content "$(shell echo $< | cut -d/ -f1-3 | sed 's|$$|/**/*.tid|')"
+	npx tailwindcss --input $< --output $@ --minify --content "$(shell echo $< | cut -d/ -f1-3 | sed 's|$$|/**/*.tid|')"
 
 %.min.js: %.ts
-	yarn run tsc
+	npx tsc
 	terser $*.js -o $@
