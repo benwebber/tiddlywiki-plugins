@@ -1,0 +1,9 @@
+title: crosslinks Unreleased
+tags: crosslinks
+.plugin: crosslinks
+.date:
+.version:
+
+!!! Fixed
+
+* Only execute complex ''crosslinks'' filters when the footer is shown. Thanks to <<.github-user SonephetR2>> for the suggestion.
